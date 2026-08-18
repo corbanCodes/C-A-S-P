@@ -58,6 +58,8 @@ def build_home():
    <span class="chip">{ic_ck} Flat pricing, published</span>
   </div>
 
+  <div class="hero-stage">
+  <div class="hero-photo" aria-hidden="true">{im_hero}</div>
   <div class="rv" role="img" aria-label="Preview of an inspection report and its compliance summary">
    <div class="rv-chrome">
     <div class="rv-dots" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -79,6 +81,7 @@ def build_home():
      <div class="rv-stat"><span>Next inspection cycle</span><b>April 2029</b></div>
     </div>
    </div>
+  </div>
   </div>
  </div>
 </section>
@@ -255,6 +258,7 @@ def build_home():
         tel=TEL, ph=PH, ic_a=svg("arrow"), ic_p=svg("phone"), ic_s=svg("shield"),
         ic_al=svg("alert"), ic_geo=svg("geo"),
         demo_hero=demo_btn(cls="btn btn-line btn-lg"),
+        im_hero=img("plaza-ramp", "", loading="eager"),
         ic_ck=svg("check"), ic_ck2=svg("check"), ic_geo2=svg("geo"), ic_doc2=svg("doc"),
         ic_ruler2=svg("ruler"), ic_sh2=svg("shield"),
         stats="".join('<div class="stat"><b>%s</b><span>%s</span></div>' % s for s in STATS),

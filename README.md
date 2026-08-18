@@ -79,7 +79,8 @@ There was no existing site and no logo, so the look was built from the subject m
   and every diagram carries a `<title>` and a full `<desc>`. A site about accessibility that
   fails an audit is an own goal.
 
-Type is Archivo 800/900 over Inter.
+Type is Fraunces (serif display — h1/h2, pull quotes) over Inter body, with Archivo for UI
+labels, buttons and chips. Primary buttons are ink pills that flip to white on dark surfaces.
 
 ## Local preview
 

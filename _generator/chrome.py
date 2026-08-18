@@ -67,7 +67,8 @@ def demo_bar():
     return ("""
 <div class="demo-bar" id="demo-bar" role="note">
  <p><span class="demo-dot" aria-hidden="true"></span><b>Demo preview</b><span class="demo-sep"></span>
-  forms post to a test inbox &mdash; payments &amp; e-signature are not connected.
+  <span class="demo-long">forms post to a test inbox &mdash; payments &amp; e-signature are not
+  connected.</span><span class="demo-short">payments not connected.</span>
   Built by <a href="https://60minutesites.com" rel="noopener" target="_blank">60 Minute Sites</a></p>
  <a class="demo-bar-cta" href="%s" target="_blank" rel="noopener" data-calendly>Book a demo %s</a>
 </div>""" % (CAL, svg("arrow", "ic ic-sm")))
@@ -95,7 +96,7 @@ def head(title, desc, path="/", extra_css="", body_class=""):
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/main.css">
 {extra_css}
 </head>
