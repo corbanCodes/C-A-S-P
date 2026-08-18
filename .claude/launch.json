@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "california-inspector-group",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5083", "--directory", "/Users/corbandamukaitis/Desktop/Personal Projects/60MS Client Sites/C-A-S-P"],
+      "port": 5083
+    }
+  ]
+}
