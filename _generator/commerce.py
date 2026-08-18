@@ -13,8 +13,9 @@ See DEMO-NOTES.md for what has to be wired before this takes money.
 import json
 
 from data import (BIZ, SQFT_BANDS, CASP_RATES, EEE_RATES, PRICE_INCLUDES, PRICE_EXCLUDES,
-                  CUSTOM_QUOTE, BOOK_STEPS, AGREEMENT_TERMS, PAY_METHODS, FORM_ACTION)
-from chrome import head, foot, cta, svg, TEL, PH, EM
+                  CUSTOM_QUOTE, BOOK_STEPS, AGREEMENT_TERMS, PAY_METHODS, FORM_ACTION,
+                  CHECKOUT_ACTION)
+from chrome import head, foot, cta, svg, demo_btn, TEL, PH, EM
 from blocks import img, phead, quote_form
 
 
@@ -168,7 +169,8 @@ def build_pricing(write):
    <p class="lede">Twenty per cent to book, the balance when the work is done. The report is
     released when the balance clears.</p></div>
   <div class="grid g4">{pay}</div>
-  <div class="note note-warn" style="margin-top:2rem">
+  <p style="margin:1.6rem 0 0"><a class="btn btn-soft" href="/checkout.html">See the example checkout {ic_a}</a></p>
+  <div class="note note-warn" style="margin-top:1.6rem">
    <b>We will never email you changed bank details.</b>
    Wire fraud in construction and property services works by sending a convincing message
    saying the account has changed. If you ever receive one that appears to be from us, do not
@@ -237,6 +239,7 @@ def build_book(write):
 
 <section class="sec-paper">
  <div class="wrap">
+  <div class="wiz-grid">
   <div class="wiz" id="wiz">
    <div class="wiz-rail" aria-hidden="true">
     <i class="on" data-w="1"></i><i data-w="2"></i><i data-w="3"></i><i data-w="4"></i>
@@ -345,7 +348,8 @@ def build_book(write):
     <ol class="wnext-list">
      <li><b>Sign the agreement.</b> Two minutes on a phone. Nothing is charged at this point.</li>
      <li><b>Pay the <span id="w-dep2">the deposit</span> deposit.</b> Signing releases a secure
-      payment link &mdash; card, ACH or wire. This is what holds your date.</li>
+      payment link &mdash; card, ACH or wire. This is what holds your date.
+      <a href="/checkout.html">See the example checkout &rarr;</a></li>
      <li><b>Pick your date.</b> The confirmation email carries a live calendar of our
       availability in your region.</li>
      <li><b>We inspect, then you settle the balance</b> and the signed PDF report unlocks in
@@ -368,23 +372,28 @@ def build_book(write):
   </div>
 
   <aside class="wiz-side">
-   <h3>Rather just talk to someone?</h3>
-   <p>Booking online suits most single-building jobs. Portfolios, franchise rollouts and
-    anything where you have already been served are better handled on a call.</p>
-   <a class="btn btn-solid btn-full" href="tel:{tel}">{ic_p} {ph}</a>
-   <a class="btn btn-line btn-full" href="/contact.html" style="margin-top:.5rem">Send the details instead</a>
-   <hr>
-   <h3>Free 15-minute consultation</h3>
-   <p>If you are not sure which mandate applies to your property, book a short call first.
-    We will not sell you an inspection you do not need.</p>
-   <a class="btn btn-line btn-full" href="/contact.html">Book a consultation</a>
+   <div class="pcard">
+    <h3>Not sure yet? Book a demo</h3>
+    <p>Fifteen minutes on a call. We will tell you which mandate applies to your property,
+     what it costs, and whether you need an inspection at all.</p>
+    {demo_side}
+   </div>
+   <div class="pcard">
+    <h3>Rather just talk to someone?</h3>
+    <p>Portfolios, franchise rollouts and anything where you have already been served are
+     better handled on a call.</p>
+    <a class="btn btn-line btn-full" href="tel:{tel}">{ic_p} {ph}</a>
+    <a class="btn btn-ghost btn-full" href="/contact.html" style="margin-top:.4rem">Send the details instead</a>
+   </div>
   </aside>
+  </div>
  </div>
 </section>
 
 {cta}
 """.format(
         steps=steps, ic_a=svg("arrow"), ic_p=svg("phone"), ic_doc=svg("doc"),
+        demo_side=demo_btn(cls="btn btn-solid btn-full"),
         ic_ck='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
         tel=TEL, ph=PH,
@@ -613,3 +622,139 @@ def build_portal(write):
         "Track your inspection, view the signed agreement and invoices, settle the balance "
         "and download your CASp or SB 721 / SB 326 report.",
         "/portal.html") + body + script + foot())
+
+
+# ------------------------------------------------------------------ checkout
+
+def build_checkout(write):
+    """Example checkout. Deliberately renders no card fields — card and bank
+    capture belong on the processor's hosted page; this page demonstrates the
+    order summary, method choice and billing hand-off, and posts the billing
+    contact to the 60MS checkout Formspree endpoint."""
+    body = phead(
+        "Checkout",
+        "The deposit that confirms your booking. Card and bank details are only ever "
+        "entered on our payment provider&rsquo;s secure page &mdash; never on this site.",
+        [("Home", "/index.html"), ("Book", "/book.html"), ("Checkout", None)]) + """
+<section>
+ <div class="wrap">
+  <div class="demo-flag">
+   {ic_al}
+   <div><b>Example checkout &mdash; payments are not connected on this demo</b>
+    <p>This page shows the flow a client will follow. On the live site the buttons below open
+     the payment provider&rsquo;s hosted checkout; nothing here charges a card today.</p></div>
+  </div>
+
+  <div class="co">
+   <div>
+    <div class="pcard">
+     <h2 style="font-size:1.3rem">Pay the booking deposit</h2>
+     <p style="font-size:.94rem">Engagement <b>CIG-2026-0418</b> &middot; agreement signed.
+      Paying the 20% deposit confirms the booking and holds your inspection date.</p>
+
+     <h3 style="margin-top:1.4rem">How would you like to pay?</h3>
+     <div class="seg" role="group" aria-label="Payment method">
+      <button type="button" data-method="card" aria-pressed="true">{ic_card} Card</button>
+      <button type="button" data-method="ach" aria-pressed="false">{ic_bank} ACH transfer</button>
+      <button type="button" data-method="wire" aria-pressed="false">{ic_wire} Wire</button>
+     </div>
+
+     <div class="co-method on" data-pane="card">
+      <div class="co-hand">
+       {ic_lock}
+       <div>
+        <b>Card details are taken on Stripe&rsquo;s secure page, not here</b>
+        <p>You will be redirected to our payment provider&rsquo;s hosted checkout to enter
+         your card. We never see or store card numbers &mdash; and no legitimate inspector
+         will ever ask for them by phone or email.</p>
+       </div>
+      </div>
+     </div>
+     <div class="co-method" data-pane="ach">
+      <div class="co-hand">
+       {ic_bank2}
+       <div>
+        <b>Bank debit connects on the provider&rsquo;s secure page</b>
+        <p>ACH direct debit from a US business checking account &mdash; the lowest-fee
+         option, and the usual choice for associations and management companies.</p>
+       </div>
+      </div>
+     </div>
+     <div class="co-method" data-pane="wire">
+      <div class="co-hand">
+       {ic_wire2}
+       <div>
+        <b>Wiring instructions are issued on the invoice</b>
+        <p>For larger portfolio engagements. We will never email you changed bank details
+         &mdash; if you ever receive a message saying our account has changed, call
+         {ph} before acting on it.</p>
+       </div>
+      </div>
+     </div>
+
+     <form id="co-form">
+      <h3>Billing contact</h3>
+      <div class="fgrid">
+       <div class="field"><label for="co-name">Name <span class="req">*</span></label>
+        <input id="co-name" name="name" type="text" autocomplete="name" required></div>
+       <div class="field"><label for="co-company">Company or association</label>
+        <input id="co-company" name="company" type="text" autocomplete="organization"></div>
+       <div class="field"><label for="co-email">Email for the receipt <span class="req">*</span></label>
+        <input id="co-email" name="email" type="email" autocomplete="email" required></div>
+       <div class="field"><label for="co-phone">Phone</label>
+        <input id="co-phone" name="phone" type="tel" autocomplete="tel"></div>
+       <div class="field full"><label for="co-addr">Billing address</label>
+        <input id="co-addr" name="billing_address" type="text" autocomplete="street-address"></div>
+      </div>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="qerr" id="co-err" role="alert">Please add your name and a valid email.</p>
+      <button class="btn btn-solid btn-lg btn-full" type="submit" id="co-pay">
+       {ic_lock2} Continue to secure payment &mdash; $230.00</button>
+      <p class="form-note">Demo: this submits the billing contact to the 60MS test inbox and
+       stops there. On the live site this button opens the hosted payment page.</p>
+     </form>
+
+     <div class="co-ok" id="co-ok" hidden>
+      <div class="qtick">{ic_ck}</div>
+      <h2 style="font-size:1.3rem">This is where Stripe takes over</h2>
+      <p>On the live site you would now be on the payment provider&rsquo;s secure page.
+       Your billing contact has been recorded in the demo inbox.</p>
+      <a class="btn btn-soft" href="/portal.html">See what happens after payment {ic_a}</a>
+     </div>
+    </div>
+   </div>
+
+   <aside class="co-side">
+    <div class="co-sum">
+     <h2>Order summary</h2>
+     <div class="co-line"><span>CASp property inspection</span><b>$1,150.00</b></div>
+     <div class="co-line"><span>Retail &amp; storefront &middot; 2,180 sq ft</span><b></b></div>
+     <div class="co-line"><span>1420 Alisal Street, Salinas</span><b></b></div>
+     <div class="co-line"><span>Travel &mdash; Monterey County</span><b>Included</b></div>
+     <div class="co-line co-total"><span>Deposit due today (20%)</span><b>$230.00</b></div>
+     <div class="co-line"><span>Balance on completion</span><b>$920.00</b></div>
+     <p class="co-muted">The balance is invoiced when the report is written; settling it
+      releases the signed PDF in your client portal. The deposit is refundable per the
+      cancellation terms in the inspection agreement.</p>
+    </div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+{cta}
+""".format(ic_al=svg("alert"), ic_card=svg("card"), ic_bank=svg("bank"), ic_wire=svg("wire"),
+           ic_bank2=svg("bank"), ic_wire2=svg("wire"), ic_lock=svg("lock"), ic_lock2=svg("lock"),
+           ic_ck='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
+                 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
+           ic_a=svg("arrow"), ph=PH,
+           cta=cta("Questions before you pay?",
+                   "Fifteen minutes on a call answers most of them, and the deposit is not "
+                   "due until the agreement is signed."))
+    script = ('<script>window.CIG_CHECKOUT={"form":"%s"};</script>'
+              '<script src="/assets/js/checkout.js" defer></script>' % CHECKOUT_ACTION)
+    write("checkout.html", head(
+        "Checkout | California Inspector Group",
+        "Pay the 20% booking deposit by card, ACH or wire. Card details are only ever "
+        "entered on the payment provider's secure page.",
+        "/checkout.html") + body + script + foot())

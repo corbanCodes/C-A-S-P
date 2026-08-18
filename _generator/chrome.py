@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
-"""Shared page chrome: <head>, nav, footer, CTA band and the icon set.
+"""Shared page chrome: demo bar, <head>, nav, footer, CTA band and the icon set.
 
 Every page on the site is wrapped by head() and foot(). The demo carries
-noindex on every page and a blanket robots.txt disallow so it can never
-outrank the client's real site once one exists.
+noindex on every page, a blanket robots.txt disallow, and a persistent demo
+bar so nobody mistakes the wiring for live: forms post to the 60MS Formspree
+endpoints (real), payments and e-signature are staged hand-offs (not yet).
+
+"Book a demo" opens Corban's 60MS Calendly in a popup (lazy-loaded); any
+element with data-calendly gets the behaviour, and the plain href works as a
+new-tab fallback without JS.
 """
-from data import BIZ, ACCESS_SERVICES, STRUCT_SERVICES
+from data import BIZ, CALENDLY, ACCESS_SERVICES, STRUCT_SERVICES
 
 TEL = BIZ["phone"].replace("-", "")
 PH = BIZ["phone"]
 EM = BIZ["email"]
+CAL = CALENDLY
 
 # ------------------------------------------------------------------ icon set
 
@@ -41,6 +47,7 @@ ICONS = {
     "unlock": '<rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 017.5-2"/>',
     "sign": '<path d="M3 20c3.5 0 3.5-14 7-14s3.5 11 7 11c1.6 0 2.4-1 3-2"/><path d="M3 20h18"/>',
     "tag": '<path d="M20.6 13.4L12 22l-9-9V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
+    "spark": '<path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/>',
 }
 
 
@@ -48,6 +55,22 @@ def svg(name, cls="ic"):
     return ('<svg class="%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
             'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '
             'aria-hidden="true">%s</svg>' % (cls, ICONS.get(name, ICONS["check"])))
+
+
+def demo_btn(label="Book a demo", cls="btn btn-soft"):
+    """Calendly popup trigger; plain link fallback without JS."""
+    return ('<a class="%s" href="%s" target="_blank" rel="noopener" data-calendly>%s</a>'
+            % (cls, CAL, label))
+
+
+def demo_bar():
+    return ("""
+<div class="demo-bar" id="demo-bar" role="note">
+ <p><span class="demo-dot" aria-hidden="true"></span><b>Demo preview</b><span class="demo-sep"></span>
+  forms post to a test inbox &mdash; payments &amp; e-signature are not connected.
+  Built by <a href="https://60minutesites.com" rel="noopener" target="_blank">60 Minute Sites</a></p>
+ <a class="demo-bar-cta" href="%s" target="_blank" rel="noopener" data-calendly>Book a demo %s</a>
+</div>""" % (CAL, svg("arrow", "ic ic-sm")))
 
 
 # ------------------------------------------------------------------ head / nav
@@ -78,10 +101,11 @@ def head(title, desc, path="/", extra_css="", body_class=""):
 </head>
 <body class="{body_class}">
 <a class="skip" href="#main">Skip to content</a>
+{bar}
 {nav}
 <main id="main">
 """.format(title=title, desc=desc, canonical=canonical, base=BIZ["base"],
-           extra_css=extra_css, body_class=body_class, nav=nav())
+           extra_css=extra_css, body_class=body_class, bar=demo_bar(), nav=nav())
 
 
 def nav():
@@ -122,6 +146,7 @@ def nav():
       <a href="/balcony-inspections.html"><b>The balcony laws</b><span>SB 721 and SB 326 scope, deadlines and cycles</span></a>
       <a href="/process.html"><b>How it works</b><span>From first call to report on your desk</span></a>
       <a href="/agreement.html"><b>The inspection agreement</b><span>What you are signing, section by section</span></a>
+      <a href="/portal.html"><b>Client portal</b><span>Where the engagement and the report live</span></a>
       <a href="/faq.html"><b>FAQ</b><span>Everything people ask on the first call</span></a>
      </div>
     </div>
@@ -131,7 +156,8 @@ def nav():
   </nav>
 
   <div class="nav-cta">
-   <a class="btn btn-ghost nav-tel" href="tel:{tel}">{ic_p}<span>{ph}</span></a>
+   <a class="btn btn-ghost nav-tel" href="tel:{tel}" aria-label="Call {ph}">{ic_p}<span>{ph}</span></a>
+   {demo}
    <a class="btn btn-solid" href="/book.html">Book an inspection</a>
   </div>
 
@@ -141,7 +167,10 @@ def nav():
  </div>
 
  <div class="mobile" id="mobile">
-  <a href="/book.html"><b>Book an inspection</b></a>
+  <div class="m-cta m-cta-top">
+   <a class="btn btn-solid btn-full" href="/book.html">Book an inspection</a>
+   {demo_full}
+  </div>
   <a href="/pricing.html">Pricing</a>
   <a href="/services.html">All services</a>
   <p class="m-head">Accessibility &mdash; CASp</p>
@@ -158,12 +187,13 @@ def nav():
   <a href="/faq.html">FAQ</a>
   <a href="/portal.html">Client portal</a>
   <div class="m-cta">
-   <a class="btn btn-solid btn-full" href="/book.html">Book an inspection</a>
-   <a class="btn btn-ghost btn-full" href="tel:{tel}">{ic_p} {ph}</a>
+   <a class="btn btn-line btn-full" href="tel:{tel}">{ic_p} {ph}</a>
   </div>
  </div>
 </header>
 """.format(acc=acc, st=st, tel=TEL, ph=PH, ic_p=svg("phone"),
+           demo=demo_btn(),
+           demo_full=demo_btn(cls="btn btn-soft btn-full"),
            caret='<svg class="cv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
            m_acc="".join('<a href="/services/%s.html">%s</a>' % (s["slug"], s["name"]) for s in ACCESS_SERVICES),
            m_st="".join('<a href="/services/%s.html">%s</a>' % (s["slug"], s["name"]) for s in STRUCT_SERVICES))
@@ -172,8 +202,9 @@ def nav():
 # ------------------------------------------------------------------ cta / foot
 
 def cta(title="Find out where you actually stand",
-        sub="A short call is free, and it is usually enough to tell you which mandate applies "
-            "to your property and what the inspection would cost.",
+        sub="Book the inspection online in about four minutes, or grab fifteen minutes on a "
+            "call first &mdash; it is usually enough to tell you which mandate applies and "
+            "what it costs.",
         variant=""):
     return """
 <section class="cta {variant}">
@@ -183,12 +214,14 @@ def cta(title="Find out where you actually stand",
    <p>{sub}</p>
   </div>
   <div class="cta-btns">
-   <a class="btn btn-solid btn-lg" href="tel:{tel}">{ic_p} {ph}</a>
-   <a class="btn btn-line btn-lg" href="/contact.html">Request a quote {ic_a}</a>
+   <a class="btn btn-solid btn-lg" href="/book.html">Book an inspection {ic_a}</a>
+   {demo}
+   <a class="btn btn-ghost btn-lg cta-tel" href="tel:{tel}">{ic_p} {ph}</a>
   </div>
  </div>
 </section>
 """.format(title=title, sub=sub, variant=variant, tel=TEL, ph=PH,
+           demo=demo_btn(cls="btn btn-line btn-lg"),
            ic_p=svg("phone"), ic_a=svg("arrow"))
 
 
@@ -211,6 +244,7 @@ def foot():
     <p class="foot-contact">
      <a href="tel:{tel}">{ic_p} {ph}</a>
      <a href="mailto:{em}">{ic_m} {em}</a>
+     <a href="{cal}" target="_blank" rel="noopener" data-calendly>{ic_c} Book a demo</a>
     </p>
    </div>
    <div>
@@ -226,6 +260,7 @@ def foot():
     <ul>
      <li><a href="/book.html">Book an inspection</a></li>
      <li><a href="/pricing.html">Pricing</a></li>
+     <li><a href="/checkout.html">Example checkout</a></li>
      <li><a href="/agreement.html">The agreement</a></li>
      <li><a href="/portal.html">Client portal</a></li>
     </ul>
@@ -251,7 +286,8 @@ def foot():
 
   <div class="foot-base">
    <p>&copy; 2026 {legal}. All rights reserved.</p>
-   <p>Site by <a href="https://60minutesites.com" rel="noopener">60 Minute Sites</a></p>
+   <p>Demo preview &mdash; payments &amp; e-signature not connected &middot;
+      Site by <a href="https://60minutesites.com" rel="noopener">60 Minute Sites</a></p>
   </div>
  </div>
 </footer>
@@ -259,5 +295,5 @@ def foot():
 <script src="/assets/js/contact-widget.js" defer></script>
 </body>
 </html>
-""".format(blurb=BIZ["blurb"], tel=TEL, ph=PH, em=EM, legal=BIZ["legal"],
-           acc=acc, st=st, ic_p=svg("phone"), ic_m=svg("mail"))
+""".format(blurb=BIZ["blurb"], tel=TEL, ph=PH, em=EM, cal=CAL, legal=BIZ["legal"],
+           acc=acc, st=st, ic_p=svg("phone"), ic_m=svg("mail"), ic_c=svg("calendar"))

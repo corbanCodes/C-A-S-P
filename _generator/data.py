@@ -5,7 +5,10 @@ Everything the pages say about the client lives here. Legal specifics carry a
 citation in the copy itself so the client can check them against the code.
 """
 
-FORM_ACTION = "https://formspree.io/f/xojeqvng"
+# 60 Minute Sites shared endpoints (real — leads land in the 60MS CRM)
+FORM_ACTION = "https://formspree.io/f/xojeqvng"        # quotes / leads / funnel
+CHECKOUT_ACTION = "https://formspree.io/f/mvzalyrw"    # checkout submissions
+CALENDLY = "https://calendly.com/corban-leadsprinter/new-meeting"  # "Book a demo" (60MS calendar for now)
 
 BIZ = {
     "name": "California Inspector Group",

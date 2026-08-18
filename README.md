@@ -27,11 +27,11 @@ consistently through nav, cards, buttons, diagrams and CTAs.
 
 | | |
 |---|---|
-| Pages | 35 |
+| Pages | 36 |
 | Services | 6 detail pages + index |
 | Service areas | 10 regional pages + a 58-county coverage page |
 | Education | `/casp.html`, `/balcony-inspections.html` — the long-form pages that do the selling |
-| Commerce | `/pricing.html`, `/book.html`, `/agreement.html`, `/portal.html` |
+| Commerce | `/pricing.html`, `/book.html`, `/checkout.html`, `/agreement.html`, `/portal.html` |
 | Ad funnel | `/start.html` — 4-step quiz landing page for paid traffic |
 | Other | home, about, process, FAQ, contact, thank-you, 404, sitemap |
 
@@ -48,7 +48,11 @@ unlock the report on final payment. The front end for all of that is built:
    same Formspree endpoint as every other 60MS funnel.
 3. **`/agreement.html`** — a plain-English walk through the twelve sections of the
    inspection agreement, so the client reads it before signing rather than after.
-4. **`/portal.html`** — a demo client portal: engagement status timeline, invoices, and the
+4. **`/checkout.html`** — an example checkout: order summary, card / ACH / wire method
+   choice, and a billing-contact form that posts to the 60MS checkout Formspree endpoint
+   (`mvzalyrw`). Deliberately renders **no card fields** — capture belongs on the
+   processor's hosted page.
+5. **`/portal.html`** — a demo client portal: engagement status timeline, invoices, and the
    report locked behind the outstanding balance. Click *Pay balance* to see it unlock.
 
 **Nothing here takes real money or real signatures yet**, and the deposit step deliberately
@@ -59,8 +63,13 @@ renders no card fields at all — card capture belongs on the processor's hosted
 
 There was no existing site and no logo, so the look was built from the subject matter:
 
-- **Authority over friendliness.** This is a compliance purchase made under legal pressure.
+- **Compliance-SaaS, not contractor-site.** Modelled on the Vanta/Drata pattern: an
+  announcement bar (doubling as the demo disclaimer), pill CTAs, a light gradient hero with
+  a floating mock inspection-report card, statutory trust chips, generous whitespace.
   Deep navy `#0B1B2B`, accessibility blue `#1263B8`, structural amber `#B4661E`.
+- **Two persistent CTAs.** *Book an inspection* (`/book.html`) and *Book a demo* — the
+  latter opens the 60MS Calendly (`corban-leadsprinter/new-meeting`) in a lazy-loaded popup
+  from the nav, hero, every CTA band, the booking sidebar, contact and footer.
 - **Diagram-led, not stock-led.** Most of the explanatory weight is carried by five authored
   inline SVG diagrams — the lawsuit timeline, the damages comparison, the path of travel, the
   balcony cross-section and the which-law decision tree. They out-perform stock photography
@@ -108,7 +117,7 @@ and compresses the shortlist into `assets/img/`. Credits are in `ATTRIBUTION.md`
 
 ## Verification
 
-The interactive pieces are covered by a 25-assertion harness run against headless Chrome —
+The interactive pieces are covered by a 27-assertion harness run against headless Chrome —
 calculator maths and deposit percentages, wizard step gating and validation, the absence of any
 card or password field, and the portal's report gate. All passing at time of writing. There is
-no horizontal overflow at 390px on any page, and no broken internal links across 2,170 refs.
+no horizontal overflow at 375px on any page, and no broken internal links across 2,269 refs.

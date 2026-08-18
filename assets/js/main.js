@@ -88,3 +88,42 @@
     });
   });
 }());
+
+/* ------------------------------------------------------- Calendly popups */
+/* Any [data-calendly] element opens the 60MS Calendly in a popup; assets
+   load on first click, and the plain href still works without JS. */
+(function () {
+  'use strict';
+  var loaded = false, loading = false, queue = [];
+
+  function openPopup(url) {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: url });
+      return;
+    }
+    queue.push(url);
+    if (loading) return;
+    loading = true;
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
+    var js = document.createElement('script');
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.onload = function () {
+      loaded = true;
+      queue.splice(0).forEach(function (u) {
+        window.Calendly.initPopupWidget({ url: u });
+      });
+    };
+    js.onerror = function () { loading = false; queue.length = 0; };
+    document.head.appendChild(js);
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-calendly]');
+    if (!a) return;
+    e.preventDefault();
+    openPopup(a.getAttribute('href'));
+  });
+}());

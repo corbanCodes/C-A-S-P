@@ -7,7 +7,7 @@ the same payload shape as every other 60MS funnel. Meta pixel calls are guarded
 so they no-op until a pixel is actually added.
 """
 from data import BIZ, FORM_ACTION
-from chrome import head, svg, TEL, PH, EM
+from chrome import head, svg, demo_bar, TEL, PH, EM
 from blocks import img
 
 STEP1 = [
@@ -224,9 +224,10 @@ def build(write):
         extra_css='<link rel="stylesheet" href="/assets/css/start.css">',
         body_class="start-page")
 
-    # the funnel deliberately drops the site nav — strip it back out
+    # the funnel deliberately drops the site nav — strip it back out,
+    # but keep the demo bar so the disclaimer travels with paid traffic too
     html = html.split('<a class="skip"')[0] + \
-        '<a class="skip" href="#main">Skip to content</a>\n<main id="main">\n'
+        '<a class="skip" href="#main">Skip to content</a>\n' + demo_bar() + '\n<main id="main">\n'
 
     write("start.html", html + body + """
 </main>

@@ -74,7 +74,9 @@ POST with everything captured, which lands the lead in the CRM.
 | Step | Now | Needs |
 |---|---|---|
 | Price | Live calculator, real maths | nothing |
+| Book a demo | 60MS Calendly (`corban-leadsprinter/new-meeting`) popup | swap to Robert's own Calendly when he has one |
 | Details | Validated, posts to Formspree `xojeqvng` | point at the 60MS HQ CRM endpoint |
+| Checkout | `/checkout.html` example — method choice + billing contact to Formspree `mvzalyrw` | Stripe Checkout for card + ACH; wire stays invoice-based |
 | E-signature | Consent checkboxes; confirmation screen says the agreement is on its way | DocuSign or Dropbox Sign; send template on submit, webhook on completion |
 | Deposit | Explains methods; **renders no card fields** | Stripe Checkout / Payment Links (card + ACH). Never build card fields into this site |
 | Scheduling | Confirmation says a calendar link follows | Cal.com or Calendly embed, ideally gated until the deposit clears |
@@ -102,7 +104,13 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
 
 ## 3. Test wiring to swap out
 
-- **Forms** — every form and the funnel post to the 60MS Formspree endpoint `xojeqvng`.
+- **Demo bar** — every page (funnel included) carries the top banner saying forms post to a
+  test inbox and payments/e-signature are not connected. Remove it at launch (it is emitted
+  by `demo_bar()` in `_generator/chrome.py` — delete the call in `head()` and rebuild).
+- **Book a demo** — all `[data-calendly]` elements open Corban's 60MS Calendly. This is a
+  placeholder calendar: replace `CALENDLY` in `_generator/data.py` with the client's own.
+- **Forms** — every form and the funnel post to the 60MS Formspree endpoint `xojeqvng`;
+  the example checkout posts to the 60MS checkout endpoint `mvzalyrw`.
   Page forms redirect to `/thank-you.html`; the funnel and booking wizard send JSON.
   Payload shape matches the other 60MS funnels so leads land in the CRM identically.
 - **Contact widget** (`assets/js/contact-widget.js`) — self-contained Call / Text / Email dock.

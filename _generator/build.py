@@ -16,7 +16,7 @@ sys.path.insert(0, HERE)
 from data import (BIZ, SERVICES, ACCESS_SERVICES, STRUCT_SERVICES, SERVICE_BY_SLUG,
                   PATH_OF_TRAVEL, EEE_CHECKS, PROCESS, REGIONS, COUNTIES, AUDIENCES,
                   FAQ, STATS)
-from chrome import head, foot, cta, svg, TEL, PH, EM
+from chrome import head, foot, cta, svg, demo_btn, TEL, PH, EM
 from blocks import (img, phead, service_cards, service_mini, faq_block, faq_schema,
                     quote_form, process_steps, stat_row)
 import diagrams as dg
@@ -37,42 +37,73 @@ def write(path, html):
 
 def build_home():
     body = """
-<section class="hero">
- <div class="hero-bg">{bg}</div>
- <div class="wrap hero-in">
-  <span class="eyebrow">{ic_geo} All 58 California counties</span>
-  <h1>Two California mandates. <em>One inspector.</em></h1>
+<section class="hero-lite">
+ <div class="wrap hero-lite-in">
+  <span class="eyebrow">{ic_geo} Statewide &middot; all 58 California counties</span>
+  <h1>Two California mandates.<br><em>One inspector.</em></h1>
   <p class="hero-lede">
-   One of them protects you from a lawsuit you can see coming. The other is already
-   overdue. California Inspector Group handles both &mdash; CASp accessibility inspections
-   and SB&nbsp;721 / SB&nbsp;326 balcony inspections &mdash; statewide.
+   CASp accessibility inspections that make you a qualified defendant before anyone files,
+   and the SB&nbsp;721 / SB&nbsp;326 balcony inspections the state already requires.
+   Priced up front, booked online, reported in days.
   </p>
   <div class="hero-btns">
    <a class="btn btn-solid btn-lg" href="/book.html">Book an inspection {ic_a}</a>
-   <a class="btn btn-line btn-lg" href="/pricing.html">See published pricing</a>
+   {demo_hero}
+  </div>
+  <div class="hero-chips">
+   <span class="chip">{ic_ck} DSA Certified Access Specialist program</span>
+   <span class="chip">{ic_ck} Civil Code &sect;55.54 qualified defendant</span>
+   <span class="chip">{ic_ck} SB 721 &middot; H&amp;S &sect;17973</span>
+   <span class="chip">{ic_ck} SB 326 &middot; Civ. &sect;5551</span>
+   <span class="chip">{ic_ck} Flat pricing, published</span>
   </div>
 
+  <div class="rv" role="img" aria-label="Preview of an inspection report and its compliance summary">
+   <div class="rv-chrome">
+    <div class="rv-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <span>CASp Inspection Report &mdash; 1420 Alisal Street, Salinas</span>
+   </div>
+   <div class="rv-body">
+    <div class="rv-main">
+     <h3>Itemised findings</h3>
+     <p class="rv-sub">34 findings &middot; measured against CBC Chapter 11B &amp; 2010 ADA Standards</p>
+     <div class="rv-row">{ic_geo2}<b>Parking &mdash; access aisle slope 4.1% (max 2.08%)</b><span class="rv-sev rv-sev-hi">Priority</span></div>
+     <div class="rv-row">{ic_doc2}<b>Entrance &mdash; door opening force 11 lbf (max 5 lbf)</b><span class="rv-sev rv-sev-md">Correct</span></div>
+     <div class="rv-row">{ic_ruler2}<b>Restroom &mdash; grab bar at 30&Prime; (required 33&ndash;36&Prime;)</b><span class="rv-sev rv-sev-md">Correct</span></div>
+     <div class="rv-row">{ic_ck2}<b>Service counter &mdash; 34&Prime; section provided</b><span class="rv-sev rv-sev-ok">Compliant</span></div>
+    </div>
+    <div class="rv-side">
+     <div class="rv-badge">{ic_sh2}<div><b>Qualified defendant</b><span>Report &amp; schedule on file &middot; &sect;55.54</span></div></div>
+     <div class="rv-stat"><span>Exposure per offence</span><b>$4,000 &rarr; <i class="up" style="font-style:normal">$1,000</i></b></div>
+     <div class="rv-stat"><span>Schedule of completion</span><b>12 items &middot; 60 days</b></div>
+     <div class="rv-stat"><span>Next inspection cycle</span><b>April 2029</b></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="tight">
+ <div class="wrap">
   <div class="mandates">
    <a class="mandate mandate-a" href="/casp.html">
     <span class="mandate-tag">{ic_s} Voluntary &mdash; the shield you choose</span>
-    <h2>CASp accessibility inspections</h2>
+    <h2 class="mh">CASp accessibility inspections</h2>
     <p>A Certified Access Specialist report is the only thing that makes you a
-       <b style="color:#fff">qualified defendant</b> if someone files an accessibility
-       claim against your business. Nobody makes you get one. That is rather the point.</p>
+       <b>qualified defendant</b> if someone files an accessibility claim against your
+       business. Nobody makes you get one. That is rather the point.</p>
     <span class="mandate-go">What CASp actually is {ic_a}</span>
    </a>
    <a class="mandate mandate-s" href="/balcony-inspections.html">
     <span class="mandate-tag">{ic_al} Mandatory &mdash; and already late</span>
-    <h2>SB 721 &amp; SB 326 balcony inspections</h2>
+    <h2 class="mh">SB 721 &amp; SB 326 balcony inspections</h2>
     <p>Every apartment, condo and HOA building in California with elevated wood-framed
-       balconies, walkways or stairs had a <b style="color:#fff">hard deadline</b>.
-       Both have now passed. If yours has not been inspected, you are out of compliance today.</p>
+       balconies, walkways or stairs had a <b>hard deadline</b>. Both have now passed.
+       If yours has not been inspected, you are out of compliance today.</p>
     <span class="mandate-go">Check whether you are in scope {ic_a}</span>
    </a>
   </div>
- </div>
- <div class="hero-strip">
-  <div class="wrap"><div class="hero-stats">{stats}</div></div>
+  <div class="stat-row" style="margin-top:1.1rem">{stats}</div>
  </div>
 </section>
 
@@ -221,10 +252,12 @@ def build_home():
 
 {cta}
 """.format(
-        bg=img("plaza-ramp", "", loading="eager"),
         tel=TEL, ph=PH, ic_a=svg("arrow"), ic_p=svg("phone"), ic_s=svg("shield"),
         ic_al=svg("alert"), ic_geo=svg("geo"),
-        stats="".join("<div><b>%s</b><span>%s</span></div>" % s for s in STATS),
+        demo_hero=demo_btn(cls="btn btn-line btn-lg"),
+        ic_ck=svg("check"), ic_ck2=svg("check"), ic_geo2=svg("geo"), ic_doc2=svg("doc"),
+        ic_ruler2=svg("ruler"), ic_sh2=svg("shield"),
+        stats="".join('<div class="stat"><b>%s</b><span>%s</span></div>' % s for s in STATS),
         d_timeline=dg.lawsuit_timeline(), d_which=dg.which_law(),
         acc_cards=service_cards(ACCESS_SERVICES[:3], tagged=False),
         st_cards=service_mini(STRUCT_SERVICES),
@@ -1104,6 +1137,10 @@ def build_contact():
      <div class="card" style="display:flex;gap:1rem;align-items:center">
       <div class="card-ic" style="margin:0">{ic_g}</div>
       <div><h3 style="margin:0">All 58 counties</h3><p>Statewide California &mdash; travel quoted up front</p></div></div>
+     <div class="card" style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+      <div class="card-ic" style="margin:0">{ic_cal}</div>
+      <div style="flex:1;min-width:200px"><h3 style="margin:0">Prefer to pick a time?</h3><p>Fifteen minutes, no obligation</p></div>
+      {demo_card}</div>
     </div>
 
     <h3>What to have ready</h3>
@@ -1125,6 +1162,7 @@ def build_contact():
  </div>
 </section>
 """.format(tel=TEL, ph=PH, em=EM, ic_p=svg("phone"), ic_m=svg("mail"), ic_g=svg("geo"),
+           ic_cal=svg("calendar"), demo_card=demo_btn(),
            ck=svg("check"),
            form=quote_form("contact", "Request a quote",
                            "Flat price, same business day reply. The more detail you give us, "
@@ -1203,6 +1241,7 @@ def build_sitemap():
                   ("Coverage", "/coverage.html"), ("FAQ", "/faq.html"),
                   ("Contact", "/contact.html")]),
         ("Book &amp; pay", [("Book an inspection", "/book.html"), ("Pricing", "/pricing.html"),
+                            ("Example checkout", "/checkout.html"),
                             ("The inspection agreement", "/agreement.html"),
                             ("Client portal", "/portal.html")]),
         ("Learn", [("What is CASp?", "/casp.html"),
@@ -1261,6 +1300,7 @@ def main():
     commerce.build_book(write)
     commerce.build_agreement(write)
     commerce.build_portal(write)
+    commerce.build_checkout(write)
 
     import start_page
     start_page.build(write)

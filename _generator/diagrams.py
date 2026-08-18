@@ -19,58 +19,61 @@ def _wrap(view, title, desc, body, cls="dg"):
 # ------------------------------------------------------------ lawsuit timeline
 
 def lawsuit_timeline():
-    """Two tracks from the day a complaint is served: with and without a report."""
+    """Two tracks from the day a complaint is served: with and without a report.
+
+    Laid out on a strict row grid — lane A (rows y=84..200), lane B
+    (y=260..324), outcome row (y=356..420) — so nothing can overlap.
+    """
     body = """
 <defs>
  <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-  <path d="M0 0L10 5L0 10z" fill="currentColor"/>
+  <path d="M0 0L10 5L0 10z" fill="var(--red)" fill-opacity=".75"/>
+ </marker>
+ <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+  <path d="M0 0L10 5L0 10z" fill="var(--green)"/>
  </marker>
 </defs>
 
 <!-- day 0 rule -->
-<line x1="176" y1="34" x2="176" y2="386" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4" opacity=".45"/>
-<text x="176" y="24" text-anchor="middle" class="dg-cap dg-strong">Day 0 &mdash; complaint served</text>
+<line x1="210" y1="40" x2="210" y2="420" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4" opacity=".35"/>
+<text x="210" y="26" text-anchor="middle" class="dg-cap dg-strong">Day 0 &mdash; complaint served</text>
 
-<!-- ============ track A : no report ============ -->
-<text x="16" y="78" class="dg-lane">WITHOUT a CASp report</text>
-<rect x="16" y="90" width="152" height="72" rx="10" fill="var(--paper)" stroke="var(--line)"/>
-<text x="30" y="116" class="dg-cap">You are an</text>
-<text x="30" y="136" class="dg-cap dg-strong">ordinary defendant</text>
+<!-- ============ lane A : no report ============ -->
+<text x="24" y="72" class="dg-lane">Without a CASp report</text>
+<rect x="24" y="84" width="168" height="64" rx="12" fill="var(--paper)" stroke="var(--line)"/>
+<text x="42" y="110" class="dg-cap">You are an</text>
+<text x="42" y="130" class="dg-cap dg-strong">ordinary defendant</text>
 
-<rect x="176" y="90" width="700" height="72" rx="10" fill="var(--red-wash)" stroke="var(--red)" stroke-opacity=".35"/>
-<text x="200" y="118" class="dg-cap dg-strong" fill="var(--red)">The case simply proceeds.</text>
-<text x="200" y="140" class="dg-cap">$4,000 minimum per offence under the Unruh Act, plus the plaintiff&#8217;s attorney fees.</text>
-<g color="var(--red)">
- <line x1="200" y1="172" x2="856" y2="172" stroke="currentColor" stroke-width="2" marker-end="url(#ar)" opacity=".75"/>
-</g>
-<text x="856" y="192" text-anchor="end" class="dg-cap dg-mute">fees compound &rarr;</text>
+<rect x="210" y="84" width="666" height="64" rx="12" fill="var(--red-wash)" stroke="var(--red)" stroke-opacity=".3"/>
+<text x="234" y="110" class="dg-cap dg-strong" fill="var(--red)">The case simply proceeds</text>
+<text x="234" y="132" class="dg-cap">$4,000 minimum per offence under the Unruh Act, plus the plaintiff&#8217;s attorney fees.</text>
 
-<!-- ============ track B : report on file ============ -->
-<text x="16" y="248" class="dg-lane">WITH a CASp report on file</text>
-<rect x="16" y="260" width="152" height="72" rx="10" fill="var(--blue-wash)" stroke="var(--blue)" stroke-opacity=".4"/>
-<text x="30" y="286" class="dg-cap">You are a</text>
-<text x="30" y="306" class="dg-cap dg-strong" fill="var(--blue)">qualified defendant</text>
+<line x1="234" y1="176" x2="846" y2="176" stroke="var(--red)" stroke-width="2" opacity=".6" marker-end="url(#ar)"/>
+<text x="234" y="198" class="dg-cap dg-mute">day 1</text>
+<text x="846" y="198" text-anchor="end" class="dg-cap dg-mute">fees compound the longer it runs</text>
 
-<!-- 90 day stay -->
-<rect x="176" y="260" width="330" height="72" rx="10" fill="var(--blue)" fill-opacity=".14" stroke="var(--blue)"/>
-<text x="196" y="288" class="dg-cap dg-strong" fill="var(--blue-ink)">90-day stay of proceedings</text>
-<text x="196" y="310" class="dg-cap">The case pauses. Civil Code &#167;55.54.</text>
+<!-- ============ lane B : report on file ============ -->
+<text x="24" y="248" class="dg-lane">With a CASp report on file</text>
+<rect x="24" y="260" width="168" height="64" rx="12" fill="var(--blue-wash)" stroke="var(--blue)" stroke-opacity=".35"/>
+<text x="42" y="286" class="dg-cap">You are a</text>
+<text x="42" y="306" class="dg-cap dg-strong" fill="var(--blue-ink)">qualified defendant</text>
 
-<!-- brace under stay -->
-<path d="M176 344 v8 h330 v-8" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity=".55"/>
-<text x="341" y="370" text-anchor="middle" class="dg-cap dg-mute">90 days to correct and negotiate</text>
+<rect x="210" y="260" width="330" height="64" rx="12" fill="var(--blue)" fill-opacity=".13" stroke="var(--blue)" stroke-opacity=".6"/>
+<text x="234" y="286" class="dg-cap dg-strong" fill="var(--blue-ink)">90-day stay of proceedings</text>
+<text x="234" y="308" class="dg-cap">The case pauses. Civil Code &#167;55.54.</text>
 
-<!-- eec -->
-<circle cx="506" cy="296" r="7" fill="var(--gold)"/>
-<line x1="506" y1="260" x2="506" y2="289" stroke="var(--gold)" stroke-width="2"/>
-<text x="524" y="284" class="dg-cap dg-strong">Early evaluation conference</text>
-<text x="524" y="304" class="dg-cap">A judge, both parties, before fees run away.</text>
+<circle cx="540" cy="292" r="7" fill="var(--gold)"/>
+<line x1="549" y1="292" x2="566" y2="292" stroke="var(--gold)" stroke-width="1.5" opacity=".7"/>
+<text x="574" y="286" class="dg-cap dg-strong">Early evaluation conference</text>
+<text x="574" y="306" class="dg-cap">A judge and both parties, before fees compound.</text>
 
-<rect x="176" y="188" width="700" height="52" rx="10" fill="var(--green-wash)" stroke="var(--green)" stroke-opacity=".4"/>
-<text x="196" y="210" class="dg-cap dg-strong" fill="var(--green-ink)">Minimum statutory damages may fall to $1,000 per offence</text>
-<text x="196" y="230" class="dg-cap">where the site was CASp-inspected and violations are corrected within 60 days of service. Civil Code &#167;55.56.</text>
+<!-- outcome row -->
+<line x1="375" y1="326" x2="375" y2="352" stroke="var(--green)" stroke-width="2" marker-end="url(#ag)"/>
+<rect x="210" y="356" width="666" height="64" rx="12" fill="var(--green-wash)" stroke="var(--green)" stroke-opacity=".35"/>
+<text x="234" y="382" class="dg-cap dg-strong" fill="var(--green-ink)">Minimum statutory damages may fall to $1,000 per offence</text>
+<text x="234" y="404" class="dg-cap">where the site was CASp-inspected and violations are corrected within 60 days of service. &#167;55.56.</text>
 """
-    return _wrap("0 0 892 396",
+    return _wrap("0 0 900 436",
                  ("lt-t", "What changes on the day you are served"),
                  ("lt-d", "A comparison of two tracks after a construction-related accessibility "
                           "complaint is served. Without a CASp report the case proceeds immediately "
