@@ -23,6 +23,7 @@ from blocks import (img, phead, service_cards, service_mini, faq_block, faq_sche
 import diagrams as dg
 import commerce
 import report_docs
+import blog
 
 PAGES = []
 
@@ -1392,6 +1393,8 @@ def build_sitemap():
                    ("SB 721 &amp; SB 326 balcony law", "/balcony-inspections.html"),
                    ("Sample CASp report", "/samples/casp-report.html"),
                    ("Sample SB 721 report", "/samples/sb721-report.html")]),
+        ("Field notes", [(a["title"][:60], "/blog/%s.html" % a["slug"])
+                         for a in blog.ARTICLES] + [("All articles", "/blog.html")]),
         ("Accessibility services", [(s["name"], "/services/%s.html" % s["slug"]) for s in ACCESS_SERVICES]),
         ("Structural services", [(s["name"], "/services/%s.html" % s["slug"]) for s in STRUCT_SERVICES]),
         ("Regions", [(n, "/areas/%s.html" % s) for s, n, _, _ in REGIONS]),
@@ -1449,6 +1452,7 @@ def main():
     commerce.build_portal(write)
     commerce.build_checkout(write)
     report_docs.build(write)
+    blog.build(write)
 
     import start_page
     start_page.build(write)

@@ -996,3 +996,14 @@ a.tag:hover { background: var(--blue-wash); border-color: var(--blue); color: va
 .sources a { color: #9EC7F2; }
 .sec-ink .stat span strong { color: #E8EEF5; display: block; margin-bottom: .15rem; }
 .sec-ink .stat span { line-height: 1.45; }
+
+/* ------------------------------------------------------------------ blog */
+
+.post-meta { display: block; margin-top: .9rem; font-family: Archivo, sans-serif; font-size: .78rem; font-weight: 600; color: var(--mute); }
+.post-byline { display: flex; align-items: center; gap: .9rem; margin-bottom: 2rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
+.post-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: center 30%; border: 2px solid #fff; box-shadow: 0 0 0 1.5px var(--line-strong); }
+.post-byline b { display: block; font-family: Archivo, sans-serif; font-size: .95rem; color: var(--ink); }
+.post-byline span { font-size: .82rem; color: var(--mute); }
+.post-body h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.45rem; margin: 2rem 0 .6rem; letter-spacing: -.01em; }
+.post-body p { font-size: 1.02rem; line-height: 1.75; }
+.post-body b { font-weight: 650; }

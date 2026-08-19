@@ -104,6 +104,16 @@ what was described/shown → re-quoted on site before proceeding) is in the wiza
 the agreement summary §9. The photo ask is a soft gate: one nudge, then the booking proceeds,
 because a lost booking is worse than a missing photo.
 
+### The blog — "Field notes" (19 Aug)
+Six articles at /blog.html drafted directly from Robert's phone-call talking points: the
+civil-rights framing (Unruh §51(f)/§52), the no-grandfather-clause myth (ADA readily
+achievable + CBC 11B-202.4 path of travel), the certificate-of-occupancy myth (Gov. Code
+§818.6 building-department immunity — you cannot sue the city), the ten-minute vulnerability
+walk, who actually files (sourced numbers), and CRASCA. Bylined "Robert Lehman" with staged
+July–August dates. **Robert must review and approve every article before launch** — they are
+in his voice and carry legal citations. Once the noindex comes off, these are also the SEO
+engine; publish one at a time on a real schedule rather than six at once.
+
 ### Sample reports (18 Aug)
 `/samples/casp-report.html` and `/samples/sb721-report.html` are worked examples — watermarked
 SAMPLE, fictional properties, but structured to the statutes (§55.53 and §17973 respectively).

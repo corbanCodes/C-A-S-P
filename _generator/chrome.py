@@ -144,6 +144,7 @@ def nav():
     <button type="button" class="nav-top" aria-expanded="false">Learn {caret}</button>
     <div class="menu menu-1">
      <div class="menu-col">
+      <a href="/blog.html"><b>Field notes &mdash; the blog</b><span>The myths, the numbers, the ten-minute vulnerability walk</span></a>
       <a href="/casp.html"><b>What is CASp?</b><span>The certification, the report, qualified defendant status</span></a>
       <a href="/balcony-inspections.html"><b>The balcony laws</b><span>SB 721 and SB 326 scope, deadlines and cycles</span></a>
       <a href="/process.html"><b>How it works</b><span>From first call to report on your desk</span></a>
@@ -182,6 +183,7 @@ def nav():
   <p class="m-head">Structural &mdash; SB 721 / SB 326</p>
   {m_st}
   <p class="m-head">Learn</p>
+  <a href="/blog.html">Field notes (blog)</a>
   <a href="/casp.html">What is CASp?</a>
   <a href="/balcony-inspections.html">Balcony inspection law</a>
   <a href="/process.html">How it works</a>
@@ -273,6 +275,7 @@ def foot():
     <h3 style="margin-top:1.4rem">Company</h3>
     <ul>
      <li><a href="/about.html">About</a></li>
+     <li><a href="/blog.html">Field notes (blog)</a></li>
      <li><a href="/reviews.html">Reviews</a></li>
      <li><a href="/process.html">How it works</a></li>
      <li><a href="/coverage.html">Where we work</a></li>
