@@ -899,3 +899,42 @@ a.tag:hover { background: var(--blue-wash); border-color: var(--blue); color: va
   .demo-short { display: inline; }
   .demo-bar { font-size: .78rem; padding: .42rem 14px; }
 }
+
+/* ---------------------------------------------------------------- reviews */
+
+.rev-stars { display: inline-flex; gap: 2px; color: #D98E2B; }
+.rev-stars svg { width: 14px; height: 14px; }
+
+.revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+@media (max-width: 940px) { .revs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .revs { grid-template-columns: 1fr; } }
+.revs > * { min-width: 0; }
+
+.rev {
+  display: flex; flex-direction: column; margin: 0;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 1.4rem 1.5rem 1.3rem; box-shadow: var(--sh-sm);
+}
+.rev blockquote { margin: .8rem 0 0; }
+.rev blockquote p { font-size: .93rem; line-height: 1.65; margin: 0; color: var(--body); }
+.rev-who { margin-top: auto; padding-top: 1.1rem; display: flex; align-items: center; gap: .7rem; }
+.rev-av {
+  width: 38px; height: 38px; border-radius: 50%; flex: none;
+  background: var(--blue-wash); color: var(--blue-ink);
+  font-family: Archivo, sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .03em;
+  display: grid; place-items: center;
+}
+.rev-s .rev-av { background: var(--gold-wash); color: var(--gold-ink); }
+.rev-who b { display: block; font-family: Archivo, sans-serif; font-size: .87rem; color: var(--ink); line-height: 1.3; }
+.rev-who i { display: block; font-style: normal; font-size: .77rem; color: var(--mute); }
+
+.rev-feat { margin: 0 auto clamp(2rem, 4vw, 2.8rem); max-width: 780px; text-align: center; }
+.rev-feat blockquote { margin: 1rem 0 1.1rem; }
+.rev-feat blockquote p {
+  font-family: Fraunces, Georgia, serif; font-style: italic; font-weight: 500;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem); line-height: 1.45; color: var(--ink); margin: 0;
+}
+.rev-feat figcaption { font-family: Archivo, sans-serif; font-size: .85rem; font-weight: 600; color: var(--mute); }
+
+.rev-solo { margin: 2rem 0 0; }
+.sec-paper .rev, .sec-tint .rev { box-shadow: none; }

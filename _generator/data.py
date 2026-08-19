@@ -621,3 +621,74 @@ PAY_METHODS = [
     ("Invoice terms", "doc", "Net-30 available to established management companies and "
                              "public agencies on approval."),
 ]
+
+# ============================================================ reviews
+
+# SAMPLE testimonials — placeholders that establish the layout and the voice.
+# Robert must replace these with real, permissioned client quotes before
+# launch; publishing invented reviews as genuine violates FTC endorsement
+# rules. See DEMO-NOTES.md.
+
+REVIEWS = [
+    {
+        "feat": True, "line": "access",
+        "q": "We got the letter every California business owner dreads. Because the property "
+             "had been CASp-inspected eight months earlier, our attorney applied for the stay "
+             "the same week and the matter settled for a fraction of the demand. That report "
+             "paid for itself many times over.",
+        "name": "Maria G.", "role": "Restaurant owner", "where": "Fresno County",
+    },
+    {
+        "line": "structural",
+        "q": "Our board had been trying to price the balcony inspection for two years and "
+             "getting numbers that made no sense. CIG quoted flat off the unit count, arrived "
+             "when they said they would, and the report slotted straight into our reserve "
+             "study. Our management company actually thanked us.",
+        "name": "Susan T.", "role": "HOA board president", "where": "Orange County",
+    },
+    {
+        "line": "structural",
+        "q": "Sixty-one units across four buildings, one mobilisation. The two walkways they "
+             "took out of service had dry rot you could not see from below. I did not enjoy "
+             "writing that cheque, and I am very glad I did.",
+        "name": "Daniel K.", "role": "Apartment owner", "where": "Santa Clara County",
+    },
+    {
+        "line": "access",
+        "q": "They marked up our tenant-improvement drawings before permit and caught a "
+             "restroom layout that would have cost five figures to demolish and rebuild. "
+             "The cheapest correction we ever made was the one on paper.",
+        "name": "Rob V.", "role": "General contractor", "where": "Los Angeles County",
+    },
+    {
+        "line": "general",
+        "q": "We manage forty-odd properties across six counties. One inspector, one report "
+             "format, one calendar. My compliance binder finally makes sense.",
+        "name": "Alicia M.", "role": "Portfolio property manager", "where": "Inland Empire",
+    },
+    {
+        "line": "access",
+        "q": "Every lease we sign now answers the &sect;1938 question with a real inspection "
+             "instead of the statutory boilerplate. Two tenants have told us directly that it "
+             "is part of why they signed with us.",
+        "name": "James H.", "role": "Commercial landlord", "where": "San Diego County",
+    },
+    {
+        "line": "general",
+        "q": "Quoted on Tuesday, inspected on Friday, report the following Thursday. Nobody "
+             "else in this trade moves like that, and the price was the price.",
+        "name": "Priya N.", "role": "Hotel general manager", "where": "Monterey County",
+    },
+    {
+        "line": "structural",
+        "q": "They do not sell repairs, which is exactly why I trust their list of repairs.",
+        "name": "Frank D.", "role": "Condominium board treasurer", "where": "Los Angeles County",
+    },
+    {
+        "line": "access",
+        "q": "Robert measured things I did not know had rules &mdash; door pressure, counter "
+             "height, the slope of my parking lot. The report reads like it was written to be "
+             "handed to a judge. As I understand it, that is the point.",
+        "name": "Denise O.", "role": "Boutique owner", "where": "Sacramento County",
+    },
+]

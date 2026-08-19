@@ -15,10 +15,11 @@ sys.path.insert(0, HERE)
 
 from data import (BIZ, SERVICES, ACCESS_SERVICES, STRUCT_SERVICES, SERVICE_BY_SLUG,
                   PATH_OF_TRAVEL, EEE_CHECKS, PROCESS, REGIONS, COUNTIES, AUDIENCES,
-                  FAQ, STATS)
+                  FAQ, STATS, REVIEWS)
 from chrome import head, foot, cta, svg, demo_btn, TEL, PH, EM
 from blocks import (img, phead, service_cards, service_mini, faq_block, faq_schema,
-                    quote_form, process_steps, stat_row)
+                    quote_form, process_steps, stat_row, review_cards, review_feature,
+                    review_pull)
 import diagrams as dg
 import commerce
 
@@ -245,6 +246,15 @@ def build_home():
  </div>
 </section>
 
+<section class="sec-tint">
+ <div class="wrap">
+  <div class="sec-head center"><h2>Owners and boards on working with us</h2></div>
+  {rev_feat}
+  {revs}
+  <p class="center" style="margin-top:2rem"><a class="btn btn-line" href="/reviews.html">Read all reviews {ic_a}</a></p>
+ </div>
+</section>
+
 <section>
  <div class="wrap narrow">
   <div class="sec-head center"><h2>Common questions</h2></div>
@@ -272,6 +282,8 @@ def build_home():
         aud="".join('<div class="card"><div class="card-ic">%s</div><h3>%s</h3><p>%s</p></div>'
                     % (svg(ic), t, d) for t, ic, d in AUDIENCES[:8]),
         steps=process_steps(),
+        rev_feat=review_feature(next(r for r in REVIEWS if r.get("feat"))),
+        revs=review_cards([r for r in REVIEWS if not r.get("feat")][:6]),
         ic_tag=svg("tag"), ck=svg("check"),
         im_park=img("parking-stalls", "Marked accessible parking stalls in a commercial car park"),
         faq=faq_block([f for f in FAQ if f[1] in (
@@ -776,6 +788,7 @@ def build_service_pages():
    <div>
     <h2>How this one runs</h2>
     {steps}
+    {review}
    </div>
    <div>{form}</div>
   </div>
@@ -798,6 +811,8 @@ def build_service_pages():
             rows="".join('<div class="row"><h3>%s</h3><p>%s</p></div>' % (t, d)
                          for t, d in s["points"]),
             steps=process_steps(PROCESS[:4]),
+            review=review_pull([r for r in REVIEWS if r["line"] == s["line"]]
+                               [hash(s["slug"]) % len([r for r in REVIEWS if r["line"] == s["line"]])]),
             form=quote_form(s["slug"], "Quote this service",
                             "Send the property details and we&rsquo;ll come back with a flat price."),
             others=service_mini(others),
@@ -1091,6 +1106,38 @@ def build_area_pages():
             "/areas/%s.html" % slug) + body + foot())
 
 
+# ============================================================ reviews
+
+def build_reviews():
+    body = phead(
+        "Reviews",
+        "What owners, boards and managers say about working with California Inspector Group.",
+        [("Home", "/index.html"), ("Reviews", None)]) + """
+<section>
+ <div class="wrap">
+  {feat}
+  {revs}
+  <div class="note" style="margin-top:2.4rem">
+   <b>Every engagement ends with an ask.</b>
+   We request a short review after the report is delivered &mdash; and we publish what
+   clients actually say, not a curated highlight reel. If we inspected your property and
+   you have feedback, good or bad, <a href="/contact.html">we want it</a>.
+  </div>
+ </div>
+</section>
+{cta}
+""".format(feat=review_feature(next(r for r in REVIEWS if r.get("feat"))),
+           revs=review_cards([r for r in REVIEWS if not r.get("feat")]),
+           cta=cta("Join the list",
+                   "Book the inspection online in about four minutes, or start with a "
+                   "fifteen-minute call."))
+    write("reviews.html", head(
+        "Reviews | California Inspector Group",
+        "Reviews from California owners, HOA boards and property managers on CASp and "
+        "SB 721 / SB 326 inspections.",
+        "/reviews.html") + body + foot())
+
+
 # ============================================================ faq / contact
 
 def build_faq():
@@ -1242,6 +1289,7 @@ def build_sitemap():
     groups = [
         ("Main", [("Home", "/index.html"), ("Services", "/services.html"),
                   ("How it works", "/process.html"), ("About", "/about.html"),
+                  ("Reviews", "/reviews.html"),
                   ("Coverage", "/coverage.html"), ("FAQ", "/faq.html"),
                   ("Contact", "/contact.html")]),
         ("Book &amp; pay", [("Book an inspection", "/book.html"), ("Pricing", "/pricing.html"),
@@ -1293,6 +1341,7 @@ def main():
     build_about()
     build_coverage()
     build_area_pages()
+    build_reviews()
     build_faq()
     build_contact()
     build_thanks()

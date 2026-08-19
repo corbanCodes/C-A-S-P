@@ -177,3 +177,44 @@ def process_steps(items=None):
 def stat_row(stats, dark=False):
     return '<div class="stat-row">%s</div>' % "".join(
         '<div class="stat"><b>%s</b><span>%s</span></div>' % (n, l) for n, l in stats)
+
+
+# ----------------------------------------------------------------- reviews
+
+def stars():
+    s = ('<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">'
+         '<path d="M12 3l2.7 5.6 6.3.9-4.5 4.4 1 6.1-5.5-2.9L6.5 20l1-6.1L3 9.5l6.3-.9z"/></svg>')
+    return '<span class="rev-stars" role="img" aria-label="Five out of five stars">%s</span>' % (s * 5)
+
+
+def _initials(name):
+    parts = name.replace(".", "").split()
+    return "".join(p[0] for p in parts[:2]).upper()
+
+
+def review_cards(items):
+    out = []
+    for r in items:
+        amber = ' rev-s' if r["line"] == "structural" else ''
+        out.append(
+            '<figure class="rev%s">%s<blockquote><p>&ldquo;%s&rdquo;</p></blockquote>'
+            '<figcaption class="rev-who"><span class="rev-av" aria-hidden="true">%s</span>'
+            '<span><b>%s</b><i>%s &middot; %s</i></span></figcaption></figure>'
+            % (amber, stars(), r["q"], _initials(r["name"]),
+               r["name"], r["role"], r["where"]))
+    return '<div class="revs">%s</div>' % "".join(out)
+
+
+def review_feature(r):
+    return ('<figure class="rev-feat">%s<blockquote><p>&ldquo;%s&rdquo;</p></blockquote>'
+            '<figcaption>%s &middot; %s, %s</figcaption></figure>'
+            % (stars(), r["q"], r["name"], r["role"], r["where"]))
+
+
+def review_pull(r):
+    """Compact single review for service pages and sidebars."""
+    amber = ' rev-s' if r["line"] == "structural" else ''
+    return ('<figure class="rev rev-solo%s">%s<blockquote><p>&ldquo;%s&rdquo;</p></blockquote>'
+            '<figcaption class="rev-who"><span class="rev-av" aria-hidden="true">%s</span>'
+            '<span><b>%s</b><i>%s &middot; %s</i></span></figcaption></figure>'
+            % (amber, stars(), r["q"], _initials(r["name"]), r["name"], r["role"], r["where"]))

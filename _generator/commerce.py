@@ -16,7 +16,8 @@ from data import (BIZ, SQFT_BANDS, CASP_RATES, EEE_RATES, PRICE_INCLUDES, PRICE_
                   CUSTOM_QUOTE, BOOK_STEPS, AGREEMENT_TERMS, PAY_METHODS, FORM_ACTION,
                   CHECKOUT_ACTION)
 from chrome import head, foot, cta, svg, demo_btn, TEL, PH, EM
-from blocks import img, phead, quote_form
+from blocks import img, phead, quote_form, review_pull
+from data import REVIEWS
 
 
 # --------------------------------------------------------------- rate table
@@ -128,6 +129,7 @@ def build_pricing(write):
     <a class="btn btn-solid btn-full" href="/book.html" id="calc-go">Book this inspection {ic_a}</a>
    </div>
   </div>
+  {rev}
  </div>
 </section>
 
@@ -183,6 +185,7 @@ def build_pricing(write):
 """.format(
         ic_s=svg("shield"), ic_al=svg("alert"), ic_a=svg("arrow"), ph=PH,
         rate=_rate_table(), eee=_eee_table(),
+        rev=review_pull(next(r for r in REVIEWS if "price was the price" in r["q"])),
         occ_opts="".join('<option value="%d">%s</option>' % (i, n.replace("&amp;", "&"))
                          for i, (n, _, _, _) in enumerate(CASP_RATES)),
         sqft_opts="".join('<option value="%d">%s sq ft</option>' % (i, b)
@@ -378,6 +381,7 @@ def build_book(write):
      what it costs, and whether you need an inspection at all.</p>
     {demo_side}
    </div>
+   {side_rev}
    <div class="pcard">
     <h3>Rather just talk to someone?</h3>
     <p>Portfolios, franchise rollouts and anything where you have already been served are
@@ -394,6 +398,7 @@ def build_book(write):
 """.format(
         steps=steps, ic_a=svg("arrow"), ic_p=svg("phone"), ic_doc=svg("doc"),
         demo_side=demo_btn(cls="btn btn-solid btn-full"),
+        side_rev=review_pull(next(r for r in REVIEWS if "binder" in r["q"])),
         ic_ck='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
         tel=TEL, ph=PH,

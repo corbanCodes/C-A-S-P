@@ -139,7 +139,16 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
   for California cities, which is what he told us — but no years, no city names, no specifics,
   because we have none. Get: how long, which jurisdictions, what he inspected. That paragraph is
   the single most persuasive thing on the site and it is currently the vaguest.
-- **Proof.** No testimonials, no case studies, no client names, no report sample. A redacted
+- **Reviews are SAMPLES.** The testimonials on the home page, `/reviews.html` and the
+  service/pricing/booking pages are invented placeholders that establish the layout and the
+  voice (they live in `REVIEWS` in `_generator/data.py`). **They must be replaced with real,
+  permissioned client quotes before launch** — publishing fabricated reviews as genuine
+  violates FTC endorsement rules (16 CFR Part 465 makes fake reviews independently
+  actionable) and California's own consumer statutes. The demo bar marks the whole site as a
+  preview in the meantime. The reviews page already frames the ask ("we request a review
+  after every report") — that is the collection habit Robert should actually adopt from
+  engagement one.
+- **Proof.** Beyond reviews: no case studies, no client names, no report sample. A redacted
   sample report would be an excellent lead magnet for exactly this audience.
 - **Turnaround time.** The site says five to seven business days. Confirm.
 - **Scheduling lead time.** Area pages say "usually within two weeks". Confirm.
