@@ -15,7 +15,7 @@ sys.path.insert(0, HERE)
 
 from data import (BIZ, SERVICES, ACCESS_SERVICES, STRUCT_SERVICES, SERVICE_BY_SLUG,
                   PATH_OF_TRAVEL, EEE_CHECKS, PROCESS, REGIONS, COUNTIES, AUDIENCES,
-                  FAQ, STATS, REVIEWS)
+                  FAQ, STATS, REVIEWS, LAWSUIT_STATS, LAWSUIT_SOURCES)
 from chrome import head, foot, cta, svg, demo_btn, TEL, PH, EM
 from blocks import (img, phead, service_cards, service_mini, faq_block, faq_schema,
                     quote_form, process_steps, stat_row, review_cards, review_feature,
@@ -133,6 +133,19 @@ def build_home():
    <b>The timing is the whole trick.</b>
    You cannot buy the shield after the arrow lands. An inspection commissioned the week you
    are served does not make you a qualified defendant &mdash; the report has to already exist.
+  </div>
+
+  <div class="lawband">
+   <div class="lawband-head">
+    <b>Lawsuits happen all the time. Literally.</b>
+    <span>Current, sourced filing data &mdash; <a href="/casp.html#numbers">see the numbers
+     and sources</a></span>
+   </div>
+   <div class="lawband-stats">
+    <div><b>3,252</b><span>federal ADA suits filed in California in 2025 &mdash; the most of any state</span></div>
+    <div><b>~271</b><span>new filings a month, federal court alone</span></div>
+    <div><b>10 firms</b><span>sent 95.8% of 2024's reported demand letters</span></div>
+   </div>
   </div>
 
   <div style="margin-top:2.6rem">{acc_cards}</div>
@@ -404,6 +417,22 @@ def build_casp():
  </div>
 </section>
 
+<section class="sec-ink" id="numbers">
+ <div class="wrap">
+  <div class="sec-head">
+   <span class="eyebrow" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.16);color:#C6D4E2;box-shadow:none">{ic_scale2} The lawsuit reality</span>
+   <h2>It is good that you found this page first</h2>
+   <p style="color:#C0CFDE">Most owners meet accessibility law for the first time inside a
+    demand letter. You are meeting it here instead &mdash; so while you are here, understand
+    the scale of what you are ahead of. These are current, sourced figures, not scare copy.</p>
+  </div>
+  <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">{lstats}</div>
+  <p class="sources">Sources: {lsources}. Figures are federal-court and state-reported
+   filings; California's Commission on Disability Access receives copies of demand letters
+   and complaints by law (Civil Code &sect;55.32) and tabulates them quarterly.</p>
+ </div>
+</section>
+
 <section>
  <div class="wrap">
   <div class="sec-head">
@@ -415,13 +444,24 @@ def build_casp():
   <p>California's Unruh Civil Rights Act treats a construction-related accessibility violation
    as a civil rights violation and attaches <b>minimum statutory damages of $4,000 per
    offence</b>, plus the plaintiff's attorney fees. A single visit to your business can
-   generate more than one alleged offence. There is an established practice of plaintiffs
-   who visit many businesses looking for exactly this, and the economics work in their favour
-   because the fee award does not depend on the damages being large.</p>
+   generate more than one alleged offence. The numbers above are what that practice looks
+   like at state scale: a small number of plaintiffs and firms, filing industrially, because
+   the fee award does not depend on the damages being large.</p>
 
-  <p>The Construction-Related Accessibility Standards Compliance Act gives owners a way to
-   change that arithmetic. A site that has been CASp-inspected before a claim is filed can
-   move into a different procedural category.</p>
+  <div class="note note-a">
+   <b>CRASCA &mdash; the state's answer, and the reason this firm exists.</b>
+   In 2008 California passed SB 1608, the <b>Construction-Related Accessibility Standards
+   Compliance Act</b> (Civil Code &sect;&sect;55.51&ndash;55.545). Its whole design is a
+   bargain: the state <i>wants</i> your business accessible, so if you hire a state-certified
+   specialist &mdash; a CASp &mdash; and fix what the report finds on its schedule, the courts
+   treat you differently. The lawsuit pauses while you fix things, a judge takes an early
+   look, and minimum damages can drop. It is not a loophole; it is the legislature telling
+   owners exactly how it would like this handled. Google CRASCA &mdash; it says what this
+   page says.</p>
+  </div>
+
+  <p>A site that has been CASp-inspected before a claim is filed moves into a different
+   procedural category:</p>
 
   <figure class="dgw" style="margin:2rem 0">
    {d_damages}
@@ -498,6 +538,11 @@ def build_casp():
         im_restroom=img("restroom", "A restroom fitted with grab bars at a water closet"),
         d_path=dg.path_of_travel(), d_damages=dg.damages_chart(),
         ic_a2=svg("arrow"),
+        ic_scale2=svg("scale"),
+        lstats="".join('<div class="stat"><b>%s</b><span><strong>%s</strong><br>%s</span></div>'
+                       % (n, l, d) for n, l, d in LAWSUIT_STATS),
+        lsources=" &middot; ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (u, t)
+                                   for t, u in LAWSUIT_SOURCES),
         rows="".join('<div class="row"><h3>%s</h3><p>%s</p></div>' % (t, d)
                      for t, d in PATH_OF_TRAVEL),
         im_curb=img("curb-ramp", "A concrete curb ramp meeting a road at a marked crossing"),

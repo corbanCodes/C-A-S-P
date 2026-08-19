@@ -978,3 +978,21 @@ a.tag:hover { background: var(--blue-wash); border-color: var(--blue); color: va
 
 /* about page portrait */
 .split-media .about-portrait { aspect-ratio: 1; object-fit: cover; }
+
+/* lawsuit-reality band (home) + sources line (casp numbers section) */
+.lawband { margin-top: 1.6rem; background: var(--ink); color: #C6D4E2; border-radius: var(--r-lg); padding: 1.4rem 1.6rem; position: relative; overflow: hidden; }
+.lawband::before { content: ""; position: absolute; inset: 0; background: radial-gradient(420px 240px at 92% 0%, rgba(18,99,184,.35), transparent 65%); }
+.lawband > * { position: relative; }
+.lawband-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; margin-bottom: 1rem; }
+.lawband-head b { font-family: Archivo, sans-serif; color: #fff; font-size: 1.02rem; }
+.lawband-head span { font-size: .84rem; color: #9FB2C4; }
+.lawband-head a { color: #9EC7F2; }
+.lawband-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+@media (max-width: 720px) { .lawband-stats { grid-template-columns: 1fr; gap: .8rem; } }
+.lawband-stats b { display: block; font-family: Archivo, sans-serif; font-size: 1.7rem; font-weight: 900; color: #fff; letter-spacing: -.02em; line-height: 1.1; }
+.lawband-stats span { font-size: .82rem; color: #9FB2C4; line-height: 1.5; }
+
+.sources { margin: 1.6rem 0 0; font-size: .78rem; color: #8AA0B4; line-height: 1.6; }
+.sources a { color: #9EC7F2; }
+.sec-ink .stat span strong { color: #E8EEF5; display: block; margin-bottom: .15rem; }
+.sec-ink .stat span { line-height: 1.45; }

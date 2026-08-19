@@ -392,8 +392,18 @@ FAQ = [
     ("access", "So why would I pay for something optional?",
      "Because the alternative is priced by somebody else. California's Unruh Civil Rights Act "
      "carries minimum statutory damages of $4,000 per offence plus the plaintiff's attorney "
-     "fees, and a single visit can generate multiple alleged offences. A CASp inspection is a "
-     "known, one-time cost. A claim is not."),
+     "fees, and a single visit can generate multiple alleged offences. In 2025 alone, 3,252 "
+     "federal ADA lawsuits were filed in California &mdash; more than any other state, about "
+     "271 a month &mdash; and a handful of firms and serial plaintiffs file most of them. A "
+     "CASp inspection is a known, one-time cost. A claim is not."),
+    ("access", "What is CRASCA?",
+     "The <b>Construction-Related Accessibility Standards Compliance Act</b> &mdash; SB 1608, "
+     "passed in 2008, now Civil Code &sect;&sect;55.51&ndash;55.545. It created the CASp "
+     "program and everything this site describes: the state certifies access specialists, and "
+     "owners who hire one and work the report's schedule get treated differently by the "
+     "courts &mdash; the stay of proceedings, the early evaluation conference, the reduced "
+     "damages tiers. California's stated intent is compliance with help, not litigation. "
+     "Google CRASCA; the statute says what we say."),
     ("access", "What is &lsquo;qualified defendant&rsquo; status?",
      "If your site has been CASp-inspected and you are sued over construction-related "
      "accessibility, you may apply to the court for a stay of proceedings and an early "
@@ -714,4 +724,32 @@ REVIEWS = [
              "handed to a judge. As I understand it, that is the point.",
         "name": "Denise O.", "role": "Boutique owner", "where": "Sacramento County",
     },
+]
+
+# ============================================================ lawsuit data
+
+# Sourced figures for the "lawsuit reality" sections. Verified Aug 2026.
+# Federal filings: Seyfarth Shaw's ADA Title III tracker (adatitleiii.com).
+# Demand letters / law-firm concentration: California Commission on
+# Disability Access (CCDA) reporting, to which attorneys must submit copies
+# of demand letters and complaints under Civil Code §55.32.
+
+LAWSUIT_STATS = [
+    ("3,252", "Federal ADA lawsuits filed in California in 2025",
+     "More than any other state — roughly 271 every month, in federal court alone."),
+    ("~9 a day", "New federal accessibility filings in California",
+     "Before counting state-court Unruh actions and demand letters."),
+    ("2,598", "Suits filed by a single plaintiff group in 2024",
+     "One organisation. Serial filers are not a rumour; they are the business model."),
+    ("95.8%", "Of 2024 demand letters came from just 10 law firms",
+     "Per filings reported to the state's own Commission on Disability Access."),
+]
+
+LAWSUIT_SOURCES = [
+    ("Seyfarth Shaw ADA Title III tracker — 2025 filings",
+     "https://www.adatitleiii.com/2026/02/ada-title-iii-federal-lawsuit-filings-fall-slightly-to-8667-in-2025/"),
+    ("Seyfarth Shaw — 2024 recap (California retakes top spot)",
+     "https://www.adatitleiii.com/2025/01/our-2024-ada-title-iii-recap-and-predictions-for-2025/"),
+    ("California Commission on Disability Access — complaint & demand-letter reporting",
+     "https://www.dgs.ca.gov/CCDA/Resources"),
 ]
