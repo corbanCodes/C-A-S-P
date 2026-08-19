@@ -128,7 +128,7 @@ def quote_form(source="page", heading="Request a quote",
 <div class="form-card">
  <h2>{heading}</h2>
  <p>{sub}</p>
- <form action="{action}" method="POST" class="quote-form" data-source="{source}">
+ <form action="{action}" method="POST" class="quote-form" enctype="multipart/form-data" data-source="{source}">
   <div class="fgrid">
    <div class="field"><label for="q-name-{source}">Name <span class="req">*</span></label>
     <input id="q-name-{source}" name="name" type="text" autocomplete="name" required></div>
@@ -148,6 +148,15 @@ def quote_form(source="page", heading="Request a quote",
    <div class="field full"><label for="q-msg-{source}">Anything we should know?</label>
     <textarea id="q-msg-{source}" name="message"
       placeholder="Square footage, number of units, how many balconies or walkways, whether you have been served, deadlines you are working to."></textarea></div>
+   <div class="field full">
+    <label for="q-photos-{source}">Photos of the property <span style="font-weight:400;color:var(--mute)">&mdash; optional</span></label>
+    <label class="upl" for="q-photos-{source}">
+     <input id="q-photos-{source}" name="upload" type="file" accept="image/*" multiple>
+     {cam}<span><b>Add photos</b> &mdash; they help us hold the quote. Material discrepancies
+      found on site are re-quoted before we proceed.</span>
+    </label>
+    <div class="upl-list" hidden></div>
+   </div>
   </div>
   <input type="hidden" name="_subject" value="New quote request &mdash; California Inspector Group ({source})">
   <input type="hidden" name="landing_page" value="{source}">
@@ -163,7 +172,8 @@ def quote_form(source="page", heading="Request a quote",
  </form>
 </div>
 """.format(heading=heading, sub=sub, action=FORM_ACTION, source=source,
-           svc=_opts(SUBJECTS), ptype=_opts(PROPERTY_TYPES), arrow=svg("arrow"))
+           svc=_opts(SUBJECTS), ptype=_opts(PROPERTY_TYPES), arrow=svg("arrow"),
+           cam=svg("camera"))
 
 
 # ------------------------------------------------------------------ process

@@ -127,3 +127,34 @@
     openPopup(a.getAttribute('href'));
   });
 }());
+
+/* ------------------------------------------------------- photo previews */
+/* Any .upl file input gets thumbnail previews in its sibling .upl-list. */
+(function () {
+  'use strict';
+  var MAX = 8;
+  document.querySelectorAll('.upl input[type="file"]').forEach(function (input) {
+    input.addEventListener('change', function () {
+      var wrap = input.closest('.field') || input.closest('form') || document;
+      var list = wrap.querySelector('.upl-list');
+      if (!list) return;
+      list.innerHTML = '';
+      var files = Array.prototype.slice.call(input.files || []);
+      files.slice(0, MAX).forEach(function (f) {
+        if (!/^image\//.test(f.type)) return;
+        var img = document.createElement('img');
+        img.alt = '';
+        img.src = URL.createObjectURL(f);
+        img.onload = function () { URL.revokeObjectURL(img.src); };
+        list.appendChild(img);
+      });
+      if (files.length > MAX) {
+        var more = document.createElement('span');
+        more.className = 'upl-more';
+        more.textContent = '+' + (files.length - MAX);
+        list.appendChild(more);
+      }
+      list.hidden = files.length === 0;
+    });
+  });
+}());

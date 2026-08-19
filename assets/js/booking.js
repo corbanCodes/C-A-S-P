@@ -93,9 +93,22 @@
     var name = document.getElementById('w-name').value.trim(),
         phone = document.getElementById('w-phone').value.trim(),
         email = document.getElementById('w-email').value.trim(),
-        addr = document.getElementById('w-addr').value.trim();
+        addr = document.getElementById('w-addr').value.trim(),
+        notes = document.getElementById('w-notes').value.trim();
     return name && phone.replace(/\D/g, '').length >= 7 &&
-      /^\S+@\S+\.\S+$/.test(email) && addr;
+      /^\S+@\S+\.\S+$/.test(email) && addr && notes;
+  }
+
+  /* photos are asked for on every job; one gentle gate, then proceed */
+  var photoNudged = false;
+  function photosOkOrNudge(err) {
+    var input = document.getElementById('w-photos');
+    if (!input || input.files.length > 0 || photoNudged) return true;
+    photoNudged = true;
+    err.textContent = 'One more thing — please add a photo or two of the property. ' +
+      'Robert uses them to confirm your estimate. (Press continue again to send without.)';
+    err.classList.add('on');
+    return false;
   }
 
   function submitBooking() {
@@ -108,6 +121,10 @@
       phone: document.getElementById('w-phone').value.trim(),
       property_address: document.getElementById('w-addr').value.trim(),
       message: document.getElementById('w-notes').value.trim(),
+      photos_count: (document.getElementById('w-photos') || {files: []}).files.length,
+      photo_names: Array.prototype.map.call(
+        (document.getElementById('w-photos') || {files: []}).files,
+        function (f) { return f.name; }).slice(0, 12).join(', '),
       service_needed: line.options[line.selectedIndex].text,
       property_type: quoteLabel,
       quoted_fee: quoted === null ? 'Custom quote' : money(quoted),
@@ -147,6 +164,7 @@
       if (next === 3) {
         var err = document.getElementById('w-err');
         if (!validDetails()) { err.classList.add('on'); return; }
+        if (!photosOkOrNudge(err)) return;
         err.classList.remove('on');
       }
 

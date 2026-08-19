@@ -47,6 +47,7 @@ ICONS = {
     "unlock": '<rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 017.5-2"/>',
     "sign": '<path d="M3 20c3.5 0 3.5-14 7-14s3.5 11 7 11c1.6 0 2.4-1 3-2"/><path d="M3 20h18"/>',
     "tag": '<path d="M20.6 13.4L12 22l-9-9V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
+    "camera": '<path d="M4 7h3l2-2.5h6L17 7h3a1.5 1.5 0 011.5 1.5V19a1.5 1.5 0 01-1.5 1.5H4A1.5 1.5 0 012.5 19V8.5A1.5 1.5 0 014 7z"/><circle cx="12" cy="13.5" r="3.6"/>',
     "spark": '<path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/>',
 }
 
@@ -147,6 +148,7 @@ def nav():
       <a href="/balcony-inspections.html"><b>The balcony laws</b><span>SB 721 and SB 326 scope, deadlines and cycles</span></a>
       <a href="/process.html"><b>How it works</b><span>From first call to report on your desk</span></a>
       <a href="/agreement.html"><b>The inspection agreement</b><span>What you are signing, section by section</span></a>
+      <a href="/samples/casp-report.html"><b>Sample reports</b><span>Worked examples of both deliverables, page by page</span></a>
       <a href="/reviews.html"><b>Reviews</b><span>What owners, boards and managers say</span></a>
       <a href="/portal.html"><b>Client portal</b><span>Where the engagement and the report live</span></a>
       <a href="/faq.html"><b>FAQ</b><span>Everything people ask on the first call</span></a>
@@ -251,11 +253,13 @@ def foot():
    </div>
    <div>
     <h3>Accessibility</h3>
-    <ul>{acc}<li><a href="/casp.html">What is CASp?</a></li></ul>
+    <ul>{acc}<li><a href="/casp.html">What is CASp?</a></li>
+     <li><a href="/samples/casp-report.html">Sample report</a></li></ul>
    </div>
    <div>
     <h3>Structural</h3>
-    <ul>{st}<li><a href="/balcony-inspections.html">The balcony laws</a></li></ul>
+    <ul>{st}<li><a href="/balcony-inspections.html">The balcony laws</a></li>
+     <li><a href="/samples/sb721-report.html">Sample report</a></li></ul>
    </div>
    <div>
     <h3>Book &amp; pay</h3>

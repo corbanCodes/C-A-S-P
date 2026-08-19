@@ -471,7 +471,10 @@ FAQ = [
      "to a hazard."),
     ("general", "How much does it cost?",
      "It depends on square footage, unit count and how many exterior elevated elements are on "
-     "the property. We quote a flat price after a short call. No hourly surprises."),
+     "the property. We quote a flat price after a short call. No hourly surprises. Sending "
+     "photos with your request helps us hold that price &mdash; if the property turns out to "
+     "differ materially from what was described or shown, the fee is re-quoted on site "
+     "before the inspection proceeds, not invoiced as a surprise afterwards."),
     ("general", "How far do you travel?",
      "All 58 counties. We are a statewide practice; travel outside the immediate region is "
      "quoted up front so it is never a line item you find later."),
@@ -557,12 +560,13 @@ CUSTOM_QUOTE = [
 # ============================================================ booking flow
 
 BOOK_STEPS = [
-    ("Get your price",
-     "Pick your occupancy and footprint off the rate card, or send the details and we quote "
-     "it. Multi-building and franchise work is always quoted.",
-     "search"),
+    ("Get your estimate",
+     "Pick your occupancy and footprint off the rate card, then send photos and your best "
+     "description of the project &mdash; every job, no exceptions. Robert reviews both and "
+     "confirms the number.",
+     "camera"),
     ("Sign the inspection agreement",
-     "We send the agreement for electronic signature. It sets out scope, exclusions, "
+     "The agreement arrives with your confirmed fee. It sets out scope, exclusions, "
      "insurance, liability, confidentiality and payment terms. Signing takes a couple of "
      "minutes on a phone.",
      "doc"),
@@ -616,7 +620,10 @@ AGREEMENT_TERMS = [
      "The quoted fee, the 20% deposit due on signing, and the balance due on completion of "
      "the report. Paying the balance releases the signed PDF immediately. There are no net "
      "terms and no retention &mdash; the agreement says so in as many words, so nobody's "
-     "accounts-payable process is surprised later."),
+     "accounts-payable process is surprised later. The fee relies on the property "
+     "information and photographs the client provides; where the site differs materially "
+     "from what was described or shown, the fee is re-quoted on site before the inspection "
+     "proceeds."),
     ("Scheduling, cancellation &amp; rescheduling",
      "Notice periods, what happens if the site is not accessible on the day, and the "
      "circumstances in which the deposit is refundable."),

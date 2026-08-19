@@ -22,6 +22,7 @@ from blocks import (img, phead, service_cards, service_mini, faq_block, faq_sche
                     review_pull)
 import diagrams as dg
 import commerce
+import report_docs
 
 PAGES = []
 
@@ -246,6 +247,34 @@ def build_home():
  </div>
 </section>
 
+<section>
+ <div class="wrap">
+  <div class="sec-head center"><h2>See the report before you buy it</h2>
+   <p class="lede">The report is the product, so look at one first. Two worked samples &mdash;
+    fictional property, real format &mdash; showing exactly what lands on your desk.</p></div>
+  <div class="grid g2">
+   <a class="card svc" href="/samples/casp-report.html">
+    <div class="doc-card-img">{th_casp}</div>
+    <div class="svc-body"><span class="svc-tag">Accessibility</span>
+     <h3>Sample CASp inspection report</h3>
+     <p>Built to Civil Code &sect;55.53: every finding stated as a measurement against the
+      code section it fails, a schedule of completion, and the certificate &mdash; the
+      document that makes you a qualified defendant.</p>
+     <span class="card-more">Read the sample {ic_a}</span></div>
+   </a>
+   <a class="card svc svc-s" href="/samples/sb721-report.html">
+    <div class="doc-card-img">{th_721}</div>
+    <div class="svc-body"><span class="svc-tag">Structural</span>
+     <h3>Sample SB 721 balcony report</h3>
+     <p>Built to Health &amp; Safety Code &sect;17973: current condition and projected
+      service life per element, the photographic baseline your next cycle is measured
+      against, and the immediate-threat advisory done properly.</p>
+     <span class="card-more">Read the sample {ic_a}</span></div>
+   </a>
+  </div>
+ </div>
+</section>
+
 <section class="sec-tint">
  <div class="wrap">
   <div class="sec-head center"><h2>Owners and boards on working with us</h2></div>
@@ -282,6 +311,8 @@ def build_home():
         aud="".join('<div class="card"><div class="card-ic">%s</div><h3>%s</h3><p>%s</p></div>'
                     % (svg(ic), t, d) for t, ic, d in AUDIENCES[:8]),
         steps=process_steps(),
+        th_casp=img("report-casp-thumb", "First page of the sample CASp inspection report"),
+        th_721=img("report-sb721-thumb", "First page of the sample SB 721 inspection report"),
         rev_feat=review_feature(next(r for r in REVIEWS if r.get("feat"))),
         revs=review_cards([r for r in REVIEWS if not r.get("feat")][:6]),
         ic_tag=svg("tag"), ck=svg("check"),
@@ -431,6 +462,7 @@ def build_casp():
      <li>{ck}<span>An itemised list of every required correction</span></li>
      <li>{ck}<span>A schedule of completion for each correction</span></li>
     </ul>
+    <p style="margin:1.4rem 0"><a class="btn btn-soft" href="/samples/casp-report.html">Read a sample report {ic_a2}</a></p>
     <div class="note">
      <b>The certificate is not a compliance certificate.</b>
      A Disability Access Inspection Certificate records that an inspection happened. DSA is
@@ -454,6 +486,7 @@ def build_casp():
         im_sign=img("parking-sign", "An accessible parking sign against a clear sky"),
         im_restroom=img("restroom", "A restroom fitted with grab bars at a water closet"),
         d_path=dg.path_of_travel(), d_damages=dg.damages_chart(),
+        ic_a2=svg("arrow"),
         rows="".join('<div class="row"><h3>%s</h3><p>%s</p></div>' % (t, d)
                      for t, d in PATH_OF_TRAVEL),
         im_curb=img("curb-ramp", "A concrete curb ramp meeting a road at a marked crossing"),
@@ -606,7 +639,8 @@ def build_balcony():
    </table>
   </div>
 
-  <div class="note note-s" style="margin-top:1.8rem">
+  <p style="margin-top:1.8rem"><a class="btn btn-amber" href="/samples/sb721-report.html">Read a sample report {ic_a}</a></p>
+  <div class="note note-s" style="margin-top:1.4rem">
    <b>HOA boards: the report is a funding document too.</b>
    Because an SB 326 report feeds the reserve study, a deferred balcony repair stops being a
    maintenance opinion and becomes a number the board has to fund. That is uncomfortable, and
@@ -849,6 +883,8 @@ def build_process():
   <div class="sec-head"><h2>What lands on your desk</h2>
    <p class="lede">A report written to be used by somebody else &mdash; your attorney, your
     board, your lender, your contractor or a code official.</p></div>
+  <p style="margin:-.8rem 0 1.6rem"><a class="btn btn-soft" href="/samples/casp-report.html">Sample CASp report {ic_c2}</a>
+   <a class="btn btn-soft" href="/samples/sb721-report.html">Sample SB 721 report {ic_c2}</a></p>
   <div class="grid g3">
    <div class="card"><div class="card-ic">{ic_d}</div><h3>Itemised findings</h3>
     <p>Every item listed separately with the applicable standard or code section beside it,
@@ -892,7 +928,7 @@ def build_process():
 </section>
 
 {cta}
-""".format(steps=process_steps(), form=quote_form("process"), ck=svg("check"),
+""".format(steps=process_steps(), form=quote_form("process"), ck=svg("check"), ic_c2=svg("arrow"),
            ic_d=svg("doc"), ic_se=svg("search"), ic_c=svg("check"), ic_r=svg("ruler"),
            ic_sh=svg("shield"), ic_cal=svg("calendar"), cta=cta())
     write("process.html", head(
@@ -1297,7 +1333,9 @@ def build_sitemap():
                             ("The inspection agreement", "/agreement.html"),
                             ("Client portal", "/portal.html")]),
         ("Learn", [("What is CASp?", "/casp.html"),
-                   ("SB 721 &amp; SB 326 balcony law", "/balcony-inspections.html")]),
+                   ("SB 721 &amp; SB 326 balcony law", "/balcony-inspections.html"),
+                   ("Sample CASp report", "/samples/casp-report.html"),
+                   ("Sample SB 721 report", "/samples/sb721-report.html")]),
         ("Accessibility services", [(s["name"], "/services/%s.html" % s["slug"]) for s in ACCESS_SERVICES]),
         ("Structural services", [(s["name"], "/services/%s.html" % s["slug"]) for s in STRUCT_SERVICES]),
         ("Regions", [(n, "/areas/%s.html" % s) for s, n, _, _ in REGIONS]),
@@ -1354,6 +1392,7 @@ def main():
     commerce.build_agreement(write)
     commerce.build_portal(write)
     commerce.build_checkout(write)
+    report_docs.build(write)
 
     import start_page
     start_page.build(write)

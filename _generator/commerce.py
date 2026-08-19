@@ -286,9 +286,10 @@ def build_book(write):
     </div>
 
     <div class="wiz-price" id="w-price-box" aria-live="polite">
-     <div><span>Inspection fee</span><b id="w-price">$895</b></div>
+     <div><span>Estimated fee</span><b id="w-price">$895</b></div>
      <div><span>Deposit to book (20%)</span><b id="w-dep">$179</b></div>
-     <p id="w-price-note">Balance due on completion. The report is released when it clears.</p>
+     <p id="w-price-note">Rate-card estimate. Robert reviews your photos and description and
+      confirms the final fee with the agreement.</p>
     </div>
 
     <button type="button" class="btn btn-solid btn-lg btn-full wnext" data-next="2">
@@ -298,7 +299,10 @@ def build_book(write):
    <!-- 2. details -->
    <div class="wstep" data-step="2">
     <p class="qnum">Step 2 of 4</p>
-    <h2>The property and who we send the agreement to</h2>
+    <h2>The project, in your words and your photos</h2>
+    <p style="font-size:.93rem">For every job, we ask for photos and your best description of
+     the property. Robert reviews both and confirms your estimate &mdash; usually the same
+     business day, before anything is signed or paid.</p>
     <div class="fgrid">
      <div class="field"><label for="w-name">Your name <span class="req">*</span></label>
       <input id="w-name" type="text" autocomplete="name"></div>
@@ -310,10 +314,23 @@ def build_book(write):
       <input id="w-phone" type="tel" autocomplete="tel"></div>
      <div class="field full"><label for="w-addr">Property address <span class="req">*</span></label>
       <input id="w-addr" type="text" autocomplete="street-address" placeholder="Street, city, county"></div>
-     <div class="field full"><label for="w-notes">Anything we should know?</label>
-      <textarea id="w-notes" placeholder="Access arrangements, trading hours, deadlines you are working to, whether you have been served."></textarea></div>
+     <div class="field full"><label for="w-notes">Describe the project <span class="req">*</span></label>
+      <textarea id="w-notes" placeholder="Best description you can give: what the property is, roughly when it was built, how many balconies / walkways / stairs, access arrangements, deadlines, whether you have been served."></textarea></div>
+     <div class="field full">
+      <label for="w-photos">Photos of the property <span style="font-weight:400;color:var(--mute)">&mdash; please add for every job</span></label>
+      <label class="upl" for="w-photos">
+       <input id="w-photos" type="file" accept="image/*" multiple>
+       {ic_cam}<span><b>Add photos</b> &mdash; balconies, walkways, entrances, parking; whatever
+        we should see before we quote.</span>
+      </label>
+      <div class="upl-list" id="w-photo-list" hidden></div>
+      <p class="form-note">Robert looks at your photos before confirming the number, so the
+       estimate you get is a real one. If the property differs materially from what is
+       described or shown, the fee is re-quoted on site before the inspection proceeds.</p>
+     </div>
     </div>
-    <p class="qerr" id="w-err" role="alert">Please add your name, a valid phone number, an email and the property address.</p>
+    <p class="qerr" id="w-err" role="alert">Please add your name, a valid phone number, an
+     email, the property address and a short description of the project.</p>
     <button type="button" class="btn btn-solid btn-lg btn-full wnext" data-next="3">Continue {ic_a}</button>
     <button type="button" class="qback" data-back="1">&larr; Back</button>
    </div>
@@ -358,6 +375,9 @@ def build_book(write):
     </div>
 
     <ol class="wnext-list">
+     <li><b>We confirm your fee.</b> Robert reviews the photos and description you just sent
+      and the agreement arrives with the confirmed number &mdash; usually the same business
+      day.</li>
      <li><b>Sign the agreement.</b> Two minutes on a phone. Nothing is charged at this point.</li>
      <li><b>Pay the <span id="w-dep2">the deposit</span> deposit.</b> Signing releases a secure
       payment link &mdash; card, ACH or wire. This is what holds your date.
@@ -407,6 +427,7 @@ def build_book(write):
 """.format(
         steps=steps, ic_a=svg("arrow"), ic_p=svg("phone"), ic_doc=svg("doc"),
         demo_side=demo_btn(cls="btn btn-solid btn-full"),
+        ic_cam=svg("camera"),
         side_rev=review_pull(next(r for r in REVIEWS if "binder" in r["q"])),
         ic_ck='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',

@@ -77,6 +77,7 @@ POST with everything captured, which lands the lead in the CRM.
 | Book a demo | 60MS Calendly (`corban-leadsprinter/new-meeting`) popup | swap to Robert's own Calendly when he has one |
 | Details | Validated, posts to Formspree `xojeqvng` | point at the 60MS HQ CRM endpoint |
 | Checkout | `/checkout.html` example — method choice + billing contact to Formspree `mvzalyrw` | Stripe Checkout for card + ACH; wire stays invoice-based |
+| Property photos | Booking wizard asks for photos + description on every job (soft-gated); quote forms post multipart with a file input; the wizard JSON carries photo names/count only | Real photo storage: a 60MS backend upload endpoint or Formspree's paid attachment support. Robert also collects photos on sales calls — either channel feeds the same estimate review |
 | E-signature | Consent checkboxes; confirmation screen says the agreement is on its way | DocuSign or Dropbox Sign; send template on submit, webhook on completion |
 | Deposit | Explains methods; **renders no card fields** | Stripe Checkout / Payment Links (card + ACH). Never build card fields into this site |
 | Scheduling | Confirmation says a calendar link follows | Cal.com or Calendly embed, ideally gated until the deposit clears |
@@ -94,6 +95,21 @@ page. That is the correct integration, it keeps the site out of PCI scope, and i
 no card form here for anyone to clone into a phishing page. The pricing page carries a matching
 warning to clients that we will never email changed bank details — worth keeping, because wire
 fraud against property-services firms is common and specifically targets this workflow.
+
+### Standing client decision — photos + description on every booking (18 Aug)
+Every Book-an-inspection submission asks for photos and the client's best project description.
+Robert reviews both and confirms the estimate before the agreement goes out — the wizard price
+is now explicitly labelled an estimate. Discrepancy language (site differs materially from
+what was described/shown → re-quoted on site before proceeding) is in the wizard, the FAQ and
+the agreement summary §9. The photo ask is a soft gate: one nudge, then the booking proceeds,
+because a lost booking is worse than a missing photo.
+
+### Sample reports (18 Aug)
+`/samples/casp-report.html` and `/samples/sb721-report.html` are worked examples — watermarked
+SAMPLE, fictional properties, but structured to the statutes (§55.53 and §17973 respectively).
+Homepage showcases both with real page thumbnails. The Save-as-PDF button uses print CSS.
+Before launch Robert should approve the format and ideally supply one real redacted report to
+replace each sample.
 
 ### Standing client decision — no net terms, ever (18 Aug)
 Robert is explicit: **no net-30 for anyone at any time, and no retention/retainage.** This

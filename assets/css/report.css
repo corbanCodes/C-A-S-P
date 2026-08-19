@@ -1,0 +1,106 @@
+/* Sample report documents — styled as paper, not as web page.
+   Loaded on /samples/*.html on top of main.css. Print-friendly so
+   File → Save as PDF produces something close to the real deliverable. */
+
+.doc-stage { background: #E9EDF3; padding: clamp(1.6rem, 4vw, 3rem) 0; }
+.doc {
+  position: relative; max-width: 880px; margin: 0 auto clamp(1.6rem, 3vw, 2.4rem);
+  background: #fff; border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(11,27,43,.08), 0 24px 60px rgba(11,27,43,.14);
+  padding: clamp(1.6rem, 4.5vw, 3.2rem) clamp(1.2rem, 5vw, 3.6rem);
+  overflow: hidden;
+}
+
+/* SAMPLE watermark + ribbon */
+.doc::before {
+  content: "SAMPLE"; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-32deg);
+  font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(90px, 18vw, 170px);
+  letter-spacing: .08em; color: rgba(18, 99, 184, .05); pointer-events: none; z-index: 0;
+}
+.doc > * { position: relative; }
+.doc-ribbon {
+  position: absolute; top: 22px; right: -44px; transform: rotate(38deg);
+  background: var(--gold-ink); color: #fff; font-family: Archivo, sans-serif;
+  font-size: .66rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  padding: .32rem 3.2rem; z-index: 2;
+}
+
+/* letterhead */
+.doc-head { display: flex; justify-content: space-between; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap; padding-bottom: 1.4rem; border-bottom: 3px solid var(--ink); margin-bottom: 1.6rem; }
+.doc-head .brand-txt b { font-size: 1.05rem; }
+.doc-head-meta { text-align: right; font-size: .78rem; color: var(--mute); line-height: 1.55; }
+.doc-head-meta b { display: block; font-family: Archivo, sans-serif; color: var(--ink); font-size: .84rem; }
+
+.doc .doc-title { font-family: Fraunces, Georgia, serif; font-weight: 600; color: var(--ink);
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem); line-height: 1.1; letter-spacing: -.014em; margin: 0 0 .2em; }
+.doc .doc-sub { font-family: Archivo, sans-serif; font-size: .82rem; font-weight: 600; color: var(--mute); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1.8rem; }
+.doc h2 { font-family: Archivo, Inter, sans-serif; font-size: 1.02rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--line); padding-bottom: .45rem; margin: 2.2rem 0 1rem; }
+.doc h2 .no { color: var(--mute); font-weight: 700; margin-right: .5rem; }
+.doc p, .doc li { font-size: .92rem; }
+
+/* meta grid (property / client / engagement) */
+.doc-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: .4rem; }
+@media (max-width: 640px) { .doc-meta { grid-template-columns: 1fr 1fr; } }
+.doc-meta div { background: var(--paper); padding: .7rem .9rem; }
+.doc-meta span { display: block; font-family: Archivo, sans-serif; font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; color: var(--mute); margin-bottom: .15rem; }
+.doc-meta b { font-size: .86rem; color: var(--ink); font-weight: 600; }
+
+/* statute statement box */
+.doc-statute { background: var(--blue-tint); border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; padding: 1rem 1.2rem; font-size: .88rem; margin: 1.2rem 0; }
+.doc-statute.s { background: var(--gold-wash); border-left-color: var(--gold); }
+.doc-statute b { font-family: Archivo, sans-serif; }
+
+/* findings table */
+.doc .tw { box-shadow: none; border-radius: 10px; margin: 1rem 0; }
+.doc table { min-width: 720px; font-size: .82rem; }
+.doc th, .doc td { padding: .6rem .75rem; }
+.doc thead th { font-size: .66rem; }
+.doc td .code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .74rem; color: var(--blue-ink); white-space: nowrap; }
+.sev { display: inline-block; font-family: Archivo, sans-serif; font-size: .62rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 100px; white-space: nowrap; }
+.sev-a { background: var(--red-wash); color: var(--red); }
+.sev-b { background: var(--gold-wash); color: var(--gold-ink); }
+.sev-c { background: var(--blue-wash); color: var(--blue-ink); }
+.sev-ok { background: var(--green-wash); color: var(--green-ink); }
+
+/* condition ratings (structural) */
+.cond { font-family: Archivo, sans-serif; font-weight: 800; font-size: .78rem; }
+.cond-good { color: var(--green-ink); }
+.cond-fair { color: var(--gold-ink); }
+.cond-poor { color: #A04A12; }
+.cond-threat { color: var(--red); }
+
+/* photo figures */
+.doc-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; margin: 1rem 0; }
+@media (max-width: 640px) { .doc-photos { grid-template-columns: 1fr 1fr; } }
+.doc-photos figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--paper); }
+.doc-photos img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.doc-photos figcaption { font-size: .72rem; color: var(--mute); padding: .5rem .65rem; line-height: 1.45; }
+.doc-photos figcaption b { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .7rem; color: var(--navy); }
+
+/* immediate-threat advisory */
+.doc-threat { background: var(--red-wash); border: 1px solid rgba(179,38,30,.3); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.2rem 0; font-size: .9rem; }
+.doc-threat b { display: block; font-family: Archivo, sans-serif; color: var(--red); margin-bottom: .25rem; text-transform: uppercase; font-size: .8rem; letter-spacing: .05em; }
+
+/* signature block */
+.doc-sign { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.4rem; }
+@media (max-width: 560px) { .doc-sign { grid-template-columns: 1fr; } }
+.doc-sign div { border-top: 1.5px solid var(--ink); padding-top: .6rem; font-size: .82rem; color: var(--mute); }
+.doc-sign b { display: block; font-family: Archivo, sans-serif; color: var(--ink); font-size: .9rem; }
+.doc-sig { font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 1.5rem; color: var(--navy); margin: 0 0 .2rem; }
+
+.doc-foot { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .72rem; color: var(--mute); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+/* the sample disclaimer above each document */
+.doc-note { max-width: 880px; margin: 0 auto 1.4rem; }
+
+/* toolbar above documents */
+.doc-bar { max-width: 880px; margin: 0 auto 1.2rem; display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.doc-bar .btn { border-radius: 12px; }
+
+@media print {
+  .demo-bar, .nav, .foot, .cta, .doc-bar, .doc-note, .phead, .cw { display: none !important; }
+  .doc-stage { background: #fff; padding: 0; }
+  .doc { box-shadow: none; border: 0; max-width: none; margin: 0; border-radius: 0; }
+  .doc-ribbon { display: none; }
+}
