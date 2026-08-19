@@ -24,6 +24,10 @@ import diagrams as dg
 import commerce
 import report_docs
 import blog
+import chrome as _chrome
+
+LIVE = "--live" in sys.argv
+_chrome.LIVE = LIVE
 
 PAGES = []
 
@@ -1413,8 +1417,11 @@ def build_sitemap():
 
 
 def build_static():
-    # Demo: block every crawler so this can never outrank the client's real site.
-    write("robots.txt", "User-agent: *\nDisallow: /\n")
+    if LIVE:
+        write("robots.txt", "User-agent: *\nAllow: /\n")
+    else:
+        # Demo: block every crawler so this can never outrank a client's real site.
+        write("robots.txt", "User-agent: *\nDisallow: /\n")
 
     write("assets/img/favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <rect width="64" height="64" rx="13" fill="#0B1B2B"/>
@@ -1457,7 +1464,11 @@ def main():
     import start_page
     start_page.build(write)
 
-    print("built %d files" % len(PAGES))
+    print("built %d files (%s mode)" % (len(PAGES), "LIVE" if LIVE else "demo"))
+    if LIVE:
+        print("\n  *** LIVE BUILD — check LAUNCH.md gates first: ***")
+        print("  *** sample REVIEWS must be real, pricing confirmed, credentials in, ***")
+        print("  *** Robert has approved the blog, and Stripe/Calendly are his own.  ***")
     for p in sorted(PAGES):
         print("  ", p)
 

@@ -12,6 +12,11 @@ new-tab fallback without JS.
 """
 from data import BIZ, CALENDLY, ACCESS_SERVICES, STRUCT_SERVICES
 
+# Flipped by `build.py --live`: drops the demo bar, switches robots to index,
+# and removes the footer demo line. Default stays demo. See LAUNCH.md for the
+# gates that must pass before anyone builds --live.
+LIVE = False
+
 TEL = BIZ["phone"].replace("-", "")
 PH = BIZ["phone"]
 EM = BIZ["email"]
@@ -65,6 +70,8 @@ def demo_btn(label="Book a demo", cls="btn btn-soft"):
 
 
 def demo_bar():
+    if LIVE:
+        return ""
     return ("""
 <div class="demo-bar" id="demo-bar" role="note">
  <p><span class="demo-dot" aria-hidden="true"></span><b>Demo preview</b><span class="demo-sep"></span>
@@ -86,7 +93,7 @@ def head(title, desc, path="/", extra_css="", body_class=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="{robots}">
 <link rel="canonical" href="{canonical}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -107,6 +114,7 @@ def head(title, desc, path="/", extra_css="", body_class=""):
 {nav}
 <main id="main">
 """.format(title=title, desc=desc, canonical=canonical, base=BIZ["base"],
+           robots="index,follow" if LIVE else "noindex,nofollow",
            extra_css=extra_css, body_class=body_class, bar=demo_bar(), nav=nav())
 
 
@@ -296,8 +304,7 @@ def foot():
 
   <div class="foot-base">
    <p>&copy; 2026 {legal}. All rights reserved.</p>
-   <p>Demo preview &mdash; payments &amp; e-signature not connected &middot;
-      Site by <a href="https://60minutesites.com" rel="noopener">60 Minute Sites</a></p>
+   <p>{demo_line}Site by <a href="https://60minutesites.com" rel="noopener">60 Minute Sites</a></p>
   </div>
  </div>
 </footer>
@@ -306,4 +313,5 @@ def foot():
 </body>
 </html>
 """.format(blurb=BIZ["blurb"], tel=TEL, ph=PH, em=EM, cal=CAL, legal=BIZ["legal"],
+           demo_line="" if LIVE else "Demo preview &mdash; payments &amp; e-signature not connected &middot; ",
            acc=acc, st=st, ic_p=svg("phone"), ic_m=svg("mail"), ic_c=svg("calendar"))
