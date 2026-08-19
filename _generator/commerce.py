@@ -168,9 +168,18 @@ def build_pricing(write):
 <section>
  <div class="wrap">
   <div class="sec-head"><h2>How payment works</h2>
-   <p class="lede">Twenty per cent to book, the balance when the work is done. The report is
-    released when the balance clears.</p></div>
-  <div class="grid g4">{pay}</div>
+   <p class="lede">Twenty per cent on signing confirms the booking &mdash; and funds the
+    mobilisation, which is how one inspector covers all 58 counties. The balance falls due
+    when the report is complete, and paying it releases the signed PDF on the spot.</p></div>
+  <div class="grid g3">{pay}</div>
+  <div class="note note-a" style="margin-top:1.8rem">
+   <b>Our terms are the terms.</b>
+   No net-30, no net-anything, and no retention &mdash; whatever your accounts-payable
+   process usually asks of vendors. We are told how developers operate; we decline. The
+   deposit gets us to your property, the report is finished work, and finished work is paid
+   for on delivery. If that does not fit your organisation, we are genuinely not the right
+   fit &mdash; no hard feelings.
+  </div>
   <p style="margin:1.6rem 0 0"><a class="btn btn-soft" href="/checkout.html">See the example checkout {ic_a}</a></p>
   <div class="note note-warn" style="margin-top:1.6rem">
    <b>We will never email you changed bank details.</b>
@@ -609,6 +618,9 @@ def build_portal(write):
     either writing it off or sending a client to collections over work that was done properly.
     A 20% deposit and a settled balance on release keeps that conversation from ever
     happening.</p>
+   <p>Payment releases the report the moment it clears &mdash; the signed PDF unlocks here
+    and lands in your inbox. We do not offer net-30 or retention terms to anyone, which is
+    precisely why the price never has anyone else's unpaid invoices built into it.</p>
    <p>If a genuine emergency finding turns up, that does not wait for an invoice. Where an
     element is an immediate threat to safety we tell you, and the enforcement agency, straight
     away &mdash; paid or not.</p>
@@ -738,9 +750,10 @@ def build_checkout(write):
      <div class="co-line"><span>Travel &mdash; Monterey County</span><b>Included</b></div>
      <div class="co-line co-total"><span>Deposit due today (20%)</span><b>$230.00</b></div>
      <div class="co-line"><span>Balance on completion</span><b>$920.00</b></div>
-     <p class="co-muted">The balance is invoiced when the report is written; settling it
-      releases the signed PDF in your client portal. The deposit is refundable per the
-      cancellation terms in the inspection agreement.</p>
+     <p class="co-muted">The balance falls due when the report is complete; paying it
+      releases the signed PDF instantly &mdash; in your portal and by email. No net terms,
+      no retention. The deposit is refundable per the cancellation terms in the inspection
+      agreement.</p>
     </div>
    </aside>
   </div>

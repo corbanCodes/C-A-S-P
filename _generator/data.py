@@ -453,6 +453,22 @@ FAQ = [
      "No, deliberately. We inspect and we report. An inspector who sells the repair he "
      "recommends has an obvious reason to find more of them, and a report written that way is "
      "worth less to a court, a board and a lender. Use your own contractors."),
+    ("general", "Do you offer net-30 or other payment terms?",
+     "No &mdash; and this is a firm policy, not an opening position. The deposit is 20% on "
+     "signing; it confirms the booking and it is what puts an inspector on the road, "
+     "anywhere in the state, hotels included. The balance falls due when the report is "
+     "complete, and paying it is what releases the report. No net-30, no net-anything, and "
+     "no retention or retainage &mdash; however large the organisation or its AP process. "
+     "Our founder spent years consulting on large development projects under net-30 terms "
+     "with 10% retention holdbacks, in effect financing other people's projects. This firm "
+     "does not do that, and clients benefit from it: nobody's unpaid invoices are priced "
+     "into your inspection."),
+    ("general", "How do I actually receive the report?",
+     "As a signed PDF, the moment the balance clears &mdash; it unlocks in your client "
+     "portal and is emailed to you, along with the photograph set and the schedule of "
+     "completion. If an element poses an immediate safety threat we tell you (and the "
+     "enforcement agency) right away, paid or not; the gate applies to the report, never "
+     "to a hazard."),
     ("general", "How much does it cost?",
      "It depends on square footage, unit count and how many exterior elevated elements are on "
      "the property. We quote a flat price after a short call. No hourly surprises."),
@@ -563,8 +579,8 @@ BOOK_STEPS = [
      "to seven business days from the site visit.",
      "shield"),
     ("Pay the balance, get the report",
-     "Settling the balance releases the signed PDF report in your portal, along with the "
-     "photographs and the schedule of completion.",
+     "Settling the balance releases the signed PDF instantly &mdash; unlocked in your "
+     "portal and emailed to you. No net terms, no retention.",
      "check"),
 ]
 
@@ -597,8 +613,10 @@ AGREEMENT_TERMS = [
      "The report is prepared for you. Who else may rely on it &mdash; a lender, a buyer, a "
      "board, opposing counsel &mdash; and on what terms."),
     ("Fees &amp; payment terms",
-     "The quoted fee, the 20% deposit that confirms the booking, and the balance due on "
-     "completion. The report is released when the balance clears."),
+     "The quoted fee, the 20% deposit due on signing, and the balance due on completion of "
+     "the report. Paying the balance releases the signed PDF immediately. There are no net "
+     "terms and no retention &mdash; the agreement says so in as many words, so nobody's "
+     "accounts-payable process is surprised later."),
     ("Scheduling, cancellation &amp; rescheduling",
      "Notice periods, what happens if the site is not accessible on the day, and the "
      "circumstances in which the deposit is refundable."),
@@ -616,10 +634,8 @@ PAY_METHODS = [
     ("ACH bank transfer", "bank", "Direct debit from a US business checking account. Lowest "
                                   "fees, usual choice for associations and management companies."),
     ("Wire transfer", "wire", "For larger portfolio engagements. Wiring instructions are "
-                              "issued on the invoice &mdash; and we will never email you "
-                              "changed bank details."),
-    ("Invoice terms", "doc", "Net-30 available to established management companies and "
-                             "public agencies on approval."),
+                              "issued with the balance statement &mdash; and we will never "
+                              "email you changed bank details."),
 ]
 
 # ============================================================ reviews

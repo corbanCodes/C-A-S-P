@@ -95,6 +95,16 @@ no card form here for anyone to clone into a phishing page. The pricing page car
 warning to clients that we will never email changed bank details — worth keeping, because wire
 fraud against property-services firms is common and specifically targets this workflow.
 
+### Standing client decision — no net terms, ever (18 Aug)
+Robert is explicit: **no net-30 for anyone at any time, and no retention/retainage.** This
+comes from his years consulting on green-building/energy work for developers, where net-30
+plus 10% retention holdbacks effectively had him financing their projects. His terms, now
+stated throughout the site and in the agreement summary: 20% on signing (confirms the booking
+and funds travel/mobilisation statewide), balance due on completion, and paying the balance
+releases the signed PDF report instantly (portal + email). Developers can explain how they
+operate; the answer is still his terms or no engagement. Do not reintroduce invoice-terms or
+net-30 language in any future edit.
+
 ### Business-model check for Robert
 "Pay in full to unlock the report" is a real policy with a real edge case: if an inspection turns
 up an immediate hazard, the statutory 15-day notification does **not** wait for an invoice.
