@@ -280,7 +280,17 @@ def build_home():
   <div class="sec-head center"><h2>Owners and boards on working with us</h2></div>
   {rev_feat}
   {revs}
-  <p class="center" style="margin-top:2rem"><a class="btn btn-line" href="/reviews.html">Read all reviews {ic_a}</a></p>
+  <div class="founder">
+   {im_rob}
+   <div>
+    <b>Robert Lehman</b>
+    <span>Founder &mdash; a career municipal building inspector for California cities,
+     now on the other side of the counter. Every engagement above was his walk, his tape
+     and his signature.</span>
+   </div>
+   <a class="btn btn-line" href="/about.html">About Robert {ic_a}</a>
+  </div>
+  <p class="center" style="margin-top:1.8rem"><a class="btn btn-line" href="/reviews.html">Read all reviews {ic_a}</a></p>
  </div>
 </section>
 
@@ -313,6 +323,7 @@ def build_home():
         steps=process_steps(),
         th_casp=img("report-casp-thumb", "First page of the sample CASp inspection report"),
         th_721=img("report-sb721-thumb", "First page of the sample SB 721 inspection report"),
+        im_rob=img("robert-lehman", "Robert Lehman, founder of California Inspector Group", cls="founder-img"),
         rev_feat=review_feature(next(r for r in REVIEWS if r.get("feat"))),
         revs=review_cards([r for r in REVIEWS if not r.get("feat")][:6]),
         ic_tag=svg("tag"), ck=svg("check"),
@@ -1010,7 +1021,7 @@ def build_about():
 </section>
 
 {cta}
-""".format(im=img("handrail", "A wall-mounted handrail along an accessible route"),
+""".format(im=img("robert-lehman", "Robert Lehman, founder of California Inspector Group"),
            ic_sc=svg("scale"), ic_d=svg("doc"), ic_r=svg("ruler"), ic_g=svg("geo"),
            ic_cal=svg("calendar"), ic_sh=svg("shield"),
            stats="".join('<div class="stat"><b>%s</b><span>%s</span></div>' % s for s in STATS),

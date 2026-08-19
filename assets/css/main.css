@@ -958,3 +958,23 @@ a.tag:hover { background: var(--blue-wash); border-color: var(--blue); color: va
 .upl-list { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
 .upl-list img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
 .upl-list .upl-more { width: 56px; height: 56px; border-radius: 8px; background: var(--blue-wash); color: var(--blue-ink); display: grid; place-items: center; font-family: Archivo, sans-serif; font-weight: 700; font-size: .8rem; }
+
+/* founder strip in the reviews section */
+.founder {
+  display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap;
+  max-width: 780px; margin: 2rem auto 0;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 1.2rem 1.5rem; box-shadow: var(--sh-sm);
+}
+.founder picture { flex: none; }
+.founder-img {
+  width: 76px; height: 76px; border-radius: 50%; object-fit: cover; object-position: center 30%;
+  border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--line-strong), 0 6px 16px rgba(11,27,43,.14);
+}
+.founder > div { flex: 1 1 300px; }
+.founder b { display: block; font-family: Archivo, sans-serif; font-size: 1rem; color: var(--ink); }
+.founder span { font-size: .88rem; color: var(--body); line-height: 1.55; }
+@media (max-width: 560px) { .founder { text-align: left; } .founder .btn { width: 100%; } }
+
+/* about page portrait */
+.split-media .about-portrait { aspect-ratio: 1; object-fit: cover; }

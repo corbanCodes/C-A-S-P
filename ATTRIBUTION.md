@@ -28,6 +28,9 @@ instead. The two fetch scripts are kept in `_generator/` so the sourcing is repr
 
 `.webp` files are re-encodes of the same originals and carry the same credit.
 
+`robert-lehman.jpg/.webp` is a client-supplied photograph of Robert Lehman, used with his
+permission — not a Commons image.
+
 ## Before launch
 
 These are placeholders that establish the look and prove the layout. A real inspection firm
