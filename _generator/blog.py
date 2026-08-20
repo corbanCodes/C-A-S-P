@@ -384,7 +384,7 @@ def build_index(write):
                    "Good — that is the useful kind. A fifteen-minute call tells you whether "
                    "the worry is warranted, and the inspection price is published."))
     write("blog.html", head(
-        "Field Notes | Accessibility &amp; Balcony Law | California Inspector Group",
+        "Field Notes | Accessibility &amp; Balcony Law | Inspector Group California",
         "Plain-English articles on California accessibility law: the civil-rights framing, "
         "the grandfathering myth, why a certificate of occupancy is no defense, who files "
         "the lawsuits, and the CRASCA bargain.",
@@ -402,7 +402,7 @@ def build_articles(write):
  <div class="wrap narrow">
   <div class="post-byline">
    {avatar}
-   <div><b>Robert Lehman</b><span>Founder, California Inspector Group &middot; {date} &middot; {read} read</span></div>
+   <div><b>Robert Lehman</b><span>Founder, Inspector Group California &middot; {date} &middot; {read} read</span></div>
   </div>
   <article class="post-body">
   {content}
@@ -428,7 +428,7 @@ def build_articles(write):
            date=a["date"], read=a["read"], content=a["body"], related=related,
            cta=cta())
         write("blog/%s.html" % a["slug"], head(
-            "%s | Field Notes | California Inspector Group" % a["title"].replace("&mdash;", "—"),
+            "%s | Field Notes | Inspector Group California" % a["title"].replace("&mdash;", "—"),
             a["teaser"].replace("&mdash;", "—").replace("&ldquo;", '"').replace("&rdquo;", '"'),
             "/blog/%s.html" % a["slug"]) + body + foot())
 

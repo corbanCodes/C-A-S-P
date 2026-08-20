@@ -136,7 +136,7 @@
       utm_campaign: param('utm_campaign'),
       utm_content: param('utm_content'),
       landing_page: '/book.html',
-      _subject: 'BOOKING — California Inspector Group (agreement requested)'
+      _subject: 'BOOKING — Inspector Group California (agreement requested)'
     };
 
     fetch(R.form, {

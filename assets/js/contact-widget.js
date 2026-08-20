@@ -7,7 +7,7 @@
 
   var PHONE = '4086007165',
       PHONE_TXT = '408-600-7165',
-      EMAIL = 'Roblehman72@gmail.com',
+      EMAIL = 'robert@inspectorgroupcalifornia.com',
       FORM = 'https://formspree.io/f/xojeqvng';
 
   var css = [
@@ -65,7 +65,7 @@
   var el = document.createElement('div');
   el.className = 'cw';
   el.innerHTML =
-    '<div class="cw-panel" role="dialog" aria-label="Contact California Inspector Group">' +
+    '<div class="cw-panel" role="dialog" aria-label="Contact Inspector Group California">' +
       '<div class="cw-head"><b>Talk to an inspector</b><span>Same business day reply</span></div>' +
       '<div class="cw-body" id="cw-body">' +
         '<a class="cw-opt" href="tel:' + PHONE + '">' + svg('phone') +
@@ -80,7 +80,7 @@
         '<input type="tel" name="phone" placeholder="Phone" autocomplete="tel" required>' +
         '<input type="email" name="email" placeholder="Email" autocomplete="email" required>' +
         '<textarea name="message" placeholder="Property address and what you need"></textarea>' +
-        '<input type="hidden" name="_subject" value="Widget enquiry — California Inspector Group">' +
+        '<input type="hidden" name="_subject" value="Widget enquiry — Inspector Group California">' +
         '<input type="hidden" name="landing_page" value="">' +
         '<button type="submit">Send</button>' +
         '<button class="cw-back" type="button" id="cw-back">&larr; Back</button>' +

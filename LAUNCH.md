@@ -24,10 +24,35 @@ python3 _generator/build.py --live   # launch: no demo bar, index,follow, robots
 5. **Contract.** The real inspection agreement exists (attorney-drafted).
 6. **Domain in data.py.** Set `BIZ["base"]` to the real domain so canonicals/OG are right.
 7. Swap `CALENDLY` to Robert's own calendar; decide Formspree endpoints vs 60MS CRM.
+8. **Mailboxes must exist before launch.** The site now shows
+   `robert@inspectorgroupcalifornia.com` — provision it (and felicia@) before the site goes
+   live or enquiries bounce. See the email section below.
+9. **Entity naming.** The site says "Inspector Group California" with no LLC suffix because
+   the LLC is not formed yet. When it forms, add the suffix back in `_generator/data.py`
+   (`BIZ["legal"]`) and keep Stripe/bank/contract naming consistent with the filed entity.
+10. **Spare domains.** `inspectorgroup.com` should 301-forward to
+   `inspectorgroupcalifornia.com` (GoDaddy → Domain → Forwarding). `inspectorgroup.ca` is
+   Canada — let it lapse or forward it too; do not build on it.
 
 ---
 
-## GoDaddy domain → Netlify (the meeting script)
+## Email — robert@ / felicia@ inspectorgroupcalifornia.com
+
+Cheapest-to-best options (domain's DNS stays at GoDaddy either way, per Path 1 below):
+
+| Option | Cost | Setup | Verdict |
+|---|---|---|---|
+| **Zoho Mail Lite** | ~$1/user/mo ($2/mo total) | Add MX+SPF+DKIM at GoDaddy (~10 min) | Cheapest real mailboxes |
+| **Microsoft 365 via GoDaddy** | ~$6–8/user/mo | One-click — GoDaddy auto-writes the DNS | Easiest, since the domain lives there |
+| **Google Workspace Starter** | ~$8.40/user/mo | Add MX+SPF+DKIM (~10 min) | Best if they live in Gmail |
+
+Recommendation: **Robert buys, in his own GoDaddy (or Google/Zoho) account, on his card** —
+same principle as Stripe: his business identity, his billing, no entanglement with 60MS. An
+LLC is NOT required to buy email or domains; sole proprietors do it every day. Corban gets
+delegate/admin access to set it up. Whichever provider: send mail FROM these addresses only
+after SPF+DKIM are set, or deliverability suffers.
+
+## GoDaddy domain (inspectorgroupcalifornia.com) → Netlify (the meeting script)
 
 Do it with Robert on a screen-share; it is a 10-minute job. Two access options — prefer A:
 

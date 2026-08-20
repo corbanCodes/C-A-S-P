@@ -129,8 +129,8 @@ def nav():
 <header class="nav" id="nav">
  <div class="nav-in">
   <a class="brand" href="/index.html">
-   <span class="brand-mark" aria-hidden="true">CIG</span>
-   <span class="brand-txt"><b>California Inspector Group</b><i>CASp &amp; SB 721 / SB 326</i></span>
+   <span class="brand-mark" aria-hidden="true">IGC</span>
+   <span class="brand-txt"><b>Inspector Group California</b><i>CASp &amp; SB 721 / SB 326</i></span>
   </a>
 
   <nav class="nav-links" aria-label="Main">
@@ -251,8 +251,8 @@ def foot():
   <div class="foot-grid">
    <div class="foot-brand">
     <a class="brand" href="/index.html">
-     <span class="brand-mark" aria-hidden="true">CIG</span>
-     <span class="brand-txt"><b>California Inspector Group</b><i>LLC</i></span>
+     <span class="brand-mark" aria-hidden="true">IGC</span>
+     <span class="brand-txt"><b>Inspector Group California</b><i>Statewide CA</i></span>
     </a>
     <p>{blurb}</p>
     <p class="foot-contact">
@@ -295,7 +295,7 @@ def foot():
   </div>
 
   <p class="disclaimer">
-   <b>Not legal advice.</b> California Inspector Group performs inspections and writes
+   <b>Not legal advice.</b> Inspector Group California performs inspections and writes
    reports. We are not a law firm, we do not provide legal representation, and nothing on
    this site creates an attorney&ndash;client relationship. Statutes are summarised for
    orientation and are current as described; retain California counsel for advice on your

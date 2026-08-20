@@ -48,8 +48,8 @@ def build(write):
  <div class="start-nav">
   <div class="wrap start-nav-in">
    <a class="brand" href="/index.html">
-    <span class="brand-mark" aria-hidden="true">CIG</span>
-    <span class="brand-txt"><b>California Inspector Group</b><i>CASp &amp; SB 721 / SB 326</i></span>
+    <span class="brand-mark" aria-hidden="true">IGC</span>
+    <span class="brand-txt"><b>Inspector Group California</b><i>CASp &amp; SB 721 / SB 326</i></span>
    </a>
    <a class="btn btn-line" href="tel:{tel}">{ic_p} <span class="hide-sm">{ph}</span></a>
   </div>
@@ -184,7 +184,7 @@ def build(write):
       utm_content: utm('utm_content'),
       landing_page: '/start.html',
       _gotcha: document.getElementById('l-gotcha').value,
-      _subject: 'New quote request — California Inspector Group ad funnel (start.html)'
+      _subject: 'New quote request — Inspector Group California ad funnel (start.html)'
     }};
 
     fetch('{form}', {{
@@ -217,7 +217,7 @@ def build(write):
     )
 
     html = head(
-        "Get a flat price on your California inspection | California Inspector Group",
+        "Get a flat price on your California inspection | Inspector Group California",
         "Three questions and we come back with a flat price for a CASp accessibility or "
         "SB 721 / SB 326 balcony inspection anywhere in California.",
         "/start.html",
@@ -233,10 +233,10 @@ def build(write):
 </main>
 <footer class="start-legal">
  <div class="wrap">
-  <p><b>Not legal advice.</b> California Inspector Group performs inspections and writes
+  <p><b>Not legal advice.</b> Inspector Group California performs inspections and writes
    reports. We are not a law firm and nothing here creates an attorney&ndash;client
    relationship. Retain California counsel for advice on your own situation.</p>
-  <p>&copy; 2026 California Inspector Group LLC &middot;
+  <p>&copy; 2026 Inspector Group California &middot;
    <a href="/index.html">Main site</a> &middot;
    <a href="tel:%s">%s</a> &middot;
    Site by <a href="https://60minutesites.com" rel="noopener">60 Minute Sites</a></p>

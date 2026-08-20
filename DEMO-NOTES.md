@@ -157,7 +157,13 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
   Remove both at launch or the site will never rank.
 - **Domain** — canonical URLs assume `californiainspectorgroup.com`. Not registered as far as we
   know. Confirm with Robert, then update `BIZ["base"]` in `_generator/data.py`.
-- **Phone and email** are Robert's real ones from the CRM (408-600-7165 /
+- **Business renamed 20 Aug:** "Inspector Group California", domain
+  `inspectorgroupcalifornia.com` (owned). No LLC suffix anywhere until the entity is formed.
+  `inspectorgroup.com` (also his) should forward; `inspectorgroup.ca` was a mis-buy (Canada).
+- **Site email is now robert@inspectorgroupcalifornia.com — the mailbox does not exist yet.**
+  Provision robert@ + felicia@ before launch (see LAUNCH.md email section) or keep relying on
+  the forms until then.
+- **Phone** is Robert's real one from the CRM (408-600-7165 /
   Roblehman72@gmail.com). A Gmail address on a compliance site undersells him — recommend a
   domain mailbox before launch.
 

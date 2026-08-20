@@ -158,7 +158,7 @@ def quote_form(source="page", heading="Request a quote",
     <div class="upl-list" hidden></div>
    </div>
   </div>
-  <input type="hidden" name="_subject" value="New quote request &mdash; California Inspector Group ({source})">
+  <input type="hidden" name="_subject" value="New quote request &mdash; Inspector Group California ({source})">
   <input type="hidden" name="landing_page" value="{source}">
   <input type="hidden" name="fill_seconds" value="">
   <input type="hidden" name="traffic_source" value="">

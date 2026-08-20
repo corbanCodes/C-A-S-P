@@ -32,8 +32,8 @@ def _letterhead(doc_type, report_no, date):
 <div class="doc-ribbon">Sample</div>
 <div class="doc-head">
  <a class="brand" href="/index.html" style="pointer-events:none">
-  <span class="brand-mark" aria-hidden="true">CIG</span>
-  <span class="brand-txt"><b>California Inspector Group</b><i>LLC &middot; statewide California</i></span>
+  <span class="brand-mark" aria-hidden="true">IGC</span>
+  <span class="brand-txt"><b>Inspector Group California</b><i>Statewide California</i></span>
  </a>
  <div class="doc-head-meta">
   <b>%s</b>
@@ -91,7 +91,7 @@ def build_casp_sample(write):
   <div class="doc-meta">
    <div><span>Property</span><b>1420 Alisal Street, Salinas, CA 93905</b></div>
    <div><span>Client</span><b>Alisal Mercantile LLC</b></div>
-   <div><span>Engagement</span><b>CIG-2026-0418</b></div>
+   <div><span>Engagement</span><b>IGC-2026-0418</b></div>
    <div><span>Occupancy</span><b>Retail &mdash; M, 2,180 sq ft</b></div>
    <div><span>Inspection date</span><b>28 April 2026</b></div>
    <div><span>Standards applied</span><b>2022 CBC Ch. 11B &middot; 2010 ADAS</b></div>
@@ -142,7 +142,7 @@ def build_casp_sample(write):
   <h2><span class="no">5</span>Schedule of completion</h2>
   <p>Priority items within <b>30 days</b>; corrective items within <b>60 days</b>; planning
    items within <b>90 days</b> or the next tenant improvement, whichever is sooner. On written
-   notice of completion, California Inspector Group will re-inspect the corrected items and
+   notice of completion, Inspector Group California will re-inspect the corrected items and
    issue a supplement documenting the corrected condition.</p>
 
   <div class="doc-statute">
@@ -157,13 +157,13 @@ def build_casp_sample(write):
   <div class="doc-sign">
    <div><p class="doc-sig">Robert Lehman</p><b>Robert Lehman</b>
     Certified Access Specialist &middot; CASp No. [&bull;&bull;&bull;]<br>
-    California Inspector Group LLC</div>
+    Inspector Group California</div>
    <div style="display:flex;align-items:flex-end"><span>Disability Access Inspection
     Certificate No. [&bull;&bull;&bull;] issued to the client with this report.</span></div>
   </div>
 
   <div class="doc-foot">
-   <span>CASp Inspection Report &middot; CIG-2026-0418 &middot; page 1 of 42 (sample extract)</span>
+   <span>CASp Inspection Report &middot; IGC-2026-0418 &middot; page 1 of 42 (sample extract)</span>
    <span>SAMPLE &mdash; illustrative property and findings</span>
   </div>
  </article>
@@ -171,7 +171,7 @@ def build_casp_sample(write):
 {cta}
 """.format(note=NOTE,
            bar=_bar("", "/samples/sb721-report.html", "See the SB 721 sample"),
-           letterhead=_letterhead("CASp Inspection Report", "CIG-2026-0418", "5 May 2026"),
+           letterhead=_letterhead("CASp Inspection Report", "IGC-2026-0418", "5 May 2026"),
            rows=rows,
            ph1=img("parking-stalls", "Accessible parking stalls with painted markings"),
            ph2=img("sidewalk-ramp", "Exterior accessible route with gradual ramp"),
@@ -180,7 +180,7 @@ def build_casp_sample(write):
                    "A document written to be handed to somebody else — a judge, a lender, "
                    "a board, a contractor. Book yours online in about four minutes."))
     write("samples/casp-report.html", head(
-        "Sample CASp Inspection Report | California Inspector Group",
+        "Sample CASp Inspection Report | Inspector Group California",
         "A worked example of a CASp report built to Civil Code §55.53: areas inspected, "
         "itemised findings with measurements and code sections, schedule of completion, "
         "certification and the Disability Access Inspection Certificate.",
@@ -232,7 +232,7 @@ def build_sb721_sample(write):
   <div class="doc-meta">
    <div><span>Property</span><b>Casa Robles Apartments, 2847 Fulton Grove, Sacramento, CA</b></div>
    <div><span>Client</span><b>Fulton Grove Holdings LP</b></div>
-   <div><span>Engagement</span><b>CIG-2026-0533</b></div>
+   <div><span>Engagement</span><b>IGC-2026-0533</b></div>
    <div><span>Buildings / units</span><b>3 buildings &middot; 24 units</b></div>
    <div><span>Inspection dates</span><b>11&ndash;12 June 2026</b></div>
    <div><span>Next inspection due</span><b>By 1 January 2032 (6-year cycle)</b></div>
@@ -290,14 +290,14 @@ def build_sb721_sample(write):
   <div class="doc-sign">
    <div><p class="doc-sig">Robert Lehman</p><b>Robert Lehman</b>
     Certified building inspector &middot; Licence [&bull;&bull;&bull;]<br>
-    California Inspector Group LLC</div>
+    Inspector Group California</div>
    <div style="display:flex;align-items:flex-end"><span>Stamped and signed per
     &sect;17973(d). SB 326 engagements are signed by a licensed structural engineer or
     architect as Civil Code &sect;5551 requires.</span></div>
   </div>
 
   <div class="doc-foot">
-   <span>EEE Inspection Report &middot; CIG-2026-0533 &middot; page 1 of 28 (sample extract)</span>
+   <span>EEE Inspection Report &middot; IGC-2026-0533 &middot; page 1 of 28 (sample extract)</span>
    <span>SAMPLE &mdash; illustrative property and findings</span>
   </div>
  </article>
@@ -305,7 +305,7 @@ def build_sb721_sample(write):
 {cta}
 """.format(note=NOTE,
            bar=_bar("", "/samples/casp-report.html", "See the CASp sample"),
-           letterhead=_letterhead("EEE Inspection Report", "CIG-2026-0533", "3 July 2026"),
+           letterhead=_letterhead("EEE Inspection Report", "IGC-2026-0533", "3 July 2026"),
            rows=rows,
            ph1=img("residential-eee", "Multi-storey residential building with wood balconies"),
            ph2=img("weathered-wood", "Close view of checked, weathered structural timber"),
@@ -314,7 +314,7 @@ def build_sb721_sample(write):
                    "Both deadlines have passed. Book the inspection online, or start with "
                    "a fifteen-minute call.", variant="amber"))
     write("samples/sb721-report.html", head(
-        "Sample SB 721 Balcony Inspection Report | California Inspector Group",
+        "Sample SB 721 Balcony Inspection Report | Inspector Group California",
         "A worked example of an exterior elevated element report built to Health & Safety "
         "Code §17973: sampling, current condition, projected service life, recommendations, "
         "baseline photographs and the immediate-threat advisory.",

@@ -224,7 +224,7 @@ def build_pricing(write):
               '<script src="/assets/js/calculator.js" defer></script>' % json.dumps(rates))
 
     write("pricing.html", head(
-        "Pricing | CASp &amp; SB 721 / SB 326 Inspections | California Inspector Group",
+        "Pricing | CASp &amp; SB 721 / SB 326 Inspections | Inspector Group California",
         "Published prices for CASp accessibility inspections by occupancy and floor area, and "
         "SB 721 / SB 326 balcony inspections by unit count. 20% deposit to book.",
         "/pricing.html") + body + script + foot())
@@ -347,7 +347,7 @@ def build_book(write):
      <div class="wiz-doc-ic">{ic_doc}</div>
      <div>
       <b>Inspection Services Agreement</b>
-      <span>California Inspector Group LLC &mdash; 12 sections, about 4 pages</span>
+      <span>Inspector Group California &mdash; 12 sections, about 4 pages</span>
      </div>
      <a class="btn btn-line" href="/agreement.html">Preview</a>
     </div>
@@ -357,7 +357,7 @@ def build_book(write):
       and the California Uniform Electronic Transactions Act.</span></label>
     <label class="wcheck"><input type="checkbox" id="w-ack">
      <span>I understand that where an exterior elevated element poses an immediate threat to
-      safety, California Inspector Group is required by statute to notify the local
+      safety, Inspector Group California is required by statute to notify the local
       enforcement agency within 15 days.</span></label>
 
     <p class="qerr" id="w-err2" role="alert">Please tick both boxes to continue.</p>
@@ -455,7 +455,7 @@ def build_book(write):
               '<script src="/assets/js/booking.js" defer></script>' % json.dumps(rates))
 
     write("book.html", head(
-        "Book an Inspection | California Inspector Group",
+        "Book an Inspection | Inspector Group California",
         "Book a CASp or SB 721 / SB 326 inspection online: get your price, sign the agreement "
         "electronically, pay a 20% deposit and pick your date.",
         "/book.html") + body + script + foot())
@@ -532,7 +532,7 @@ def build_agreement(write):
            cta=cta("Start the booking",
                    "Pick your price, get the agreement sent over, and hold a date."))
     write("agreement.html", head(
-        "The Inspection Agreement | California Inspector Group",
+        "The Inspection Agreement | Inspector Group California",
         "A plain-English summary of the inspection services agreement: scope, exclusions, "
         "standard of care, insurance, liability, mandatory hazard reporting and payment terms.",
         "/agreement.html") + body + foot())
@@ -560,7 +560,7 @@ def build_portal(write):
     <div class="pcard">
      <div class="pcard-head">
       <div>
-       <p class="calc-label">Engagement CIG-2026-0418</p>
+       <p class="calc-label">Engagement IGC-2026-0418</p>
        <h2>1420 Alisal Street, Salinas &mdash; Monterey County</h2>
        <p class="pmeta">Retail &amp; storefront &middot; 2,180 sq ft &middot; CASp property inspection</p>
       </div>
@@ -598,8 +598,8 @@ def build_portal(write):
      <h3>Documents</h3>
      <div class="pfiles">
       <a class="pfile" href="/agreement.html">{ic_doc}<div><b>Inspection Services Agreement (signed)</b><span>Countersigned 14 April 2026</span></div></a>
-      <a class="pfile" href="#" data-demo>{ic_doc}<div><b>Invoice CIG-2026-0418-A &mdash; deposit</b><span>Paid 14 April 2026</span></div></a>
-      <a class="pfile" href="#" data-demo>{ic_doc}<div><b>Invoice CIG-2026-0418-B &mdash; balance</b><span>Outstanding &middot; $920.00</span></div></a>
+      <a class="pfile" href="#" data-demo>{ic_doc}<div><b>Invoice IGC-2026-0418-A &mdash; deposit</b><span>Paid 14 April 2026</span></div></a>
+      <a class="pfile" href="#" data-demo>{ic_doc}<div><b>Invoice IGC-2026-0418-B &mdash; balance</b><span>Outstanding &middot; $920.00</span></div></a>
      </div>
      <p class="note" id="pdemo-note" hidden style="margin-top:1.2rem">
       These are sample documents on a demonstration page, so there is nothing behind the link.
@@ -616,7 +616,7 @@ def build_portal(write):
     </div>
     <div class="pcard">
      <h3>Your inspector</h3>
-     <p><b>Robert Lehman</b><br><span class="pmeta">California Inspector Group LLC</span></p>
+     <p><b>Robert Lehman</b><br><span class="pmeta">Inspector Group California</span></p>
      <a class="btn btn-line btn-full" href="tel:{tel}">{ic_p} {ph}</a>
     </div>
     <div class="pcard">
@@ -656,7 +656,7 @@ def build_portal(write):
                    "Book an inspection and this is where your engagement will live."))
     script = '<script src="/assets/js/portal.js" defer></script>'
     write("portal.html", head(
-        "Client Portal | California Inspector Group",
+        "Client Portal | Inspector Group California",
         "Track your inspection, view the signed agreement and invoices, settle the balance "
         "and download your CASp or SB 721 / SB 326 report.",
         "/portal.html") + body + script + foot())
@@ -687,7 +687,7 @@ def build_checkout(write):
    <div>
     <div class="pcard">
      <h2 style="font-size:1.3rem">Pay the booking deposit</h2>
-     <p style="font-size:.94rem">Engagement <b>CIG-2026-0418</b> &middot; agreement signed.
+     <p style="font-size:.94rem">Engagement <b>IGC-2026-0418</b> &middot; agreement signed.
       Paying the 20% deposit confirms the booking and holds your inspection date.</p>
 
      <h3 style="margin-top:1.4rem">How would you like to pay?</h3>
@@ -793,7 +793,7 @@ def build_checkout(write):
     script = ('<script>window.CIG_CHECKOUT={"form":"%s"};</script>'
               '<script src="/assets/js/checkout.js" defer></script>' % CHECKOUT_ACTION)
     write("checkout.html", head(
-        "Checkout | California Inspector Group",
+        "Checkout | Inspector Group California",
         "Pay the 20% booking deposit by card, ACH or wire. Card details are only ever "
         "entered on the payment provider's secure page.",
         "/checkout.html") + body + script + foot())

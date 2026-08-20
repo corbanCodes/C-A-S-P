@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Business facts, service definitions and geography for California Inspector Group.
+"""Business facts, service definitions and geography for Inspector Group California.
 
 Everything the pages say about the client lives here. Legal specifics carry a
 citation in the copy itself so the client can check them against the code.
@@ -11,13 +11,13 @@ CHECKOUT_ACTION = "https://formspree.io/f/mvzalyrw"    # checkout submissions
 CALENDLY = "https://calendly.com/corban-leadsprinter/new-meeting"  # "Book a demo" (60MS calendar for now)
 
 BIZ = {
-    "name": "California Inspector Group",
-    "legal": "California Inspector Group LLC",
-    "short": "CIG",
+    "name": "Inspector Group California",
+    "legal": "Inspector Group California",  # no entity suffix — LLC not yet formed
+    "short": "IGC",
     "principal": "Robert Lehman",
     "phone": "408-600-7165",
-    "email": "Roblehman72@gmail.com",
-    "base": "https://californiainspectorgroup.com",
+    "email": "robert@inspectorgroupcalifornia.com",
+    "base": "https://inspectorgroupcalifornia.com",
     "tagline": "Two California mandates. One inspector.",
     "blurb": ("CASp accessibility inspections and SB 721 / SB 326 balcony inspections, "
               "statewide across all 58 California counties."),

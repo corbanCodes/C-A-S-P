@@ -55,10 +55,10 @@
           phone: document.getElementById('co-phone').value.trim(),
           billing_address: document.getElementById('co-addr').value.trim(),
           payment_method: method,
-          order: 'CIG-2026-0418 — CASp inspection deposit',
+          order: 'IGC-2026-0418 — CASp inspection deposit',
           amount: '$230.00',
           landing_page: '/checkout.html',
-          _subject: 'CHECKOUT (demo) — California Inspector Group deposit'
+          _subject: 'CHECKOUT (demo) — Inspector Group California deposit'
         })
       }).catch(function () {});
     }

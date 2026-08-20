@@ -225,7 +225,7 @@ def build_home():
    <div>
     <span class="eyebrow eyebrow-a">{ic_geo} Statewide</span>
     <h2>All 58 counties, one inspector</h2>
-    <p>California Inspector Group works the entire state. Robert Lehman spent a career as a
+    <p>Inspector Group California works the entire state. Robert Lehman spent a career as a
      municipal building inspector for California cities before founding the firm &mdash;
      the same code, read from the other side of the counter.</p>
     <p>Portfolios with buildings in several regions get one inspector, one report format and
@@ -341,7 +341,7 @@ def build_home():
         steps=process_steps(),
         th_casp=img("report-casp-thumb", "First page of the sample CASp inspection report"),
         th_721=img("report-sb721-thumb", "First page of the sample SB 721 inspection report"),
-        im_rob=img("robert-lehman", "Robert Lehman, founder of California Inspector Group", cls="founder-img"),
+        im_rob=img("robert-lehman", "Robert Lehman, founder of Inspector Group California", cls="founder-img"),
         rev_feat=review_feature(next(r for r in REVIEWS if r.get("feat"))),
         revs=review_cards([r for r in REVIEWS if not r.get("feat")][:6]),
         ic_tag=svg("tag"), ck=svg("check"),
@@ -356,7 +356,7 @@ def build_home():
         cta=cta(),
     )
     write("index.html", head(
-        "CASp &amp; SB 721 / SB 326 Inspections Statewide | California Inspector Group",
+        "CASp &amp; SB 721 / SB 326 Inspections Statewide | Inspector Group California",
         "CASp accessibility inspections and SB 721 / SB 326 balcony inspections across all 58 "
         "California counties. Flat-price quotes, reports you can hand to a lawyer or a board.",
         "/") + body + foot())
@@ -818,7 +818,7 @@ def build_services():
                            "One form, both service lines. We reply the same business day."),
            cta=cta())
     write("services.html", head(
-        "Inspection Services | CASp &amp; SB 721 / SB 326 | California Inspector Group",
+        "Inspection Services | CASp &amp; SB 721 / SB 326 | Inspector Group California",
         "CASp inspections, plan review, lawsuit response, §1938 lease disclosure, SB 721 "
         "apartment and SB 326 HOA balcony inspections — statewide in California.",
         "/services.html") + body + foot())
@@ -914,7 +914,7 @@ def build_service_pages():
             cta=cta(variant="amber" if amber else ""),
         )
         write("services/%s.html" % s["slug"], head(
-            "%s | California Inspector Group" % s["name"].replace("&amp;", "&"),
+            "%s | Inspector Group California" % s["name"].replace("&amp;", "&"),
             s["teaser"].replace("&sect;", "§").replace("&mdash;", "—"),
             "/services/%s.html" % s["slug"]) + body + foot())
 
@@ -993,7 +993,7 @@ def build_process():
            ic_d=svg("doc"), ic_se=svg("search"), ic_c=svg("check"), ic_r=svg("ruler"),
            ic_sh=svg("shield"), ic_cal=svg("calendar"), cta=cta())
     write("process.html", head(
-        "How an Inspection Works | California Inspector Group",
+        "How an Inspection Works | Inspector Group California",
         "From first call to final report: scoping, flat-price quote, the inspection itself, "
         "what the report contains, corrections and re-inspection.",
         "/process.html") + body + foot())
@@ -1001,7 +1001,7 @@ def build_process():
 
 def build_about():
     body = phead(
-        "About California Inspector Group",
+        "About Inspector Group California",
         "A building inspector&rsquo;s firm. Founded by someone who spent a career on the "
         "enforcement side of the counter reading the same code.",
         [("Home", "/index.html"), ("About", None)]) + """
@@ -1010,13 +1010,13 @@ def build_about():
   <div class="split">
    <div>
     <h2>Robert Lehman</h2>
-    <p class="lede">Founder, California Inspector Group LLC.</p>
+    <p class="lede">Founder, Inspector Group California.</p>
     <p>Robert spent his career as a building inspector for California cities &mdash; reading
      plans, walking sites and signing off work under the same code the state now asks private
      inspectors to apply. That is an unusual background for this work and a useful one: the
      questions a code official will ask about your building are the questions he spent years
      asking about other people's.</p>
-    <p>He founded California Inspector Group to do two things properly. The first is
+    <p>He founded Inspector Group California to do two things properly. The first is
      accessibility &mdash; a field where most owners have no idea they are exposed until a
      letter arrives. The second is the balcony inspection work that California made mandatory
      after Berkeley, where the deadlines have now passed and a great many buildings are
@@ -1071,13 +1071,13 @@ def build_about():
 </section>
 
 {cta}
-""".format(im=img("robert-lehman-bio", "Robert Lehman, founder of California Inspector Group"),
+""".format(im=img("robert-lehman-bio", "Robert Lehman, founder of Inspector Group California"),
            ic_sc=svg("scale"), ic_d=svg("doc"), ic_r=svg("ruler"), ic_g=svg("geo"),
            ic_cal=svg("calendar"), ic_sh=svg("shield"),
            stats="".join('<div class="stat"><b>%s</b><span>%s</span></div>' % s for s in STATS),
            cta=cta())
     write("about.html", head(
-        "About | California Inspector Group",
+        "About | Inspector Group California",
         "Founded by Robert Lehman, a career California municipal building inspector. CASp "
         "accessibility and SB 721 / SB 326 structural inspections, statewide.",
         "/about.html") + body + foot())
@@ -1138,7 +1138,7 @@ def build_coverage():
            counties="".join("<li>%s County</li>" % c for c in COUNTIES),
            form=quote_form("coverage"), cta=cta())
     write("coverage.html", head(
-        "Service Area | All 58 California Counties | California Inspector Group",
+        "Service Area | All 58 California Counties | Inspector Group California",
         "CASp and SB 721 / SB 326 inspections across every California county, grouped by "
         "region, with portfolio scheduling for multi-property owners.",
         "/coverage.html") + body + foot())
@@ -1197,7 +1197,7 @@ def build_area_pages():
            others="".join('<a class="tag" href="/areas/%s.html">%s</a>' % (s, n) for s, n in others),
            cta=cta())
         write("areas/%s.html" % slug, head(
-            "%s | CASp &amp; Balcony Inspections | California Inspector Group" % name,
+            "%s | CASp &amp; Balcony Inspections | Inspector Group California" % name,
             "CASp accessibility inspections and SB 721 / SB 326 balcony inspections across "
             "%s." % plain,
             "/areas/%s.html" % slug) + body + foot())
@@ -1208,7 +1208,7 @@ def build_area_pages():
 def build_reviews():
     body = phead(
         "Reviews",
-        "What owners, boards and managers say about working with California Inspector Group.",
+        "What owners, boards and managers say about working with Inspector Group California.",
         [("Home", "/index.html"), ("Reviews", None)]) + """
 <section>
  <div class="wrap">
@@ -1229,7 +1229,7 @@ def build_reviews():
                    "Book the inspection online in about four minutes, or start with a "
                    "fifteen-minute call."))
     write("reviews.html", head(
-        "Reviews | California Inspector Group",
+        "Reviews | Inspector Group California",
         "Reviews from California owners, HOA boards and property managers on CASp and "
         "SB 721 / SB 326 inspections.",
         "/reviews.html") + body + foot())
@@ -1255,7 +1255,7 @@ def build_faq():
 {cta}
 """.format(faq=faq_block(FAQ, with_filter=True), cta=cta())
     write("faq.html", head(
-        "FAQ | CASp &amp; SB 721 / SB 326 Inspections | California Inspector Group",
+        "FAQ | CASp &amp; SB 721 / SB 326 Inspections | Inspector Group California",
         "Answers on CASp certification, qualified defendant status, Unruh Act damages, SB 721 "
         "and SB 326 scope, deadlines, sampling and who may sign the reports.",
         "/faq.html") + body + faq_schema(FAQ) + foot())
@@ -1316,7 +1316,7 @@ def build_contact():
                            "Flat price, same business day reply. The more detail you give us, "
                            "the tighter the number."))
     write("contact.html", head(
-        "Contact | California Inspector Group",
+        "Contact | Inspector Group California",
         "Call 408-600-7165 or send the property details for a flat-price quote on a CASp or "
         "SB 721 / SB 326 inspection anywhere in California.",
         "/contact.html") + body + foot())
@@ -1352,7 +1352,7 @@ def build_thanks():
 </section>
 """.format(tel=TEL, ph=PH, ic_p=svg("phone"))
     write("thank-you.html", head(
-        "Thank you | California Inspector Group",
+        "Thank you | Inspector Group California",
         "Your request reached us. We reply the same business day.",
         "/thank-you.html") + body + foot())
 
@@ -1378,7 +1378,7 @@ def build_404():
  </div>
 </section>
 """
-    write("404.html", head("Page not found | California Inspector Group",
+    write("404.html", head("Page not found | Inspector Group California",
                           "That page could not be found.", "/404.html") + body + foot())
 
 
@@ -1411,8 +1411,8 @@ def build_sitemap():
                  [("Home", "/index.html"), ("Sitemap", None)]) + """
 <section><div class="wrap"><div class="grid g3">{cols}</div></div></section>
 """.format(cols=cols)
-    write("sitemap.html", head("Sitemap | California Inspector Group",
-                              "Every page on the California Inspector Group site.",
+    write("sitemap.html", head("Sitemap | Inspector Group California",
+                              "Every page on the Inspector Group California site.",
                               "/sitemap.html") + body + foot())
 
 
