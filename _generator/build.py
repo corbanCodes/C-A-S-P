@@ -1071,7 +1071,7 @@ def build_about():
 </section>
 
 {cta}
-""".format(im=img("robert-lehman", "Robert Lehman, founder of California Inspector Group"),
+""".format(im=img("robert-lehman-bio", "Robert Lehman, founder of California Inspector Group"),
            ic_sc=svg("scale"), ic_d=svg("doc"), ic_r=svg("ruler"), ic_g=svg("geo"),
            ic_cal=svg("calendar"), ic_sh=svg("shield"),
            stats="".join('<div class="stat"><b>%s</b><span>%s</span></div>' % s for s in STATS),
