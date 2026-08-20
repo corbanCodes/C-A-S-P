@@ -70,8 +70,10 @@ def demo_btn(label="Book a demo", cls="btn btn-soft"):
 
 
 def demo_bar():
-    if LIVE:
-        return ""
+    # Removed at the client's request (20 Aug) on all pages, in both build
+    # modes. The checkout/portal in-page notices remain until payments are
+    # actually connected. Restore by deleting the next line.
+    return ""
     return ("""
 <div class="demo-bar" id="demo-bar" role="note">
  <p><span class="demo-dot" aria-hidden="true"></span><b>Demo preview</b><span class="demo-sep"></span>

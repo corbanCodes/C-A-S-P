@@ -160,7 +160,7 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
 - **Business renamed 20 Aug:** "Inspector Group California", domain
   `inspectorgroupcalifornia.com` (owned). No LLC suffix anywhere until the entity is formed.
   `inspectorgroup.com` (also his) should forward; `inspectorgroup.ca` was a mis-buy (Canada).
-- **Site email is now robert@inspectorgroupcalifornia.com — the mailbox does not exist yet.**
+- **Site email is now rob@inspectorgroupcalifornia.com — the mailbox does not exist yet.**
   Provision robert@ + felicia@ before launch (see LAUNCH.md email section) or keep relying on
   the forms until then.
 - **Phone** is Robert's real one from the CRM (408-600-7165 /

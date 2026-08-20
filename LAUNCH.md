@@ -25,7 +25,7 @@ python3 _generator/build.py --live   # launch: no demo bar, index,follow, robots
 6. **Domain in data.py.** Set `BIZ["base"]` to the real domain so canonicals/OG are right.
 7. Swap `CALENDLY` to Robert's own calendar; decide Formspree endpoints vs 60MS CRM.
 8. **Mailboxes must exist before launch.** The site now shows
-   `robert@inspectorgroupcalifornia.com` — provision it (and felicia@) before the site goes
+   `rob@inspectorgroupcalifornia.com` — provision it (and felicia@) before the site goes
    live or enquiries bounce. See the email section below.
 9. **Entity naming.** The site says "Inspector Group California" with no LLC suffix because
    the LLC is not formed yet. When it forms, add the suffix back in `_generator/data.py`

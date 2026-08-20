@@ -16,7 +16,7 @@ BIZ = {
     "short": "IGC",
     "principal": "Robert Lehman",
     "phone": "408-600-7165",
-    "email": "robert@inspectorgroupcalifornia.com",
+    "email": "rob@inspectorgroupcalifornia.com",
     "base": "https://inspectorgroupcalifornia.com",
     "tagline": "Two California mandates. One inspector.",
     "blurb": ("CASp accessibility inspections and SB 721 / SB 326 balcony inspections, "

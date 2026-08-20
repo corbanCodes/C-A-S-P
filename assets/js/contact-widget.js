@@ -7,7 +7,7 @@
 
   var PHONE = '4086007165',
       PHONE_TXT = '408-600-7165',
-      EMAIL = 'robert@inspectorgroupcalifornia.com',
+      EMAIL = 'rob@inspectorgroupcalifornia.com',
       FORM = 'https://formspree.io/f/xojeqvng';
 
   var css = [
