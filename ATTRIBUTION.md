@@ -28,8 +28,10 @@ instead. The two fetch scripts are kept in `_generator/` so the sourcing is repr
 
 `.webp` files are re-encodes of the same originals and carry the same credit.
 
-`robert-lehman.jpg/.webp` and `robert-lehman-bio.jpg/.webp` are client-supplied photographs
-of Robert Lehman, used with his permission — not Commons images.
+`robert-lehman.jpg/.webp` (square crop, used for circular avatars) and
+`robert-lehman-bio.jpg/.webp` (full portrait, About page) are both derived from the same
+client-supplied professional headshot of Robert Lehman, used with his permission — not
+Commons images.
 
 ## Before launch
 
