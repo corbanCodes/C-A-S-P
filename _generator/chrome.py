@@ -3,8 +3,9 @@
 
 Every page on the site is wrapped by head() and foot(). The demo carries
 noindex on every page, a blanket robots.txt disallow, and a persistent demo
-bar so nobody mistakes the wiring for live: forms post to the 60MS Formspree
-endpoints (real), payments and e-signature are staged hand-offs (not yet).
+bar so nobody mistakes the wiring for live: forms post to the 60MS HQ form
+endpoint (real — leads land in the CRM), while payments and e-signature are
+staged hand-offs (not yet).
 
 "Book a demo" opens Corban's 60MS Calendly in a popup (lazy-loaded); any
 element with data-calendly gets the behaviour, and the plain href works as a

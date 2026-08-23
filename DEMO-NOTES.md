@@ -68,16 +68,16 @@ Have counsel read it anyway — we are inspectors' marketing, not lawyers.
 
 ## 2. Integrations the commerce flow needs
 
-The front end is complete; none of it is connected. Current behaviour is a single Formspree
-POST with everything captured, which lands the lead in the CRM.
+The front end is complete; payments and e-signature are not connected. Forms **are** live:
+every submission posts to the 60MS HQ endpoint and lands directly in the CRM as a Lead.
 
 | Step | Now | Needs |
 |---|---|---|
 | Price | Live calculator, real maths | nothing |
 | Book a demo | 60MS Calendly (`corban-leadsprinter/new-meeting`) popup | swap to Robert's own Calendly when he has one |
-| Details | Validated, posts to Formspree `xojeqvng` | point at the 60MS HQ CRM endpoint |
-| Checkout | `/checkout.html` example — method choice + billing contact to Formspree `mvzalyrw` | Stripe Checkout for card + ACH; wire stays invoice-based |
-| Property photos | Booking wizard asks for photos + description on every job (soft-gated); quote forms post multipart with a file input; the wizard JSON carries photo names/count only | Real photo storage: a 60MS backend upload endpoint or Formspree's paid attachment support. Robert also collects photos on sales calls — either channel feeds the same estimate review |
+| Details | Validated, posts to HQ `/form/general-contact-form-a935` — **done** | nothing |
+| Checkout | `/checkout.html` example — method choice + billing contact to the same HQ endpoint | Stripe Checkout for card + ACH; wire stays invoice-based |
+| Property photos | Booking wizard asks for photos + description on every job (soft-gated); quote forms post multipart with a file input; the wizard JSON carries photo names/count only | Real photo storage: a 60MS backend upload endpoint (the HQ form route currently records names/count only). Robert also collects photos on sales calls — either channel feeds the same estimate review |
 | E-signature | Consent checkboxes; confirmation screen says the agreement is on its way | DocuSign or Dropbox Sign; send template on submit, webhook on completion |
 | Deposit | Explains methods; **renders no card fields** | Stripe Checkout / Payment Links (card + ACH). Never build card fields into this site |
 | Scheduling | Confirmation says a calendar link follows | Cal.com or Calendly embed, ideally gated until the deposit clears |
@@ -145,8 +145,16 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
   by `demo_bar()` in `_generator/chrome.py` — delete the call in `head()` and rebuild).
 - **Book a demo** — all `[data-calendly]` elements open Corban's 60MS Calendly. This is a
   placeholder calendar: replace `CALENDLY` in `_generator/data.py` with the client's own.
-- **Forms** — every form and the funnel post to the 60MS Formspree endpoint `xojeqvng`;
-  the example checkout posts to the 60MS checkout endpoint `mvzalyrw`.
+- **Forms post to 60MS HQ** — `https://60minutesites.com/form/general-contact-form-a935`
+  (Formspree is gone). Leads land in the CRM directly. Field mapping matters: `name`,
+  `phone`, `email`, `business`, `business_type` become real Lead columns; `source` tags the
+  origin ("IGC booking", "IGC ad funnel", "IGC checkout (demo)", "IGC site widget", "IGC
+  site — contact"); every other field is filed into a "Form extras" note. `_gotcha` is the
+  honeypot and `_next` (set at runtime from the page origin) is the post-submit redirect, so
+  the thank-you page works on the preview domain and the live one alike. HTTPS is required —
+  `http://` 301-redirects and browsers block mixed-content POSTs.
+  **When Robert gets his own HQ form**, change `FORM_ACTION` in `_generator/data.py` so his
+  leads separate from the shared general-contact inbox.
   Page forms redirect to `/thank-you.html`; the funnel and booking wizard send JSON.
   Payload shape matches the other 60MS funnels so leads land in the CRM identically.
 - **Contact widget** (`assets/js/contact-widget.js`) — self-contained Call / Text / Email dock.

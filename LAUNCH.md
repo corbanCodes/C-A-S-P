@@ -23,7 +23,9 @@ python3 _generator/build.py --live   # launch: no demo bar, index,follow, robots
 4. **Blog byline.** Robert reads and approves all six Field Notes articles — they speak as him.
 5. **Contract.** The real inspection agreement exists (attorney-drafted).
 6. **Domain in data.py.** Set `BIZ["base"]` to the real domain so canonicals/OG are right.
-7. Swap `CALENDLY` to Robert's own calendar; decide Formspree endpoints vs 60MS CRM.
+7. Swap `CALENDLY` to Robert's own calendar. Forms already post to 60MS HQ — create a
+   dedicated form for Robert in HQ and update `FORM_ACTION` so his leads are not mixed into
+   the shared general-contact inbox.
 8. **Mailboxes must exist before launch.** The site now shows
    `rob@inspectorgroupcalifornia.com` — provision it (and felicia@) before the site goes
    live or enquiries bounce. See the email section below.

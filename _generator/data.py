@@ -5,9 +5,14 @@ Everything the pages say about the client lives here. Legal specifics carry a
 citation in the copy itself so the client can check them against the code.
 """
 
-# 60 Minute Sites shared endpoints (real — leads land in the 60MS CRM)
-FORM_ACTION = "https://formspree.io/f/xojeqvng"        # quotes / leads / funnel
-CHECKOUT_ACTION = "https://formspree.io/f/mvzalyrw"    # checkout submissions
+# 60 Minute Sites HQ form endpoint — leads land straight in the 60MS CRM.
+# The route accepts JSON or form-encoded, honours the `_gotcha` honeypot, sends
+# LEAD_FIELDS (name/phone/email/business/business_type) to real CRM columns and
+# files every other field into a "Form extras" note. CORS is open, so the JSON
+# fetch posts work cross-origin. HTTPS is required: http:// 301-redirects, and
+# a browser blocks mixed-content POSTs from the HTTPS site.
+FORM_ACTION = "https://60minutesites.com/form/general-contact-form-a935"
+CHECKOUT_ACTION = FORM_ACTION
 CALENDLY = "https://calendly.com/corban-leadsprinter/new-meeting"  # "Book a demo" (60MS calendar for now)
 
 BIZ = {

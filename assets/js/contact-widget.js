@@ -8,7 +8,7 @@
   var PHONE = '4086007165',
       PHONE_TXT = '408-600-7165',
       EMAIL = 'rob@inspectorgroupcalifornia.com',
-      FORM = 'https://formspree.io/f/xojeqvng';
+      FORM = 'https://60minutesites.com/form/general-contact-form-a935';
 
   var css = [
     '.cw{position:fixed;left:20px;bottom:20px;z-index:120;font-family:Inter,sans-serif}',
@@ -80,7 +80,6 @@
         '<input type="tel" name="phone" placeholder="Phone" autocomplete="tel" required>' +
         '<input type="email" name="email" placeholder="Email" autocomplete="email" required>' +
         '<textarea name="message" placeholder="Property address and what you need"></textarea>' +
-        '<input type="hidden" name="_subject" value="Widget enquiry — Inspector Group California">' +
         '<input type="hidden" name="landing_page" value="">' +
         '<button type="submit">Send</button>' +
         '<button class="cw-back" type="button" id="cw-back">&larr; Back</button>' +
@@ -115,11 +114,17 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    form.querySelector('[name="landing_page"]').value = window.location.pathname;
     fetch(FORM, {
       method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: new FormData(form)
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim(),
+        source: 'IGC site widget',
+        landing_page: window.location.pathname
+      })
     }).catch(function () {});
     form.classList.remove('on');
     ok.classList.add('on');

@@ -45,12 +45,12 @@ unlock the report on final payment. The front end for all of that is built:
    data as the printed table so the two cannot drift.
 2. **`/book.html`** — a four-step wizard. Price → property and contact details →
    agreement consent → confirmation. Validated at each step; posts one JSON payload to the
-   same Formspree endpoint as every other 60MS funnel.
+   60MS HQ form endpoint, landing straight in the CRM.
 3. **`/agreement.html`** — a plain-English walk through the twelve sections of the
    inspection agreement, so the client reads it before signing rather than after.
 4. **`/checkout.html`** — an example checkout: order summary, card / ACH / wire method
-   choice, and a billing-contact form that posts to the 60MS checkout Formspree endpoint
-   (`mvzalyrw`). Deliberately renders **no card fields** — capture belongs on the
+   choice, and a billing-contact form that posts to the same 60MS HQ endpoint.
+   Deliberately renders **no card fields** — capture belongs on the
    processor's hosted page.
 5. **`/portal.html`** — a demo client portal: engagement status timeline, invoices, and the
    report locked behind the outstanding balance. Click *Pay balance* to see it unlock.

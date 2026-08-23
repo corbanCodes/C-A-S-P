@@ -1,8 +1,8 @@
 /* /book.html — the four-step booking wizard.
 
    Steps 1–3 are fully working front end: the price computes off the published
-   rate card and the details POST to Formspree with the same payload shape as
-   every other 60MS form, so the booking lands in the CRM.
+   rate card and the details POST to the 60MS HQ form endpoint, mapping onto the
+   CRM's own lead fields, so the booking lands in the CRM as a Lead.
 
    Step 4 is deliberately a hand-off, not a simulation. It never renders a card
    field. Real payment belongs on the processor's hosted page and real signature
@@ -115,10 +115,11 @@
     var email = document.getElementById('w-email').value.trim();
     var payload = {
       name: document.getElementById('w-name').value.trim(),
-      company: document.getElementById('w-company').value.trim(),
+      business: document.getElementById('w-company').value.trim(),
       email: email,
-      _replyto: email,
       phone: document.getElementById('w-phone').value.trim(),
+      business_type: line.options[line.selectedIndex].text,
+      source: 'IGC booking',
       property_address: document.getElementById('w-addr').value.trim(),
       message: document.getElementById('w-notes').value.trim(),
       photos_count: (document.getElementById('w-photos') || {files: []}).files.length,
@@ -126,7 +127,7 @@
         (document.getElementById('w-photos') || {files: []}).files,
         function (f) { return f.name; }).slice(0, 12).join(', '),
       service_needed: line.options[line.selectedIndex].text,
-      property_type: quoteLabel,
+      quoted_for: quoteLabel,
       quoted_fee: quoted === null ? 'Custom quote' : money(quoted),
       deposit_due: quoted === null ? 'TBC' : money(Math.round(quoted * 0.2)),
       esign_consent: document.getElementById('w-esign').checked ? 'yes' : 'no',
@@ -135,8 +136,7 @@
       traffic_source: param('utm_source') || document.referrer || 'direct',
       utm_campaign: param('utm_campaign'),
       utm_content: param('utm_content'),
-      landing_page: '/book.html',
-      _subject: 'BOOKING — Inspector Group California (agreement requested)'
+      landing_page: '/book.html'
     };
 
     fetch(R.form, {

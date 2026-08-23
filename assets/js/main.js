@@ -80,11 +80,12 @@
     set('utm_campaign', param('utm_campaign'));
     set('utm_content', param('utm_content'));
     set('landing_page', window.location.pathname);
+    // HQ redirects here after a non-JSON post. Absolute, and built from the
+    // current origin so it works on the preview domain and the live one alike.
+    set('_next', window.location.origin + '/thank-you.html');
 
     form.addEventListener('submit', function () {
       set('fill_seconds', Math.round((Date.now() - t0) / 1000));
-      var email = form.querySelector('[name="email"]');
-      if (email) set('_replyto', email.value);
     });
   });
 }());

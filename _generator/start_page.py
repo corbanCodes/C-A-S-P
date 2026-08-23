@@ -2,8 +2,8 @@
 """/start.html — paid-traffic landing page.
 
 Mirrors the 60minutesites start funnel: a short quiz, answers accumulated in JS,
-one JSON POST to Formspree on the contact step so the lead lands in the CRM with
-the same payload shape as every other 60MS funnel. Meta pixel calls are guarded
+one JSON POST to the 60MS HQ form endpoint on the contact step, so the lead lands
+in the CRM with the same field mapping as every other form on the site. Meta pixel calls are guarded
 so they no-op until a pixel is actually added.
 """
 from data import BIZ, FORM_ACTION
@@ -173,18 +173,18 @@ def build(write):
     err.classList.remove('on');
 
     var payload = {{
-      name: name, phone: phone, email: email, _replyto: email,
+      name: name, phone: phone, email: email,
+      business_type: answers.property_type || '',
+      source: 'IGC ad funnel',
       property_address: addr,
       service_needed: answers.service_needed || '',
-      property_type: answers.property_type || '',
       timeline: answers.timeline || '',
       fill_seconds: Math.round((Date.now() - t0) / 1000),
       traffic_source: utm('utm_source') || document.referrer || 'direct',
       utm_campaign: utm('utm_campaign'),
       utm_content: utm('utm_content'),
       landing_page: '/start.html',
-      _gotcha: document.getElementById('l-gotcha').value,
-      _subject: 'New quote request — Inspector Group California ad funnel (start.html)'
+      _gotcha: document.getElementById('l-gotcha').value
     }};
 
     fetch('{form}', {{

@@ -1,7 +1,7 @@
 /* /checkout.html — example checkout.
 
    Demonstration only: the method toggle is real UI, the billing contact posts
-   to the 60MS checkout Formspree endpoint, and the "continue to secure
+   to the 60MS HQ form endpoint, and the "continue to secure
    payment" step deliberately stops at a success pane. No card or bank field
    exists on this page by design — capture belongs on the processor's hosted
    checkout, which keeps the site out of PCI scope and leaves nothing here to
@@ -50,15 +50,14 @@
         body: JSON.stringify({
           name: name,
           email: email,
-          _replyto: email,
-          company: document.getElementById('co-company').value.trim(),
+          business: document.getElementById('co-company').value.trim(),
           phone: document.getElementById('co-phone').value.trim(),
+          source: 'IGC checkout (demo)',
           billing_address: document.getElementById('co-addr').value.trim(),
           payment_method: method,
           order: 'IGC-2026-0418 — CASp inspection deposit',
           amount: '$230.00',
-          landing_page: '/checkout.html',
-          _subject: 'CHECKOUT (demo) — Inspector Group California deposit'
+          landing_page: '/checkout.html'
         })
       }).catch(function () {});
     }

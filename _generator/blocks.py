@@ -137,14 +137,14 @@ def quote_form(source="page", heading="Request a quote",
    <div class="field"><label for="q-email-{source}">Email <span class="req">*</span></label>
     <input id="q-email-{source}" name="email" type="email" autocomplete="email" required></div>
    <div class="field"><label for="q-company-{source}">Company or association</label>
-    <input id="q-company-{source}" name="company" type="text" autocomplete="organization"></div>
+    <input id="q-company-{source}" name="business" type="text" autocomplete="organization"></div>
    <div class="field full"><label for="q-addr-{source}">Property address <span class="req">*</span></label>
     <input id="q-addr-{source}" name="property_address" type="text" autocomplete="street-address" required
            placeholder="Street, city, county"></div>
    <div class="field"><label for="q-svc-{source}">Service needed <span class="req">*</span></label>
     <select id="q-svc-{source}" name="service_needed" required>{svc}</select></div>
    <div class="field"><label for="q-type-{source}">Property type</label>
-    <select id="q-type-{source}" name="property_type">{ptype}</select></div>
+    <select id="q-type-{source}" name="business_type">{ptype}</select></div>
    <div class="field full"><label for="q-msg-{source}">Anything we should know?</label>
     <textarea id="q-msg-{source}" name="message"
       placeholder="Square footage, number of units, how many balconies or walkways, whether you have been served, deadlines you are working to."></textarea></div>
@@ -158,13 +158,13 @@ def quote_form(source="page", heading="Request a quote",
     <div class="upl-list" hidden></div>
    </div>
   </div>
-  <input type="hidden" name="_subject" value="New quote request &mdash; Inspector Group California ({source})">
+  <input type="hidden" name="source" value="IGC site &mdash; {source}">
+  <input type="hidden" name="_next" value="">
   <input type="hidden" name="landing_page" value="{source}">
   <input type="hidden" name="fill_seconds" value="">
   <input type="hidden" name="traffic_source" value="">
   <input type="hidden" name="utm_campaign" value="">
   <input type="hidden" name="utm_content" value="">
-  <input type="hidden" name="_replyto" value="">
   <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
   <button class="btn btn-solid btn-lg btn-full" type="submit">Request a quote {arrow}</button>
   <p class="form-note">We reply the same business day. We do not sell or share your details,

@@ -2,10 +2,10 @@
 """Pricing, booking, agreement and client-portal pages.
 
 The booking flow is a real front end: the price calculator computes from the
-published rate card, and the details post to Formspree like every other form on
-the site. The three steps that need a vendor — e-signature, payment and the
-gated report — are staged as clearly-labelled hand-offs rather than fake
-implementations. In particular the deposit step never renders a card field:
+published rate card, and the details post to the 60MS HQ form endpoint like every
+other form on the site, landing straight in the CRM. The three steps that need a
+vendor — e-signature, payment and the gated report — are staged as clearly
+labelled hand-offs rather than fake implementations. In particular the deposit step never renders a card field:
 real card capture belongs on the processor's own hosted page, which is both the
 correct integration and the reason there is nothing here to phish.
 See DEMO-NOTES.md for what has to be wired before this takes money.
@@ -668,7 +668,7 @@ def build_checkout(write):
     """Example checkout. Deliberately renders no card fields — card and bank
     capture belong on the processor's hosted page; this page demonstrates the
     order summary, method choice and billing hand-off, and posts the billing
-    contact to the 60MS checkout Formspree endpoint."""
+    contact to the 60MS HQ form endpoint."""
     body = phead(
         "Checkout",
         "The deposit that confirms your booking. Card and bank details are only ever "

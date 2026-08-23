@@ -156,21 +156,21 @@
     err.classList.remove('on');
 
     var payload = {
-      name: name, phone: phone, email: email, _replyto: email,
+      name: name, phone: phone, email: email,
+      business_type: answers.property_type || '',
+      source: 'IGC ad funnel',
       property_address: addr,
       service_needed: answers.service_needed || '',
-      property_type: answers.property_type || '',
       timeline: answers.timeline || '',
       fill_seconds: Math.round((Date.now() - t0) / 1000),
       traffic_source: utm('utm_source') || document.referrer || 'direct',
       utm_campaign: utm('utm_campaign'),
       utm_content: utm('utm_content'),
       landing_page: '/start.html',
-      _gotcha: document.getElementById('l-gotcha').value,
-      _subject: 'New quote request — Inspector Group California ad funnel (start.html)'
+      _gotcha: document.getElementById('l-gotcha').value
     };
 
-    fetch('https://formspree.io/f/xojeqvng', {
+    fetch('https://60minutesites.com/form/general-contact-form-a935', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(payload)
