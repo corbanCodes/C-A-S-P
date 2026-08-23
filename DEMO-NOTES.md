@@ -143,8 +143,9 @@ up an immediate hazard, the statutory 15-day notification does **not** wait for 
 - **Demo bar** — every page (funnel included) carries the top banner saying forms post to a
   test inbox and payments/e-signature are not connected. Remove it at launch (it is emitted
   by `demo_bar()` in `_generator/chrome.py` — delete the call in `head()` and rebuild).
-- **Book a demo** — all `[data-calendly]` elements open Corban's 60MS Calendly. This is a
-  placeholder calendar: replace `CALENDLY` in `_generator/data.py` with the client's own.
+- **Book a demo** — all `[data-calendly]` elements open Robert's own Calendly
+  (`robert-inspectorgroupcalifornia/30min`), set 23 Aug. No longer a placeholder; bookings go
+  straight to him. Lives in `CALENDLY` in `_generator/data.py`.
 - **Forms post to 60MS HQ** — `https://60minutesites.com/form/general-contact-form-a935`
   (Formspree is gone). Leads land in the CRM directly. Field mapping matters: `name`,
   `phone`, `email`, `business`, `business_type` become real Lead columns; `source` tags the

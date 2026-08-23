@@ -13,7 +13,7 @@ citation in the copy itself so the client can check them against the code.
 # a browser blocks mixed-content POSTs from the HTTPS site.
 FORM_ACTION = "https://60minutesites.com/form/general-contact-form-a935"
 CHECKOUT_ACTION = FORM_ACTION
-CALENDLY = "https://calendly.com/corban-leadsprinter/new-meeting"  # "Book a demo" (60MS calendar for now)
+CALENDLY = "https://calendly.com/robert-inspectorgroupcalifornia/30min"  # Robert's own 30-min booking
 
 BIZ = {
     "name": "Inspector Group California",
