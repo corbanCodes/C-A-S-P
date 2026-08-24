@@ -1,4 +1,4 @@
-/* Inspector Group California — site behaviour.
+/* Inspector Group California — site behavior.
    No dependencies. Everything degrades to working HTML if this never loads. */
 (function () {
   'use strict';

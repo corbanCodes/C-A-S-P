@@ -2,7 +2,7 @@
 """Pull commercial-use photos from Wikimedia Commons for the CASp site.
 
 Openverse now requires an API key, so Commons is the source: no auth, and the
-extmetadata block carries the licence and attribution we need for ATTRIBUTION.md.
+extmetadata block carries the license and attribution we need for ATTRIBUTION.md.
 Candidates land in _generator/raw/ to be eyeballed before any of them ship.
 """
 import json, os, re, sys, time, urllib.parse, urllib.request

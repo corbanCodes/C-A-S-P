@@ -57,7 +57,7 @@ SERVICES = [
              "that decide the case, not a general impression."),
             ("What you get",
              "A CASp report written to Civil Code &sect;55.53: a description of the areas "
-             "inspected, the inspection date, a signed statement, an itemised list of each "
+             "inspected, the inspection date, a signed statement, an itemized list of each "
              "correction needed and a schedule of completion for each one."),
             ("Why it is the only inspection that counts",
              "An architect or an engineer can tell you the same things are wrong. Only a "
@@ -119,7 +119,7 @@ SERVICES = [
              "under a post-2008 permit; a qualifying small business that corrects within "
              "30 days may see $2,000 instead of $4,000."),
             ("Documentation your counsel can use",
-             "We inspect, we itemise, we date everything and we produce the schedule of "
+             "We inspect, we itemize, we date everything and we produce the schedule of "
              "completion. Your attorney argues the law; we supply the record."),
             ("Re-inspection and sign-off",
              "Once the corrections are made we come back, verify them and document the "
@@ -195,7 +195,7 @@ SERVICES = [
              "service until it is repaired. Non-emergency repairs run on a permit clock."),
             ("Who may perform it",
              "A licensed architect, a licensed civil or structural engineer, a contractor "
-             "holding an A, B or C-5 licence with at least five years of relevant "
+             "holding an A, B or C-5 license with at least five years of relevant "
              "experience, or a certified building inspector or building official."),
         ],
     },
@@ -288,7 +288,7 @@ PROCESS = [
      "sites take a few hours; multifamily EEE inspections scale with unit count."),
     ("The report",
      "A written report you can hand to a lawyer, a board, a lender or a code official. "
-     "Itemised findings, photographs, the applicable standard for each item and a schedule "
+     "Itemized findings, photographs, the applicable standard for each item and a schedule "
      "of completion."),
     ("Corrections",
      "You fix what the report lists, using your own contractors. We do not sell the repairs "
@@ -385,7 +385,7 @@ AUDIENCES = [
 
 FAQ = [
     ("access", "What does CASp actually stand for?",
-     "Certified Access Specialist. The programme is run by the California Division of the "
+     "Certified Access Specialist. The program is run by the California Division of the "
      "State Architect, part of the Department of General Services, and it certifies "
      "individuals to inspect buildings against state and federal construction-related "
      "accessibility standards. Be careful searching for it — <b>CASP</b> is also the name "
@@ -449,7 +449,7 @@ FAQ = [
      "rather than an assumption."),
     ("structural", "What is the six-foot rule exactly?",
      "The walking surface has to be more than six feet above the ground below. A ground-floor "
-     "patio is out. A second-storey walkway is in. Mixed properties usually have both, which "
+     "patio is out. A second-story walkway is in. Mixed properties usually have both, which "
      "is why the sampling is done by element type."),
     ("structural", "Do you inspect every single balcony?",
      "Not necessarily. SB 721 calls for a statistically significant sample — at least 15% of "
@@ -461,7 +461,7 @@ FAQ = [
      "is not our discretion; it is what the statutes require."),
     ("structural", "Who is allowed to sign these reports?",
      "SB 721 accepts a licensed architect, a licensed civil or structural engineer, a "
-     "contractor holding an A, B or C-5 licence with five or more years of relevant "
+     "contractor holding an A, B or C-5 license with five or more years of relevant "
      "experience, or a certified building inspector. SB 326 is narrower — a licensed "
      "structural engineer or architect."),
     ("general", "Do you do the repairs as well?",
@@ -473,7 +473,7 @@ FAQ = [
      "signing; it confirms the booking and it is what puts an inspector on the road, "
      "anywhere in the state, hotels included. The balance falls due when the report is "
      "complete, and paying it is what releases the report. No net-30, no net-anything, and "
-     "no retention or retainage &mdash; however large the organisation or its AP process. "
+     "no retention or retainage &mdash; however large the organization or its AP process. "
      "Our founder spent years consulting on large development projects under net-30 terms "
      "with 10% retention holdbacks, in effect financing other people's projects. This firm "
      "does not do that, and clients benefit from it: nobody's unpaid invoices are priced "
@@ -495,7 +495,7 @@ FAQ = [
      "quoted up front so it is never a line item you find later."),
     ("general", "Can you do both inspections in one visit?",
      "Frequently, yes — a multifamily property with retail on the ground floor can need both, "
-     "and combining them saves a mobilisation. Ask when you call."),
+     "and combining them saves a mobilization. Ask when you call."),
 ]
 
 # ---------------------------------------------------------------- trust signals
@@ -542,7 +542,7 @@ EEE_RATES = [
 PRICE_INCLUDES = [
     "The on-site inspection itself, by the certified or licensed inspector the statute requires",
     "All measurements, photographs and field notes",
-    "The written report, itemised, with the applicable code section against each finding",
+    "The written report, itemized, with the applicable code section against each finding",
     "A schedule of completion for every correction",
     "Travel anywhere in California &mdash; quoted in the price, never added afterwards",
     "A follow-up call to walk you or your board through the findings",
@@ -563,7 +563,7 @@ PRICE_EXCLUDES = [
 
 CUSTOM_QUOTE = [
     ("Multi-building campuses", "A single owner with several structures on one site — one "
-                                "mobilisation, one report, one price."),
+                                "mobilization, one report, one price."),
     ("Statewide franchise portfolios", "Big-box and chain operators inspecting every "
                                        "California facility to one standard and one format."),
     ("Mixed-use properties", "Ground-floor retail under apartments needs both mandates. "
@@ -686,9 +686,9 @@ REVIEWS = [
     },
     {
         "line": "structural",
-        "q": "Sixty-one units across four buildings, one mobilisation. The two walkways they "
+        "q": "Sixty-one units across four buildings, one mobilization. The two walkways they "
              "took out of service had dry rot you could not see from below. I did not enjoy "
-             "writing that cheque, and I am very glad I did.",
+             "writing that check, and I am very glad I did.",
         "name": "Daniel K.", "role": "Apartment owner", "where": "Santa Clara County",
     },
     {
@@ -745,7 +745,7 @@ LAWSUIT_STATS = [
     ("~9 a day", "New federal accessibility filings in California",
      "Before counting state-court Unruh actions and demand letters."),
     ("2,598", "Suits filed by a single plaintiff group in 2024",
-     "One organisation. Serial filers are not a rumour; they are the business model."),
+     "One organization. Serial filers are not a rumour; they are the business model."),
     ("95.8%", "Of 2024 demand letters came from just 10 law firms",
      "Per filings reported to the state's own Commission on Disability Access."),
 ]

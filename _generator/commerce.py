@@ -168,8 +168,8 @@ def build_pricing(write):
 <section>
  <div class="wrap">
   <div class="sec-head"><h2>How payment works</h2>
-   <p class="lede">Twenty per cent on signing confirms the booking &mdash; and funds the
-    mobilisation, which is how one inspector covers all 58 counties. The balance falls due
+   <p class="lede">Twenty percent on signing confirms the booking &mdash; and funds the
+    mobilization, which is how one inspector covers all 58 counties. The balance falls due
     when the report is complete, and paying it releases the signed PDF on the spot.</p></div>
   <div class="grid g3">{pay}</div>
   <div class="note note-a" style="margin-top:1.8rem">
@@ -177,7 +177,7 @@ def build_pricing(write):
    No net-30, no net-anything, and no retention &mdash; whatever your accounts-payable
    process usually asks of vendors. We are told how developers operate; we decline. The
    deposit gets us to your property, the report is finished work, and finished work is paid
-   for on delivery. If that does not fit your organisation, we are genuinely not the right
+   for on delivery. If that does not fit your organization, we are genuinely not the right
    fit &mdash; no hard feelings.
   </div>
   <p style="margin:1.6rem 0 0"><a class="btn btn-soft" href="/checkout.html">See the example checkout {ic_a}</a></p>
@@ -611,7 +611,7 @@ def build_portal(write):
     <div class="pcard">
      <h3>Next inspection due</h3>
      <p class="pdue">April 2029</p>
-     <p class="form-note">We diarise your cycle and write to you ninety days before it falls
+     <p class="form-note">We diarize your cycle and write to you ninety days before it falls
       due, so the date never arrives as a surprise.</p>
     </div>
     <div class="pcard">

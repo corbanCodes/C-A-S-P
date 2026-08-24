@@ -8,7 +8,7 @@ endpoint (real — leads land in the CRM), while payments and e-signature are
 staged hand-offs (not yet).
 
 "Book a demo" opens Corban's 60MS Calendly in a popup (lazy-loaded); any
-element with data-calendly gets the behaviour, and the plain href works as a
+element with data-calendly gets the behavior, and the plain href works as a
 new-tab fallback without JS.
 """
 from data import BIZ, CALENDLY, ACCESS_SERVICES, STRUCT_SERVICES
@@ -300,7 +300,7 @@ def foot():
   <p class="disclaimer">
    <b>Not legal advice.</b> Inspector Group California performs inspections and writes
    reports. We are not a law firm, we do not provide legal representation, and nothing on
-   this site creates an attorney&ndash;client relationship. Statutes are summarised for
+   this site creates an attorney&ndash;client relationship. Statutes are summarized for
    orientation and are current as described; retain California counsel for advice on your
    own situation and verify any citation against the code before you rely on it.
   </p>

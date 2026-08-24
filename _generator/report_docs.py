@@ -102,13 +102,13 @@ def build_casp_sample(write):
    <b>This site was inspected by a Certified Access Specialist and does not meet applicable
    construction-related accessibility standards.</b> This report describes the structures and
    areas inspected, states the date of inspection, identifies the corrections needed, sets an
-   itemised schedule of completion for each, and is signed by the certifying CASp. Upon
+   itemized schedule of completion for each, and is signed by the certifying CASp. Upon
    issue, a Disability Access Inspection Certificate was provided &mdash; a record of
    inspection, not a certificate of compliance.
   </div>
 
   <h2><span class="no">2</span>Structures and areas inspected</h2>
-  <p>The single-storey retail building and site, comprising: off-street parking (14 stalls)
+  <p>The single-story retail building and site, comprising: off-street parking (14 stalls)
    and passenger loading; the exterior accessible route from the public way and from parking
    to the principal entrance; the principal entrance and secondary exit; interior circulation
    and sales floor; the sales counter; the single-user restroom; and interior and exterior
@@ -182,7 +182,7 @@ def build_casp_sample(write):
     write("samples/casp-report.html", head(
         "Sample CASp Inspection Report | Inspector Group California",
         "A worked example of a CASp report built to Civil Code §55.53: areas inspected, "
-        "itemised findings with measurements and code sections, schedule of completion, "
+        "itemized findings with measurements and code sections, schedule of completion, "
         "certification and the Disability Access Inspection Certificate.",
         "/samples/casp-report.html", extra_css=RCSS) + body + foot())
 
@@ -197,7 +197,7 @@ def build_sb721_sample(write):
          "good", "8&ndash;10 yrs", "Recoat walking surface within 24 mo"),
         ("B-107", "Balcony, Bldg A", "Fungal decay in two joists at ledger; deflection under load",
          "threat", "&mdash;", "Access prevented, shoring installed; see &sect;6"),
-        ("W-02", "Walkway, Bldg B", "Fastener corrosion at three hangers; localised soft decking",
+        ("W-02", "Walkway, Bldg B", "Fastener corrosion at three hangers; localized soft decking",
          "poor", "1&ndash;2 yrs", "Replace hangers; open soffit for framing verification"),
         ("W-05", "Walkway, Bldg B", "Drainage ponding at east end; membrane intact",
          "fair", "4&ndash;6 yrs", "Correct slope to drain at next resurfacing"),
@@ -270,7 +270,7 @@ def build_sb721_sample(write):
   <h2><span class="no">5</span>Further inspection recommended</h2>
   <p>Walkway W-02: open the soffit at the two soft-decking locations to verify framing
    condition before hanger replacement is scoped. This is the only destructive verification
-   recommended; it should be performed with, not before, the repair mobilisation.</p>
+   recommended; it should be performed with, not before, the repair mobilization.</p>
 
   <h2><span class="no">6</span>Immediate threat advisory &mdash; element B-107</h2>
   <div class="doc-threat">
@@ -289,7 +289,7 @@ def build_sb721_sample(write):
    building records for no fewer than <b>two inspection cycles</b>.</p>
   <div class="doc-sign">
    <div><p class="doc-sig">Robert Lehman</p><b>Robert Lehman</b>
-    Certified building inspector &middot; Licence [&bull;&bull;&bull;]<br>
+    Certified building inspector &middot; License [&bull;&bull;&bull;]<br>
     Inspector Group California</div>
    <div style="display:flex;align-items:flex-end"><span>Stamped and signed per
     &sect;17973(d). SB 326 engagements are signed by a licensed structural engineer or
@@ -307,7 +307,7 @@ def build_sb721_sample(write):
            bar=_bar("", "/samples/casp-report.html", "See the CASp sample"),
            letterhead=_letterhead("EEE Inspection Report", "IGC-2026-0533", "3 July 2026"),
            rows=rows,
-           ph1=img("residential-eee", "Multi-storey residential building with wood balconies"),
+           ph1=img("residential-eee", "Multi-story residential building with wood balconies"),
            ph2=img("weathered-wood", "Close view of checked, weathered structural timber"),
            ph3=img("condo-construction", "Wood-framed multifamily construction"),
            cta=cta("Your building's baseline starts here",

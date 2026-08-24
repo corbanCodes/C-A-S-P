@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Crop, colour-correct and compress the chosen candidates into assets/img/.
+"""Crop, color-correct and compress the chosen candidates into assets/img/.
 
 Only the files listed in PICKS ship. Everything else stays in _generator/raw/
 (gitignored) so the shortlist stays reviewable without bloating the repo.

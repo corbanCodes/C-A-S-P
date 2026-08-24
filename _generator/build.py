@@ -74,7 +74,7 @@ def build_home():
    </div>
    <div class="rv-body">
     <div class="rv-main">
-     <h3>Itemised findings</h3>
+     <h3>Itemized findings</h3>
      <p class="rv-sub">34 findings &middot; measured against CBC Chapter 11B &amp; 2010 ADA Standards</p>
      <div class="rv-row">{ic_geo2}<b>Parking &mdash; access aisle slope 4.1% (max 2.08%)</b><span class="rv-sev rv-sev-hi">Priority</span></div>
      <div class="rv-row">{ic_doc2}<b>Entrance &mdash; door opening force 11 lbf (max 5 lbf)</b><span class="rv-sev rv-sev-md">Correct</span></div>
@@ -376,7 +376,7 @@ def build_casp():
   <div class="split">
    <div>
     <h2>Start with the name, because it is confusing on purpose</h2>
-    <p><b>CASp</b> stands for <b>Certified Access Specialist</b>. The programme is run by the
+    <p><b>CASp</b> stands for <b>Certified Access Specialist</b>. The program is run by the
      California Division of the State Architect (DSA), part of the Department of General
      Services, and it certifies individuals to inspect buildings and sites against California
      and federal construction-related accessibility standards.</p>
@@ -486,7 +486,7 @@ def build_casp():
    <b>The report has to come first.</b>
    Qualified defendant protections apply only where the inspection, the report and the
    schedule of completion pre-date the filing. This is the single most common and most
-   expensive misunderstanding about the programme.
+   expensive misunderstanding about the program.
   </div>
 
   <h3>Small business grace period</h3>
@@ -515,7 +515,7 @@ def build_casp():
     <ul class="checks">
      <li>{ck}<span>A description of the structures and areas inspected, and the date</span></li>
      <li>{ck}<span>A signed statement identifying the corrections needed</span></li>
-     <li>{ck}<span>An itemised list of every required correction</span></li>
+     <li>{ck}<span>An itemized list of every required correction</span></li>
      <li>{ck}<span>A schedule of completion for each correction</span></li>
     </ul>
     <p style="margin:1.4rem 0"><a class="btn btn-soft" href="/samples/casp-report.html">Read a sample report {ic_a2}</a></p>
@@ -616,7 +616,7 @@ def build_balcony():
      and never looked at again.</p>
     <p>Concrete and steel balconies are largely outside these statutes for exactly that
      reason. If your building went up as a wood-framed structure &mdash; and in California
-     most three-to-five storey residential buildings did &mdash; assume you are in scope
+     most three-to-five story residential buildings did &mdash; assume you are in scope
      until someone competent says otherwise.</p>
    </div>
   </div>
@@ -647,7 +647,7 @@ def build_balcony():
      extend beyond the exterior walls of the building.</p></div>
    <div class="card card-s"><div class="card-ic">{ic_r}</div><h3>More than 6 feet up</h3>
     <p>The walking surface sits more than six feet above the ground below. A ground-floor
-     patio is out; a second-storey walkway is in.</p></div>
+     patio is out; a second-story walkway is in.</p></div>
    <div class="card card-s"><div class="card-ic">{ic_h}</div><h3>Made for people</h3>
     <p>Designed for human occupancy or use &mdash; not a decorative ledge or a piece of
      mechanical screening.</p></div>
@@ -738,7 +738,7 @@ def build_balcony():
 """.format(
         ic_al=svg("alert"), ic_a=svg("arrow"), ic_b=svg("building"), ic_r=svg("ruler"),
         ic_h=svg("hoa"), ic_pl=svg("plans"),
-        im_eee=img("residential-eee", "A multi-storey residential building with exterior wood balconies and porches"),
+        im_eee=img("residential-eee", "A multi-story residential building with exterior wood balconies and porches"),
         im_frame=img("condo-construction", "A wood-framed multifamily building under construction"),
         d_which=dg.which_law(), d_eee=dg.eee_section(),
         eee="".join('<div class="card card-s"><h3>%s</h3><p>%s</p></div>' % (t, d)
@@ -798,7 +798,7 @@ def build_services():
      and the number of units and we can usually tell you inside five minutes which mandate
      applies, whether both do, and roughly what it costs.</p>
     <p>Mixed-use properties frequently need both &mdash; ground-floor retail with apartments
-     above is the classic case &mdash; and combining them into one mobilisation saves money.</p>
+     above is the classic case &mdash; and combining them into one mobilization saves money.</p>
     <p style="margin-top:1.6rem">
      <a class="btn btn-solid btn-lg" href="tel:{tel}">{ic_p} {ph}</a>
      <a class="btn btn-line btn-lg" href="/contact.html">Send the details</a>
@@ -947,7 +947,7 @@ def build_process():
   <p style="margin:-.8rem 0 1.6rem"><a class="btn btn-soft" href="/samples/casp-report.html">Sample CASp report {ic_c2}</a>
    <a class="btn btn-soft" href="/samples/sb721-report.html">Sample SB 721 report {ic_c2}</a></p>
   <div class="grid g3">
-   <div class="card"><div class="card-ic">{ic_d}</div><h3>Itemised findings</h3>
+   <div class="card"><div class="card-ic">{ic_d}</div><h3>Itemized findings</h3>
     <p>Every item listed separately with the applicable standard or code section beside it,
      not a narrative you have to interpret.</p></div>
    <div class="card"><div class="card-ic">{ic_se}</div><h3>Photographs</h3>
@@ -979,7 +979,7 @@ def build_process():
      <li>{ck}<span>Roughly when it was built, and whether it has been remodelled</span></li>
      <li>{ck}<span>Any permit history or prior reports you already hold</span></li>
      <li>{ck}<span>Access &mdash; keys, codes, and a contact who can open locked areas</span></li>
-     <li>{ck}<span>For HOAs, whoever on the board is authorised to receive the report</span></li>
+     <li>{ck}<span>For HOAs, whoever on the board is authorized to receive the report</span></li>
      <li>{ck}<span>If you have been served, the date of service. It starts a clock.</span></li>
     </ul>
    </div>
@@ -1022,7 +1022,7 @@ def build_about():
      after Berkeley, where the deadlines have now passed and a great many buildings are
      quietly non-compliant.</p>
     <p>The firm works statewide, across all 58 counties, and staffs each inspection with
-     someone who holds the certification or licence that the particular statute requires.</p>
+     someone who holds the certification or license that the particular statute requires.</p>
    </div>
    <div class="split-media">{im}</div>
   </div>
@@ -1046,7 +1046,7 @@ def build_about():
     <p>Portfolio owners get one report format across every market rather than a different
      vendor's template in each county.</p></div>
    <div class="card"><div class="card-ic">{ic_cal}</div><h3>We track your cycle</h3>
-    <p>Six years, nine years, or whenever your risk profile changes. We diarise it so the next
+    <p>Six years, nine years, or whenever your risk profile changes. We diarize it so the next
      deadline is not a surprise.</p></div>
    <div class="card"><div class="card-ic">{ic_sh}</div><h3>Right credential, right job</h3>
     <p>SB 326 requires a licensed structural engineer or architect. SB 721 and CASp have their
@@ -1124,7 +1124,7 @@ def build_coverage():
      dates that nobody is tracking.</p>
     <p>We inspect the whole portfolio on one schedule, deliver one format, and hand back a
      single register of what was found and when each property comes round again. For
-     management companies that is the difference between a compliance programme and a
+     management companies that is the difference between a compliance program and a
      recurring fire drill.</p>
     <p style="margin-top:1.6rem"><a class="btn btn-solid btn-lg" href="/contact.html">Talk about a portfolio {ic_a}</a></p>
    </div>
@@ -1272,7 +1272,7 @@ def build_contact():
   <div class="split">
    <div>
     <h2>Talk to an inspector</h2>
-    <p class="lede">Not a call centre and not a form that disappears. You get Robert or
+    <p class="lede">Not a call center and not a form that disappears. You get Robert or
      someone who has walked the kind of building you are calling about.</p>
 
     <div class="grid" style="gap:.9rem;margin:2rem 0">

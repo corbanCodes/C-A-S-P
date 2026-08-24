@@ -68,7 +68,7 @@ before anyone files puts you in a different procedural category: proceedings can
 you work a written correction schedule.</p>
 
 <p>The law treats access as a civil right. The practical response is not anxiety &mdash;
-it is a measured inspection, an itemised list, and dates on a calendar.</p>
+it is a measured inspection, an itemized list, and dates on a calendar.</p>
 """,
     },
     {
@@ -112,7 +112,7 @@ overwhelm the job. Every tenant improvement quietly re-opens the accessibility q
 <h2>The uncomfortable middle</h2>
 <p>So the 1955 building sits in the worst spot: built with zero accessibility, never
 &ldquo;forced&rdquo; to renovate, but carrying a live legal duty the whole time &mdash; and
-presenting, to a practised eye, the richest set of barriers on the block. The plaintiff who
+presenting, to a practiced eye, the richest set of barriers on the block. The plaintiff who
 walks in is not confused about any of this. The owner usually is.</p>
 
 <h2>What a CASp inspection does for an old building</h2>
@@ -120,7 +120,7 @@ walks in is not confused about any of this. The owner usually is.</p>
 <b>which standards actually apply to your building given its age and permit history</b>
 &mdash; that determination is itself part of the certification &mdash; then hands you the
 statement the statute requires: you are in violation of this, this and this; here is the
-itemised list; here is the schedule to fix it (Civil Code &sect;55.53). Work the schedule
+itemized list; here is the schedule to fix it (Civil Code &sect;55.53). Work the schedule
 and the law treats you as the owner who is fixing things &mdash; qualified-defendant status,
 a possible 90-day stay, reduced damages tiers &mdash; instead of the owner who never
 looked. <a href="/samples/casp-report.html">Here is what that report looks like.</a></p>
@@ -233,7 +233,7 @@ will likely be short. If it turned up three or four items, understand what that 
 things you could see in ten minutes are the things anyone can see. The correct next step is
 not quiet panic and not a weekend of guesswork &mdash; it is a <a href="/casp.html">CASp
 inspection</a> that determines which standards apply to your building, measures everything,
-and puts the fixes on a schedule the courts recognise. That schedule is the difference
+and puts the fixes on a schedule the courts recognize. That schedule is the difference
 between an owner with a plan and a defendant with a problem.</p>
 """,
     },
@@ -253,7 +253,7 @@ between vague worry and a rational plan.</p>
 
 <h2>The concentration is the story</h2>
 <p>In 2025, plaintiffs filed <b>3,252 federal ADA Title III lawsuits in California</b> &mdash;
-the most of any state, around 271 a month. In 2024, a single plaintiff organisation filed
+the most of any state, around 271 a month. In 2024, a single plaintiff organization filed
 <b>2,598</b> of that year's suits by itself. And of all the demand letters and complaints
 reported to the California Commission on Disability Access in 2024, <b>95.8% came from just
 ten law firms</b> &mdash; one firm alone accounted for roughly 41%. These are not our
@@ -264,7 +264,7 @@ here.</a></p>
 <h2>How the targeting works</h2>
 <p>Parking lots are legible from the street and, increasingly, from satellite and street-view
 imagery: stall counts, striping, van aisles, ramps and slopes photograph well. Entrances and
-counters take one short visit. A practised filer does not need to find a sympathetic
+counters take one short visit. A practiced filer does not need to find a sympathetic
 disaster; they need to find one measurable barrier, because statutory damages are set by
 statute &mdash; $4,000 minimum per occasion &mdash; and the attorney-fee award makes modest
 cases worth running at volume.</p>
@@ -273,7 +273,7 @@ cases worth running at volume.</p>
 <p>First: <i>&ldquo;these suits are frivolous.&rdquo;</i> Usually not, and that is the
 problem &mdash; the barrier named in the complaint is typically real and measurable. The
 industry is opportunistic; the violations are genuine. Judges know the difference, which is
-why the defence of &ldquo;but everyone does it&rdquo; goes nowhere.</p>
+why the defense of &ldquo;but everyone does it&rdquo; goes nowhere.</p>
 
 <p>Second: <i>&ldquo;I'm small, they won't bother.&rdquo;</i> The volume numbers say
 otherwise. Small retail, restaurants and strip-mall tenants are the core of the docket
@@ -409,7 +409,7 @@ def build_articles(write):
   </article>
   <div class="note" style="margin-top:2.4rem">
    <b>This is orientation, not legal advice.</b>
-   Statutes are summarised and cited so you can check them; how they apply to your property
+   Statutes are summarized and cited so you can check them; how they apply to your property
    depends on facts we have not seen. For an answer about your building,
    <a href="/book.html">book the inspection</a> or <a href="/contact.html">start with a
    call</a> &mdash; and for anything in active litigation, retain California counsel.
